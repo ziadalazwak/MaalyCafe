@@ -1,0 +1,1002 @@
+.hero-bottom-black {
+  width: 100%;
+  height: 90px;
+  background: #251b19;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: 40;
+}
+
+body {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+
+  color: #fff;
+}
+
+.hero-section {
+  min-height: 100vh;
+  background: linear-gradient(90deg, #251b19 50%, #7c573c 50%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  left: -10vw;
+  top: -12vh;
+  width: 50vw;
+  height: 40vw;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 18% 12%,
+    #745f58 0%,
+    rgba(176, 139, 101, 0.08) 50%,
+    rgba(45, 26, 19, 0.02) 80%,
+    rgba(45, 26, 19, 0) 100%
+  );
+  border-radius: 50%;
+  z-index: 1;
+  mix-blend-mode: lighten;
+  filter: blur(50px);
+}
+
+.logo-corner {
+  position: absolute;
+  top: 32px;
+  left: 64px;
+  z-index: 20;
+}
+
+.logo-corner img {
+  width: 90px;
+  height: 90px;
+  bottom: 80%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 32px;
+  padding: 32px 230px 0 0;
+  background: transparent;
+  position: relative;
+  min-height: 80px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+  margin: 0 0 0 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: #e3c08d;
+  text-decoration: none;
+  font-size: 1.08rem;
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+.hero-buttons-top {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  z-index: 30;
+}
+
+.reservation-btn,
+.login-btn {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.cart-icon {
+  cursor: pointer;
+}
+
+.nav-links a {
+  cursor: pointer;
+}
+
+button:focus,
+.reservation-btn:focus,
+.login-btn:focus,
+.cart-icon:focus,
+.nav-links a:focus {
+  outline: 2px solid #e3c08d;
+  outline-offset: 2px;
+}
+
+.reservation-btn {
+  margin-left: 300px;
+  margin-top: 32px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(145, 131, 110, 0.6) 0%,
+    rgba(146, 135, 119, 0.6)
+  );
+  border: 2px solid #f8e4be;
+  color: #f8e4be;
+  padding: 10px 48px;
+  border-radius: 30px;
+  font-size: 1.12rem;
+  font-family: "Abhaya Libre", serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+
+  min-width: 160px;
+}
+
+.login-btn {
+  margin-right: 300px;
+  margin-top: 32px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(145, 131, 110, 0.6) 0%,
+    rgba(146, 135, 119, 0.6)
+  );
+  border: 2px solid #f8e4be;
+  color: #f8e4be;
+  padding: 10px 48px;
+  border-radius: 30px;
+  font-size: 1.12rem;
+  font-family: "Abhaya Libre", serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+
+  min-width: 160px;
+}
+
+.hero-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px; /* Increased for button space */
+  position: relative;
+}
+
+.hero-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 18px;
+  z-index: 2;
+  margin-top: -160px;
+}
+
+.hero-logo img {
+  width: 330px;
+  margin: 0 0 24px 0;
+  display: block;
+}
+
+.hero-content h1 {
+  font-family: "Dancing Script", cursive;
+  font-size: 2.8rem;
+  color: #e3c08d;
+  margin: 0 0 10px 0;
+  letter-spacing: 2px;
+  text-shadow: 1px 2px 8px #2c1b1b;
+}
+
+.hero-content h1 span {
+  display: inline-block;
+  margin: 0 12px;
+}
+
+.coffee-machine-art {
+  position: absolute;
+  left: 46%;
+  top: 160px;
+  bottom: 0;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+.coffee-machine-art::after {
+  content: "";
+  position: absolute;
+  left: 65%;
+  top: 85%;
+  width: 400px;
+  height: 600px;
+  background: radial-gradient(
+    ellipse 60% 40% at 60% 60%,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.7) 50%,
+    rgba(0, 0, 0, 0.38) 100%,
+    rgba(0, 0, 0, 0.05) 100%
+  );
+  filter: blur(120px);
+  transform: rotate(6deg);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.coffee-machine-art::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 94%;
+  width: 500px;
+  height: 120px;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.25) 0%,
+    rgba(0, 0, 0, 0.1) 40%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  filter: blur(18px);
+  z-index: 0; /* Place it behind the machine image */
+  pointer-events: none;
+}
+
+.coffee-machine-art img {
+  width: 750px;
+  max-width: 90vw;
+  height: auto;
+  display: block;
+}
+.coffee-art-bottom {
+  position: absolute;
+  right: 3px;
+  top: 420px;
+  background: linear-gradient(135deg, #4e2e23, #54362a);
+  border-radius: 50px;
+  padding: 24px 36px 24px 28px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 10;
+  overflow: hidden;
+  gap: 0;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3),
+    inset 0 0 8px rgba(255, 255, 255, 0.05);
+  width: 20%;
+  height: 300px;
+}
+
+.coffee-art-bottom::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 100%;
+  pointer-events: none;
+  border-radius: 50px;
+  z-index: 2;
+
+  border-top: 4px solid #a8715c;
+  border-left: 4px solid #a8715c;
+  box-sizing: border-box;
+
+  /* Softer mask with more gradual fade */
+  mask-image: radial-gradient(
+    farthest-corner at top left,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 40px,
+    rgba(0, 0, 0, 0.5) 80px,
+    rgba(0, 0, 0, 0) 130px
+  );
+  -webkit-mask-image: radial-gradient(
+    farthest-corner at top left,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 40px,
+    rgba(0, 0, 0, 0.5) 80px,
+    rgba(0, 0, 0, 0) 130px
+  );
+}
+
+.coffee-art-bottom img {
+  width: 200px;
+  margin-bottom: 8px;
+}
+
+.coffee-caption {
+  color: #e3c08d;
+  font-family: "Dancing Script", cursive;
+  font-size: 2.25rem;
+  text-align: left;
+  margin-left: 24px;
+  margin-bottom: 0;
+  align-self: center;
+  white-space: nowrap;
+}
+
+.floating-bean {
+  position: absolute;
+  opacity: 1;
+  pointer-events: none;
+  filter: drop-shadow(0 6px 18px #2d1a1340) drop-shadow(0 2px 6px #7b5a3c30);
+  z-index: 2;
+}
+
+.bean1 {
+  top: 50%;
+  left: 48%;
+  width: 50px;
+  transform: rotate(115deg);
+}
+
+.bean2 {
+  filter: blur(1px);
+  top: -50%;
+  left: 23%;
+  width: 35px;
+  transform: rotate(130deg);
+}
+
+.bean3 {
+  top: 10%;
+  left: 35%;
+  width: 50px;
+  transform: rotate(0deg);
+}
+
+.bean4 {
+  opacity: 0.7;
+  top: 145%;
+  left: 42%;
+  width: 40px;
+  transform: rotate(120deg);
+}
+
+.bean5 {
+  opacity: 0.7;
+  top: 160%;
+  left: 33%;
+  width: 46px;
+  transform: rotate(-5deg);
+}
+
+.bean6 {
+  filter: blur(1px);
+  top: 40%;
+  left: 60%;
+  width: 40px;
+  transform: rotate(125deg);
+}
+
+.bean7 {
+  top: 17%;
+  left: 77%;
+  width: 35px;
+  transform: rotate(-40deg);
+}
+
+.bean8 {
+  top: 120%;
+  left: 70%;
+  width: 44px;
+  transform: rotate(0deg);
+}
+
+.maaly-word {
+  font-weight: 700;
+  font-size: 6.2rem;
+  color: transparent; /* No fill */
+  -webkit-text-stroke: 2px #f8e4be; /* cream outline */
+  position: absolute;
+  left: 400px;
+  top: 210%;
+  transform: translateY(-50%);
+  font-family: "Dancing Script", cursive;
+
+  z-index: 10;
+  letter-spacing: 1px;
+  pointer-events: none;
+}
+
+.coffee-word {
+  font-family: "Dancing Script", cursive;
+  font-size: 6.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  position: absolute;
+  right: 400px;
+  top: 210%;
+  transform: translateY(-50%);
+  color: transparent; /* make inside empty */
+  -webkit-text-stroke: 2px #e2f8be; /* gold outline */
+  text-shadow: 0 6px 32px #3d2626cc, 0 2px 12px #000a, 1px 2px 8px #422727;
+}
+
+@media (max-width: 900px) {
+  .logo-corner {
+    top: 12px;
+    left: 12px;
+  }
+  .navbar {
+    padding: 18px 10px 0 0;
+    gap: 16px;
+  }
+  .nav-links {
+    gap: 18px;
+  }
+  .hero-buttons-top {
+    padding: 0 20px;
+  }
+  .reservation-btn {
+    margin-left: 20px;
+  }
+  .coffee-machine-art img {
+    width: 260px;
+  }
+  .coffee-art-bottom {
+    min-width: 100px;
+    padding: 10px 12px 6px 12px;
+  }
+  .coffee-art-bottom img {
+    width: 48px;
+  }
+  .hero-logo img {
+    width: 100px;
+  }
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+  .maaly-word,
+  .coffee-word {
+    font-size: 2.2rem;
+    left: 2vw;
+    right: 2vw;
+    top: 60%;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo-corner {
+    top: 4px;
+    left: 4px;
+  }
+  .navbar {
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px 0 0 0;
+  }
+  .nav-links {
+    gap: 8px;
+  }
+  .hero-buttons-top {
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    padding: 0 10px;
+    margin-top: 60px;
+  }
+  .reservation-btn,
+  .login-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    min-width: 120px;
+  }
+  .reservation-btn {
+    margin-left: 5px;
+  }
+  .coffee-machine-art img {
+    width: 120px;
+  }
+  .coffee-art-bottom {
+    min-width: 60px;
+    padding: 4px 6px 2px 6px;
+  }
+  .coffee-art-bottom img {
+    width: 24px;
+  }
+  .hero-logo img {
+    width: 60px;
+  }
+  .hero-content h1 {
+    font-size: 1.2rem;
+  }
+  .maaly-word,
+  .coffee-word {
+    font-size: 1.2rem;
+    left: 1vw;
+    right: 1vw;
+    top: 70%;
+  }
+}
+
+/* Rest of the CSS remains the same */
+.products-section {
+  background: #221518;
+  background-image: url("images/products-bg-beans.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  min-height: 100vh;
+  padding: 48px 0 0 0;
+  z-index: 1;
+}
+.products-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #221518;
+  z-index: 0;
+}
+.products-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+.products-section .bean {
+  position: absolute;
+  opacity: 0.11;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 16px rgba(58, 27, 26, 0.13));
+  z-index: 0;
+}
+.products-section .bean1 {
+  top: 10%;
+  left: 0%;
+  width: 60px;
+  transform: rotate(0deg);
+  opacity: 1;
+}
+.products-section .bean2 {
+  top: 420px;
+  left: 3px;
+  width: 60px;
+  transform: rotate(0deg);
+  opacity: 1;
+}
+.products-section .bean3 {
+  top: 40%;
+  left: 97%;
+  width: 60px;
+  transform: rotate(-7deg);
+  opacity: 1;
+}
+.products-section .bean4 {
+  top: 420px;
+  left: 97%;
+  width: 60px;
+  transform: rotate(-7deg);
+  opacity: 1;
+}
+
+.section-title {
+  font-family: "Dancing Script", cursive;
+  font-size: 3.2rem;
+  text-align: center;
+  margin-bottom: -15px;
+  color: #f8e4be;
+  letter-spacing: 2px;
+}
+.product-filters {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  margin-bottom: 36px;
+}
+.product-filters button {
+  height: 63px;
+  background: linear-gradient(
+    135deg,
+    rgba(87, 78, 65, 0.6) 0%,
+    rgba(87, 78, 65, 0.6)
+  );
+  border: 2px solid #f8e4be;
+  color: #f3d8a7;
+  width: 180px;
+  border-radius: 30px;
+  font-size: 1.12rem;
+  font-family: "Abhaya Libre", serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+
+  min-width: 160px;
+  cursor: pointer;
+
+  margin-top: 70px;
+}
+.product-card:hover .product-info,
+.product-card:focus .product-info {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.product-filters button:hover,
+.product-filters button.active {
+  background: #e3c08d;
+  color: #7b5a3c;
+  border: 2px solid #fff;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 260px);
+  gap: 38px;
+  justify-content: center;
+  padding: 0 48px 48px 48px;
+  margin-top: 70px;
+}
+.product-card {
+  max-width: 260px;
+  width: 100%;
+  position: relative; /* must-have for absolute children like .product-info */
+  overflow: visible;
+}
+.product-card img {
+  width: 100%;
+  min-width: 0;
+}
+.product-info {
+  width: 100%;
+  background: #8a7262;
+  border-radius: 0 0 18px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 14px 22px 10px 22px;
+  position: absolute;
+  left: 0;
+  height: 5%;
+  bottom: 0;
+  min-height: 48px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 14px rgba(58, 27, 26, 0.13);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.product-name {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.08rem;
+  color: #fff;
+  font-weight: bold;
+  margin-right: 12px;
+}
+.product-price {
+  font-size: 0.93rem;
+  color: #fff;
+  opacity: 0.9;
+  margin-right: auto;
+}
+.add-cart {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.25rem;
+  margin-left: 8px;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+.add-cart:hover {
+  color: #e3c08d;
+}
+.product-card:hover {
+  transform: translateY(-8px) scale(1.03);
+}
+
+.reservation-section {
+  box-shadow: 0 16px 48px 0 rgba(60, 38, 27, 0.18),
+    0 2px 8px 0 rgba(60, 38, 27, 0.09);
+
+  background: #7b5a3c 50%;
+  padding: 48px 0;
+  min-height: 70vh;
+}
+.reservation-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  margin-top: 150px;
+  padding: 40px;
+  border-radius: 20px;
+
+  z-index: 1;
+}
+
+.reservation-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 700px;
+  z-index: -1;
+  pointer-events: none;
+
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.25) 1%,
+    rgba(0, 0, 0, 0.15) 40%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  filter: blur(20px);
+}
+
+.reservation-container::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  height: 800px;
+  z-index: -1;
+  pointer-events: none;
+
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.25) 1%,
+    rgba(0, 0, 0, 0.15) 40%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  filter: blur(100px);
+}
+
+.reservation-art img {
+  width: 420px;
+  max-width: 100%;
+  margin-right: 200px;
+  margin-bottom: 50px;
+}
+.reservation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  min-width: 340px;
+  color: #ad714a59;
+}
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.input-wrapper .input-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ad714a59;
+  font-size: 1.18rem;
+  pointer-events: none;
+  z-index: 2;
+}
+.input-wrapper input[placeholder="Date"] {
+  width: 500px;
+}
+
+.input-wrapper input[placeholder="Deposit"] {
+  width: 280px;
+}
+
+.input-wrapper input,
+.input-wrapper select {
+  padding-left: 40px;
+  border: 1.5px solid #ad714a59;
+  border-radius: 18px;
+  height: 44px;
+  font-size: 1.08rem;
+  background: #fff;
+  color: #3a1b1a;
+  box-shadow: 0 2px 8px rgba(58, 27, 26, 0.07);
+  transition: border 0.2s;
+}
+.input-wrapper input:focus,
+.input-wrapper select:focus {
+  border-color: #e3c08d;
+  outline: none;
+}
+.time-group,
+.row-group {
+  display: flex;
+  gap: 16px;
+}
+.reserve-btn {
+  height: 50px;
+  background: linear-gradient(
+    135deg,
+    rgba(145, 131, 110, 0.6) 0%,
+    rgba(146, 135, 119, 0.6)
+  );
+  border: 2px solid #f8e4be;
+  color: #f8e4be;
+
+  border-radius: 30px;
+  font-size: 1.12rem;
+  font-family: "Abhaya Libre", serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+
+  min-width: 160px;
+  cursor: pointer;
+}
+.reserve-btn:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(145, 131, 110, 0.6) 0%,
+    rgba(146, 135, 119, 0.6)
+  );
+  color: #f8e4be;
+}
+
+/* --- FOOTER BACKGROUND WITH IMAGE AND OVERLAY --- */
+.footer {
+  background: #533529;
+  background-image: url("images/Bg\ footer.png");
+
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: #fff;
+  padding: 32px 0 0 0;
+  height: 400px;
+  height: 100%;
+}
+
+.footer *,
+.footer-content,
+.footer-bottom {
+  position: relative;
+  z-index: 1;
+}
+.footer-art img {
+  width: 300px;
+  position: absolute;
+  left: 60px;
+  top: 50px;
+}
+.footer-content {
+  display: flex;
+  justify-content: center;
+  gap: 120px;
+  margin-left: 200px;
+}
+.footer-content > div {
+  margin-right: 0;
+}
+.footer-content > div:not(:last-child) {
+  margin-right: 80px;
+}
+@media (max-width: 900px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 48px;
+    margin-left: 0;
+    align-items: center;
+  }
+  .footer-content > div:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 32px;
+  }
+}
+.footer-content h4 {
+  font-family: "Abhaya Libre Medium", cursive;
+  margin-bottom: 12px;
+  color: #fff;
+  margin-top: 100px;
+}
+.footer-content ul {
+  list-style: none;
+  padding: 0;
+
+  margin-top: 5px;
+}
+.footer-content li {
+  margin-bottom: 8px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding-top: 50px;
+}
+.footer-icon {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+.footer-content li svg {
+  margin-right: 8px;
+}
+.footer-social a {
+  margin-right: 10px;
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+.footer-bottom {
+  text-align: center;
+  margin-top: 32px;
+  font-size: 0.95rem;
+  color: #bba98a;
+}
+
+@media (max-width: 900px) {
+  .products-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer-content {
+    flex-direction: column;
+    gap: 32px;
+    margin-left: 0;
+    align-items: center;
+  }
+  .footer-art img {
+    position: static;
+    margin-bottom: 24px;
+  }
+  .reservation-container {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .hero-flex {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+  }
+  .coffee-machine-art img {
+    width: 240px;
+  }
+}
+@media (max-width: 600px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+  .navbar {
+    flex-direction: column;
+    gap: 16px;
+    padding: 18px 8px;
+  }
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .reservation-form {
+    min-width: 90vw;
+    padding: 16px;
+  }
+  .hero-center h1 {
+    font-size: 1.5rem;
+  }
+}
