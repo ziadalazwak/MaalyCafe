@@ -1,0 +1,138 @@
+.footer {
+  background: #533529;
+  background-image: url("../images/Bg footer.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: #fff;
+  padding: 32px 0 0 0;
+  width: 100vw;
+  min-height: 600px;
+
+  box-sizing: border-box;
+  /* Ensure the footer background fills the entire area */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.footer-art img {
+  width: 300px;
+  position: absolute;
+  left: 60px;
+  top: 50px;
+}
+.footer-content {
+  display: flex;
+  justify-content: center;
+  gap: 120px;
+  margin-left: 200px;
+}
+.footer-content > div {
+  margin-right: 0;
+}
+.footer-content > div:not(:last-child) {
+  margin-right: 80px;
+}
+@media (max-width: 900px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 48px;
+    margin-left: 0;
+    align-items: center;
+  }
+  .footer-content > div:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 32px;
+  }
+}
+.footer-content h4 {
+  font-family: "Abhaya Libre Medium", cursive;
+  margin-bottom: 12px;
+  color: #fff;
+  margin-top: 100px;
+}
+.footer-content ul {
+  list-style: none;
+  padding: 0;
+
+  margin-top: 5px;
+}
+.footer-content li {
+  margin-bottom: 8px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding-top: 50px;
+}
+.footer-icon {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+.footer-content li svg {
+  margin-right: 8px;
+}
+.footer-social a {
+  margin-right: 10px;
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+.footer-bottom {
+  text-align: center;
+  margin-top: 32px;
+  font-size: 0.95rem;
+  color: #bba98a;
+}
+
+@media (max-width: 900px) {
+  .products-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer-content {
+    flex-direction: column;
+    gap: 32px;
+    margin-left: 0;
+    align-items: center;
+  }
+  .footer-art img {
+    position: static;
+    margin-bottom: 24px;
+  }
+  .reservation-container {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .hero-flex {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+  }
+  .coffee-machine-art img {
+    width: 240px;
+  }
+}
+@media (max-width: 600px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+  .navbar {
+    flex-direction: column;
+    gap: 16px;
+    padding: 18px 8px;
+  }
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .reservation-form {
+    min-width: 90vw;
+    padding: 16px;
+  }
+  .hero-center h1 {
+    font-size: 1.5rem;
+  }
+}

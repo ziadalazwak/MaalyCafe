@@ -1,0 +1,191 @@
+/* =====================
+   Reusable Components
+   ===================== */
+
+/* Buttons */
+.reservation-btn,
+
+.reserve-btn,
+.product-filters button {
+  background: linear-gradient(135deg, rgba(145, 131, 110, 0.6) 0%, rgba(146, 135, 119, 0.6));
+  border: 2px solid #f8e4be;
+  color: #f8e4be;
+  padding: 10px 48px;
+  border-radius: 30px;
+  font-size: 1.12rem;
+  font-family: "Abhaya Libre", serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  min-width: 160px;
+  cursor: pointer;
+}
+.product-filters button {
+  width: 180px;
+  height: 63px;
+  color: #f3d8a7;
+  margin-top: 70px;
+}
+.product-filters button:hover,
+.product-filters button.active {
+  background: #e3c08d;
+  color: #7b5a3c;
+  border: 2px solid #fff;
+}
+.reserve-btn:hover {
+  color: #f8e4be;
+}
+
+/* Cards */
+.product-card {
+  max-width: 260px;
+  width: 100%;
+  position: relative;
+  overflow: visible;
+}
+.product-card img {
+  width: 100%;
+  min-width: 0;
+}
+.product-info {
+  width: 100%;
+  background: #8a7262;
+  border-radius: 0 0 18px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 14px 22px 10px 22px;
+  position: absolute;
+  left: 0;
+  height: 5%;
+  bottom: 0;
+  min-height: 48px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 14px rgba(58, 27, 26, 0.13);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.product-name {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.08rem;
+  color: #fff;
+  font-weight: bold;
+  margin-right: 12px;
+}
+.product-price {
+  font-size: 0.93rem;
+  color: #fff;
+  opacity: 0.9;
+  margin-right: auto;
+}
+.add-cart {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.25rem;
+  margin-left: 8px;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+.add-cart:hover {
+  color: #e3c08d;
+}
+
+/* Inputs & Forms */
+.input-wrapper input,
+.input-wrapper select {
+  padding-left: 40px;
+  border: 1.5px solid #ad714a59;
+  border-radius: 18px;
+  height: 44px;
+  font-size: 1.08rem;
+  background: #fff;
+  color: #3a1b1a;
+  box-shadow: 0 2px 8px rgba(58, 27, 26, 0.07);
+  transition: border 0.2s;
+}
+.input-wrapper input:focus,
+.input-wrapper select:focus {
+  border-color: #e3c08d;
+  outline: none;
+}
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.input-wrapper .input-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ad714a59;
+  font-size: 1.18rem;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Section Titles */
+.section-title {
+  font-family: "Dancing Script", cursive;
+  font-size: 3.2rem;
+  text-align: center;
+  margin-bottom: -15px;
+  color: #f8e4be;
+  letter-spacing: 2px;
+}
+
+/* Utility Classes */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.text-center {
+  text-align: center;
+}
+
+/* Responsive Utilities (example) */
+@media (max-width: 900px) {
+  .product-card {
+    max-width: 100%;
+  }
+  .section-title {
+    font-size: 2.2rem;
+  }
+}
+@media (max-width: 600px) {
+  .section-title {
+    font-size: 1.2rem;
+  }
+}
+
+
+.hero-section {
+  min-height: 100vh;
+  background: linear-gradient(90deg, #251b19 50%, #7c573c 50%);
+  position: relative;
+  overflow: hidden;
+}
+.hero-section::before {
+  content: "";
+  position: absolute;
+  left: -10vw;
+  top: -12vh;
+  width: 50vw;
+  height: 40vw;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 18% 12%,
+    #745f58 0%,
+    rgba(176, 139, 101, 0.08) 50%,
+    rgba(45, 26, 19, 0.02) 80%,
+    rgba(45, 26, 19, 0) 100%
+  );
+  border-radius: 50%;
+  z-index: 1;
+  mix-blend-mode: lighten;
+  filter: blur(50px);
+}

@@ -1,0 +1,179 @@
+.products-section {
+  background: #221518;
+  background-image: url("../images/products-bg-beans.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  min-height: 100vh;
+  padding: 48px 0 0 0;
+  z-index: 1;
+}
+.products-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #221518;
+  z-index: 0;
+}
+.products-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+.products-section .bean {
+  position: absolute;
+  opacity: 0.11;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 16px rgba(58, 27, 26, 0.13));
+  z-index: 0;
+}
+.products-section .bean1 {
+  top: 10%;
+  left: 0%;
+  width: 60px;
+  transform: rotate(0deg);
+  opacity: 1;
+}
+.products-section .bean2 {
+  top: 420px;
+  left: 3px;
+  width: 60px;
+  transform: rotate(0deg);
+  opacity: 1;
+}
+.products-section .bean3 {
+  top: 40%;
+  left: 97%;
+  width: 60px;
+  transform: rotate(-7deg);
+  opacity: 1;
+}
+.products-section .bean4 {
+  top: 420px;
+  left: 97%;
+  width: 60px;
+  transform: rotate(-7deg);
+  opacity: 1;
+}
+
+.section-title {
+  font-family: "Dancing Script", cursive;
+  font-size: 3.2rem;
+  text-align: center;
+  margin-bottom: -15px;
+  color: #f8e4be;
+  letter-spacing: 2px;
+}
+.product-filters {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  margin-bottom: 36px;
+}
+.product-filters button {
+  height: 63px;
+  background: linear-gradient(
+    135deg,
+    rgba(87, 78, 65, 0.6) 0%,
+    rgba(87, 78, 65, 0.6)
+  );
+  border: 2px solid #f8e4be;
+  color: #f3d8a7;
+  width: 180px;
+  border-radius: 30px;
+  font-size: 1.12rem;
+  font-family: "Abhaya Libre", serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+
+  min-width: 160px;
+  cursor: pointer;
+
+  margin-top: 70px;
+}
+.product-card:hover .product-info,
+.product-card:focus .product-info {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.product-filters button:hover,
+.product-filters button.active {
+  background: #e3c08d;
+  color: #7b5a3c;
+  border: 2px solid #fff;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 260px);
+  gap: 38px;
+  justify-content: center;
+  padding: 0 48px 48px 48px;
+  margin-top: 70px;
+}
+.product-card {
+  max-width: 260px;
+  width: 100%;
+  position: relative; /* must-have for absolute children like .product-info */
+  overflow: visible;
+}
+.product-card img {
+  width: 100%;
+  min-width: 0;
+}
+.product-info {
+  width: 100%;
+  background: #8a7262;
+  border-radius: 0 0 18px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 14px 22px 10px 22px;
+  position: absolute;
+  left: 0;
+  height: 5%;
+  bottom: 0;
+  min-height: 48px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 14px rgba(58, 27, 26, 0.13);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.product-name {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.08rem;
+  color: #fff;
+  font-weight: bold;
+  margin-right: 12px;
+}
+.product-price {
+  font-size: 0.93rem;
+  color: #fff;
+  opacity: 0.9;
+  margin-right: auto;
+}
+.add-cart {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.25rem;
+  margin-left: 8px;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+.add-cart:hover {
+  color: #e3c08d;
+}
+.product-card:hover {
+  transform: translateY(-8px) scale(1.03);
+}

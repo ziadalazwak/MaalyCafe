@@ -1,0 +1,419 @@
+.hero-section {
+  min-height: 100vh;
+
+  position: relative;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  background: linear-gradient(90deg, #251b19 50%, #7c573c 50%);
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  left: -10vw;
+  top: -12vh;
+  width: 50vw;
+  height: 40vw;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 18% 12%,
+    #745f58 0%,
+    rgba(176, 139, 101, 0.08) 50%,
+    rgba(45, 26, 19, 0.02) 80%,
+    rgba(45, 26, 19, 0) 100%
+  );
+  border-radius: 50%;
+  z-index: 1;
+  mix-blend-mode: lighten;
+  filter: blur(50px);
+}
+.hero-bottom-black {
+  width: 100%;
+  height: 110px;
+  background: #251b19;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 0;
+  bottom: 160px ;
+  z-index: 40;
+}
+
+
+.logo-corner {
+  position: absolute;
+  top: 32px;
+  left: 64px;
+  z-index: 20;
+}
+
+.logo-corner img {
+  width: 90px;
+  height: 90px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 32px;
+  padding: 32px 230px 0 0;
+  background: transparent;
+  position: relative;
+  min-height: 80px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: #e3c08d;
+  text-decoration: none;
+  font-size: 1.08rem;
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+.hero-buttons-top {
+  position: absolute;
+  top: 0vw;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  z-index: 30;
+}
+
+.reservation-btn,
+.login-btn {
+  background: linear-gradient(135deg, rgba(145, 131, 110, 0.6), rgba(146, 135, 119, 0.6));
+  border: 2px solid #f8e4be;
+  color: #f8e4be;
+  padding: 10px 48px;
+  border-radius: 30px;
+  font-size: 1.12rem;
+  font-family: "Abhaya Libre", serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  min-width: 160px;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.reservation-btn {
+  margin-left: 300px;
+  margin-top: 32px;
+}
+
+.login-btn {
+  margin-right: 300px;
+  margin-top: 32px;
+}
+
+button:focus,
+.reservation-btn:focus,
+.login-btn:focus,
+.cart-icon:focus,
+.nav-links a:focus {
+  outline: 2px solid #e3c08d;
+  outline-offset: 2px;
+}
+
+.cart-icon {
+  cursor: pointer;
+}
+
+.hero-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 7vw;
+  width: 100%;
+  position: relative;
+  gap: 2vw;
+}
+
+.hero-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.5vw;
+  z-index: 2;
+  margin-top: -10vw;
+  width: 100%;
+}
+
+.hero-logo img {
+  width: 22vw;
+  max-width: 330px;
+  min-width: 90px;
+  margin-bottom: 2vw;
+  display: block;
+}
+
+.hero-content h1 {
+  font-family: "Dancing Script", cursive;
+  font-size: 2.8rem;
+  color: #e3c08d;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  text-shadow: 1px 2px 8px #2c1b1b;
+}
+
+.hero-content h1 span {
+  margin: 0 12px;
+  display: inline-block;
+}
+
+.coffee-machine-art {
+  position: absolute;
+  left: 46%;
+  top:6vw;
+  transform: translateX(-50%);
+  z-index: 5;
+  width: 40vw;
+
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.coffee-machine-art img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.coffee-machine-art::after {
+  content: "";
+  position: absolute;
+  left: 65%;
+  top: 0%;
+  width: 400px;
+  height: 600px;
+  background: radial-gradient(
+    ellipse 60% 40% at 60% 60%,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.7) 50%,
+    rgba(0, 0, 0, 0.38) 100%,
+    rgba(0, 0, 0, 0.05) 100%
+  );
+  filter: blur(120px);
+  transform: rotate(6deg);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.coffee-machine-art::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 94%;
+  width: 500px;
+  height: 120px;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.25) 0%,
+    rgba(0, 0, 0, 0.1) 40%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  filter: blur(18px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.coffee-art-bottom {
+  position: absolute;
+ right: 0vw;
+  top: 22vw;
+  background: linear-gradient(135deg, #4e2e23, #54362a);
+  border-radius: 3vw;
+  padding: 2vw 3vw 2vw 2vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5vw;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3),
+    inset 0 0 8px rgba(255, 255, 255, 0.05);
+  width: 17vw;
+  min-width: 120px;
+  max-width: 340px;
+  height: 11vw;
+  min-height: 80px;
+  max-height: 220px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.coffee-art-bottom img {
+  width: 9vw;
+ 
+  
+  height: auto;
+  object-fit: contain;
+}
+
+.coffee-art-bottom::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 100%;
+  pointer-events: none;
+  border-radius: 50px;
+  z-index: 2;
+  border-top: 4px solid #a8715c;
+  border-left: 4px solid #a8715c;
+  box-sizing: border-box;
+  mask-image: radial-gradient(
+    farthest-corner at top left,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 40px,
+    rgba(0, 0, 0, 0.5) 80px,
+    rgba(0, 0, 0, 0) 130px
+  );
+  -webkit-mask-image: radial-gradient(
+    farthest-corner at top left,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 40px,
+    rgba(0, 0, 0, 0.5) 80px,
+    rgba(0, 0, 0, 0) 130px
+  );
+}
+
+.coffee-caption {
+  color: #e3c08d;
+  font-family: "Dancing Script", cursive;
+  font-size: 2.25rem;
+  text-align: left;
+  margin-left: 24px;
+  align-self: center;
+  white-space: nowrap;
+}
+
+.floating-bean {
+  position: absolute;
+  opacity: 1;
+  pointer-events: none;
+  filter: drop-shadow(0 6px 18px #2d1a1340) drop-shadow(0 2px 6px #7b5a3c30);
+  z-index: 2;
+}
+
+.bean1 { top: 50%; left: 48%; width: 50px; transform: rotate(115deg); }
+.bean2 { top: -50%; left: 23%; width: 35px; filter: blur(1px); transform: rotate(130deg); }
+.bean3 { top: 10%; left: 35%; width: 50px; transform: rotate(0deg); }
+.bean4 { top: 145%; left: 42%; width: 40px; opacity: 0.7; transform: rotate(120deg); }
+.bean5 { top: 160%; left: 33%; width: 46px; opacity: 0.7; transform: rotate(-5deg); }
+.bean6 { top: 40%; left: 60%; width: 40px; filter: blur(1px); transform: rotate(125deg); }
+.bean7 { top: 17%; left: 77%; width: 35px; transform: rotate(-40deg); }
+.bean8 { top: 120%; left: 70%; width: 44px; transform: rotate(0deg); }
+
+.maaly-word,
+.coffee-word {
+  font-weight: 700;
+  font-size: 6vw;
+  color: transparent;
+  font-family: "Dancing Script", cursive;
+  position: absolute;
+  top: 34vw;
+  transform: translateY(-50%);
+  z-index: 10;
+  letter-spacing: 0.15vw;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.section-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 4rem;
+  color: linear-gradient(90deg, #F8E4BE, #FFF3E0, #FFF8E8, #DFC39D);
+  -webkit-text-stroke: .5px #f8e4be;
+ 
+  text-shadow: 2px 4px 10px #2c1b1b, 0 2px 8px #000a;
+
+margin-top: 3vw;
+}
+.maaly-word {
+  left: 19vw;
+  -webkit-text-stroke: 3.2px #f8e4be;
+ 
+  top: 15vw;
+}
+
+.coffee-word {
+  right: 19vw;
+  -webkit-text-stroke: 3.2px #e2f8be;
+  text-shadow: 0 0.5vw 2vw #3d2626cc, 0 0.2vw 1vw #000a, 0.1vw 0.2vw 0.8vw #422727;
+top: 15vw;
+}
+
+@media (max-width: 900px) {
+  .hero-section {
+    min-height: 80vh;
+  }
+
+  .hero-flex {
+    margin-top: 4vw;
+    gap: 1vw;
+  }
+
+  .hero-logo img {
+    width: 120px;
+  }
+
+  .maaly-word,
+  .coffee-word {
+    font-size: 2.6rem;
+    left: 10vw;
+    right: 10vw;
+    top: 60vw;
+  }
+
+  .coffee-machine-art {
+    width: 60vw;
+    max-width: 340px;
+    min-width: 120px;
+    top: 120px;
+  }
+
+  .coffee-machine-art img {
+    width: 100%;
+  }
+
+  .coffee-art-bottom {
+    width: 130px;
+    height: 8vw;
+    min-height: 60px;
+    max-height: 100px;
+    top: 60vw;
+    right: 4vw;
+    padding: 1vw 2vw 1vw 1vw;
+  }
+
+  .coffee-art-bottom img {
+    width: 40px;
+    min-width: 24px;
+    max-width: 60px;
+  }
+}

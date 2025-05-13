@@ -1,0 +1,151 @@
+.reservation-section {
+  box-shadow: 0 16px 48px 0 rgba(60, 38, 27, 0.18),
+    0 2px 8px 0 rgba(60, 38, 27, 0.09);
+
+  background: #7b5a3c 50%;
+  padding: 48px 0;
+  min-height: 70vh;
+  max-height:80vh;
+}
+.reservation-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  margin-top: 150px;
+  padding: 40px;
+  border-radius: 20px;
+
+  z-index: 1;
+}
+.hero-bottom-black {
+  width: 100%;
+  height: 120px;
+  background: #251b19;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 40;
+
+
+}
+
+.reservation-container::before {
+  content: "";
+  position: absolute;
+}
+.reservation-container::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  height: 800px;
+  z-index: -1;
+  pointer-events: none;
+
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.25) 1%,
+    rgba(0, 0, 0, 0.15) 40%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  filter: blur(100px);
+}
+
+.reservation-art img {
+  width: 420px;
+  max-width: 100%;
+  margin-right: 200px;
+  margin-bottom: 50px;
+}
+.reservation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  min-width: 340px;
+  color: #ad714a59;
+  
+ 
+}
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  
+}
+.input-wrapper .input-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ad714a59;
+  font-size: 1.18rem;
+  pointer-events: none;
+  z-index: 2;
+}
+.input-wrapper input[placeholder="Date"] {
+  width: 500px;
+}
+
+.input-wrapper input[placeholder="Deposit"] {
+  width: 280px;
+}
+
+.input-wrapper input,
+.input-wrapper select {
+  padding-left: 40px;
+  border: 1.5px solid #ad714a59;
+  border-radius: 18px;
+  height: 44px;
+  font-size: 1.08rem;
+  background: #fff;
+  color: #3a1b1a;
+  box-shadow: 0 2px 8px rgba(58, 27, 26, 0.07);
+  transition: border 0.2s;
+}
+.input-wrapper input:focus,
+.input-wrapper select:focus {
+  border-color: #e3c08d;
+  outline: none;
+}
+.time-group,
+.row-group {
+  display: flex;
+  gap: 16px;
+}
+.reserve-btn {
+  height: 50px;
+  background: linear-gradient(
+    135deg,
+    rgba(145, 131, 110, 0.6) 0%,
+    rgba(146, 135, 119, 0.6)
+  );
+  border: 2px solid #f8e4be;
+  color: #f8e4be;
+
+  border-radius: 30px;
+  font-size: 1.12rem;
+  font-family: "Abhaya Libre", serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+
+  min-width: 160px;
+  cursor: pointer;
+}
+.reserve-btn:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(145, 131, 110, 0.6) 0%,
+    rgba(146, 135, 119, 0.6)
+  );
+  color: #f8e4be;
+}
