@@ -39,10 +39,9 @@
   justify-content: center;
   position: relative;
   left: 0;
-  bottom: 160px ;
+  bottom: 160px;
   z-index: 40;
 }
-
 
 .logo-corner {
   position: absolute;
@@ -102,7 +101,11 @@
 
 .reservation-btn,
 .login-btn {
-  background: linear-gradient(135deg, rgba(145, 131, 110, 0.6), rgba(146, 135, 119, 0.6));
+  background: linear-gradient(
+    135deg,
+    rgba(145, 131, 110, 0.6),
+    rgba(146, 135, 119, 0.6)
+  );
   border: 2px solid #f8e4be;
   color: #f8e4be;
   padding: 10px 48px;
@@ -186,7 +189,7 @@ button:focus,
 .coffee-machine-art {
   position: absolute;
   left: 46%;
-  top:6vw;
+  top: 6vw;
   transform: translateX(-50%);
   z-index: 5;
   width: 40vw;
@@ -245,7 +248,7 @@ button:focus,
 
 .coffee-art-bottom {
   position: absolute;
- right: 0vw;
+  right: 0vw;
   top: 22vw;
   background: linear-gradient(135deg, #4e2e23, #54362a);
   border-radius: 3vw;
@@ -268,8 +271,7 @@ button:focus,
 
 .coffee-art-bottom img {
   width: 9vw;
- 
-  
+
   height: auto;
   object-fit: contain;
 }
@@ -321,14 +323,58 @@ button:focus,
   z-index: 2;
 }
 
-.bean1 { top: 50%; left: 48%; width: 50px; transform: rotate(115deg); }
-.bean2 { top: -50%; left: 23%; width: 35px; filter: blur(1px); transform: rotate(130deg); }
-.bean3 { top: 10%; left: 35%; width: 50px; transform: rotate(0deg); }
-.bean4 { top: 145%; left: 42%; width: 40px; opacity: 0.7; transform: rotate(120deg); }
-.bean5 { top: 160%; left: 33%; width: 46px; opacity: 0.7; transform: rotate(-5deg); }
-.bean6 { top: 40%; left: 60%; width: 40px; filter: blur(1px); transform: rotate(125deg); }
-.bean7 { top: 17%; left: 77%; width: 35px; transform: rotate(-40deg); }
-.bean8 { top: 120%; left: 70%; width: 44px; transform: rotate(0deg); }
+.bean1 {
+  top: 50%;
+  left: 48%;
+  width: 50px;
+  transform: rotate(115deg);
+}
+.bean2 {
+  top: -50%;
+  left: 23%;
+  width: 35px;
+  filter: blur(1px);
+  transform: rotate(130deg);
+}
+.bean3 {
+  top: 10%;
+  left: 35%;
+  width: 50px;
+  transform: rotate(0deg);
+}
+.bean4 {
+  top: 145%;
+  left: 42%;
+  width: 40px;
+  opacity: 0.7;
+  transform: rotate(120deg);
+}
+.bean5 {
+  top: 160%;
+  left: 33%;
+  width: 46px;
+  opacity: 0.7;
+  transform: rotate(-5deg);
+}
+.bean6 {
+  top: 40%;
+  left: 60%;
+  width: 40px;
+  filter: blur(1px);
+  transform: rotate(125deg);
+}
+.bean7 {
+  top: 17%;
+  left: 77%;
+  width: 35px;
+  transform: rotate(-40deg);
+}
+.bean8 {
+  top: 120%;
+  left: 70%;
+  width: 44px;
+  transform: rotate(0deg);
+}
 
 .maaly-word,
 .coffee-word {
@@ -345,27 +391,28 @@ button:focus,
   pointer-events: none;
 }
 .section-title {
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
   font-size: 4rem;
-  color: linear-gradient(90deg, #F8E4BE, #FFF3E0, #FFF8E8, #DFC39D);
-  -webkit-text-stroke: .5px #f8e4be;
- 
+  color: linear-gradient(90deg, #f8e4be, #fff3e0, #fff8e8, #dfc39d);
+  -webkit-text-stroke: 0.5px #f8e4be;
+
   text-shadow: 2px 4px 10px #2c1b1b, 0 2px 8px #000a;
 
-margin-top: 3vw;
+  margin-top: 3vw;
 }
 .maaly-word {
   left: 19vw;
   -webkit-text-stroke: 3.2px #f8e4be;
- 
+
   top: 15vw;
 }
 
 .coffee-word {
   right: 19vw;
   -webkit-text-stroke: 3.2px #e2f8be;
-  text-shadow: 0 0.5vw 2vw #3d2626cc, 0 0.2vw 1vw #000a, 0.1vw 0.2vw 0.8vw #422727;
-top: 15vw;
+  text-shadow: 0 0.5vw 2vw #3d2626cc, 0 0.2vw 1vw #000a,
+    0.1vw 0.2vw 0.8vw #422727;
+  top: 15vw;
 }
 
 @media (max-width: 900px) {

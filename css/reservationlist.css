@@ -1,0 +1,234 @@
+body {
+  background:  #1a1211;
+  font-family: 'Abhaya Libre Medium';
+  margin: 0;
+  padding: 0;
+
+}
+body::before {
+  content: "";
+  position: absolute;
+  left: -10vw;
+  top: -12vh;
+  width: 50vw;
+  height: 40vw;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 18% 12%,
+    #745f58 0%,
+    rgba(176, 139, 101, 0.08) 50%,
+    rgba(45, 26, 19, 0.02) 80%,
+    rgba(45, 26, 19, 0) 100%
+  );
+  border-radius: 50%;
+  z-index: 1;
+  mix-blend-mode: lighten;
+  filter: blur(50px);
+}
+
+.reservation-list-wrapper {
+  padding: 0;
+  min-height: 100vh;
+  background: #1a1211;
+  position: relative;
+}
+
+
+.section-title {
+  font-size: 4rem;
+  margin: 40px 0 30px 40px;
+
+  letter-spacing: 2px;
+  font-family: "Dancing Script", cursive;
+
+  background: linear-gradient(90deg, #E0A872, #F8E4BE, #FFF3E0, #E0A872);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  /* Stroke: solid color only (this works, but not with gradients) */
+  -webkit-text-stroke: 2px #f8f2be;
+
+  text-shadow: 2px 4px 10px #000000C7, 0 2px 8px #000000C4;
+}
+
+
+
+.filter-btns {
+  display: flex;
+  gap: 28px;
+  margin-left: 40px;
+  margin-bottom: 40px;
+}
+.filter-btns button {
+  background: #3F2F2A;
+  border: 2px solid #c7a47b;
+  color: #F8E4BE;
+  font-size: 1.2rem;
+  padding: 10px 38px;
+  border-radius: 28px;
+  margin-left: 30px;
+  margin-bottom: 40px;
+  height: 65px;
+  width: 165px;
+
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.filter-btns button.active,
+.filter-btns button:focus {
+  background: #c7a47b;
+  color: #231311;
+}
+
+.reservation-card {
+  height: 150px;
+  background: #3F2F2A;
+  border: 2px solid #c7a47b;
+  border-radius: 70px;
+  margin: 32px 40px 0 40px;
+  width: 800px;
+  padding: 28px 32px 22px 32px;
+  color: #F8E4BE;
+  box-shadow: 0 2px 16px 0 rgba(60,38,27,0.18);
+  max-width: 800px;
+  position: relative;
+}
+.reservation-card:not(:last-child) {
+  margin-bottom: 28px;
+}
+
+.res-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.res-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
+  margin-bottom: 18px;
+  font-size: 1.08rem;
+}
+
+
+.res-footer .status-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 2px;
+}
+
+.status-label {
+  font-weight: 700;
+  font-size: 1.08rem;
+  background: linear-gradient(90deg, #E0A872, #F8E4BE, #FFF3E0, #E0A872);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: #E0A872;
+  letter-spacing: 0.5px;
+  margin-left: 2px;
+}
+
+
+
+.res-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.res-title, .res-info span,.res-max-cancel ,.resinfo-status{
+  font-weight: 700;
+  background: linear-gradient(90deg, #E0A872, #F8E4BE, #FFF3E0, #E0A872);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: #E0A872;
+  margin-top  : 20px;
+  letter-spacing: 1px;
+}
+
+.res-status {
+  color: #7ad37a;
+  font-weight: 600;
+  margin-left: 10px;
+}
+.res-max-cancel {
+  font-size: 0.8rem;
+  color: #b1a091;
+  margin-left: 14px;
+}
+
+.res-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  margin-bottom: 10px;
+}
+.res-info span {
+  font-size: 1.05rem;
+}
+
+.res-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  margin-top: -80px; /* ← Adjust this as needed */
+  min-width: 120px;
+  margin-left: auto;
+}
+.status-btn {
+  padding: 8px 24px;
+  border-radius: 18px;
+  font-size: 1rem;
+  border: 2px solid #c7a47b;
+  background: none;
+  color: #c7a47b;
+  margin-right: 12px;
+  font-weight: 600;
+  cursor: default;
+
+  
+}
+
+.status-btn.notpaid { color: #c77b7b; border-color: #c77b7b;background: #191a15; }
+.status-btn.paid { color: #7ad37a; border-color: #7ad37a;  }
+.status-btn.deposit { color: #c77b7b; border-color: #7ad37a; }
+
+.cancel-btn {
+  padding: 8px 24px;
+  border-radius: 18px;
+  font-size: 1rem;
+  border: 2px solid #c77b7b;
+  background: none;
+  color: #fa5555;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.cancel-btn:hover {
+  background: #c77b7b;
+  color: #fff;
+}
+
+@media (max-width: 700px) {
+  .reservation-card {
+    margin: 24px 8px;
+    padding: 18px 8px 14px 8px;
+    max-width: 98vw;
+  }
+  .filter-btns {
+    margin-left: 8px;
+    gap: 10px;
+  }
+  .section-title {
+    margin-left: 8px;
+    font-size: 2rem;
+  }
+}

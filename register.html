@@ -3,9 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Maaly Coffee Shop - Login</title>
+    <title>Maaly Coffee Shop - Register</title>
     <link rel="stylesheet" href="css/navbar.css" />
     <link rel="stylesheet" href="css/login.css" />
+<link rel="stylesheet" href="css/register.css" />
     <link rel="stylesheet" href="css/footer.css" />
 
     <link rel="stylesheet" href="css/style.css" />
@@ -19,21 +20,31 @@
     <div class="login-container">
       <!-- Left: Login Form -->
       <div class="login-left">
-        <div class="login-title">Login</div>
+        <div class="register-title">Sign Up</div>
         <form class="login-form">
           <div class="input-wrapper">
             <input type="text" placeholder="Username" required />
           </div>
           <div class="input-wrapper">
+            <input type="tel" placeholder="Phone Number" required />
+          </div>
+          <div class="input-wrapper">
+            <input type="email" placeholder="Email" required />
+          </div>
+          <div class="input-wrapper">
+            <input type="text" placeholder="Country" required />
+          </div>
+          <div class="input-wrapper">
             <input type="password" placeholder="Password" required />
           </div>
-          <div class="login-links">
-            <a href="#" class="forgot-password">Forgot Password ?</a>
-          </div>
-          <button type="submit" class="login-btn">Login</button>
+          <label class="terms-label" for="terms">
+            Terms And Condition
+            <input type="checkbox" id="terms" class="custom-checkbox" />
+          </label>
+          <button type="submit" class="login-btn">Sign Up</button>
         </form>
         <div class="signup-link">
-          Don’t Have An Account ? <a href="register.html">Sign Up</a>
+          Already Have An Account ? <a href="login.html">Login</a>
         </div>
       </div>
       <!-- Right: Branding & Art -->

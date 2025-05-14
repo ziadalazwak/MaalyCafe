@@ -1,52 +1,69 @@
-
-
-
-
 .logo-corner {
   position: absolute;
-  top: 32px;
+  top: 0px;
   left: 64px;
   z-index: 20;
+
 }
 
 .logo-corner img {
-  width: 90px;
+  width: 100px;
   height: 90px;
-  bottom: 80%;
+  bottom: 80%;justify-content: flex-start;
+}
+navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 32px;
+  padding: 24px 120px 0 0;
+  background: rgba(31, 21, 17, 0.97);
+  position: sticky;
+  top: 0;
+  min-height: 80px;
+  z-index: 100;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  box-shadow: 0 4px 16px #0003;
 }
 
 .nav-links {
   display: flex;
   gap: 36px;
   list-style: none;
-  margin: 0 0 0 0;
+  margin: 0;
   padding: 0;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .nav-links a {
   color: #e3c08d;
   text-decoration: none;
-  font-size: 1.08rem;
+  font-size: 1.12rem;
   font-family: "Playfair Display", serif;
-  font-weight: 400;
-  letter-spacing: 0.5px;
+  font-weight: 500;
+  letter-spacing: 0.7px;
   transition: color 0.2s;
+  padding: 8px 16px;
+  border-radius: 12px;
+  background: transparent;
 }
 
 .nav-links a:hover {
   color: #fff;
+  background: rgba(227,192,141,0.08);
 }
-
-
 
 .cart-icon {
   cursor: pointer;
+  margin-left: 18px;
+  font-size: 1.22rem;
 }
 
 .nav-links a {
   cursor: pointer;
 }
-
 
 .cart-icon:focus,
 .nav-links a:focus {
@@ -54,29 +71,21 @@
   outline-offset: 2px;
 }
 
-
-
-
-
-
-
-
-
-
-
 @media (max-width: 900px) {
   .logo-corner {
     top: 12px;
     left: 12px;
-  }}
-  .navbar {
-    padding: 18px 10px 0 0;
-    gap: 16px;
   }
-  .nav-links {
-    gap: 18px;
-  }
-
+}
+.navbar {
+  padding: 18px 10px 0 0;
+  gap: 16px;
+  z-index: 200;
+  position: relative;
+}
+.nav-links {
+  gap: 18px;
+}
 
 @media (max-width: 600px) {
   .logo-corner {

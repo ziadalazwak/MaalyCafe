@@ -5,7 +5,17 @@
   background: #7b5a3c 50%;
   padding: 48px 0;
   min-height: 70vh;
-  max-height:80vh;
+  max-height: 80vh;
+  height: 100vh;
+}
+.section-title {
+  font-family: "Dancing Script", cursive;
+  font-size: 3.2rem;
+  text-align: center;
+  margin-bottom: -15px;
+  color: #f8e4be;
+  letter-spacing: 2px;
+  margin-top: 70px;
 }
 .reservation-container {
   position: relative;
@@ -20,6 +30,8 @@
   z-index: 1;
 }
 .hero-bottom-black {
+  font-family: "Dancing Script", cursive;
+  margin-top: -100px;
   width: 100%;
   height: 120px;
   background: #251b19;
@@ -27,8 +39,6 @@
   align-items: center;
   justify-content: center;
   z-index: 40;
-
-
 }
 
 .reservation-container::before {
@@ -70,15 +80,12 @@
   border-radius: 0;
   min-width: 340px;
   color: #ad714a59;
-  
- 
 }
 .input-wrapper {
   position: relative;
   display: flex;
   align-items: center;
   margin-bottom: 12px;
-  
 }
 .input-wrapper .input-icon {
   position: absolute;

@@ -2,35 +2,15 @@
 .login-container {
   display: flex;
   min-height: 100vh;
-  font-family: 'Abhaya Libre Medium', serif;
+  font-family: "Abhaya Libre Medium", serif;
   max-width: 100vw;
   overflow-x: hidden;
 }
 
-.login-left::before {
-  content: "";
-  position: absolute;
-  left: -10vw;
-  top: -12vh;
-  width: 50vw;
-  height: 40vw;
-  pointer-events: none;
-  background: radial-gradient(
-    circle at 18% 12%,
-    #745f58 0%,
-    rgba(176, 139, 101, 0.08) 50%,
-    rgba(45, 26, 19, 0.02) 80%,
-    rgba(45, 26, 19, 0) 100%
-  );
-  border-radius: 50%;
-  z-index: 1;
-  mix-blend-mode: lighten;
-  filter: blur(50px);
-}
 /* Left Side: Form */
 .login-left {
   flex: 1;
-  background: radial-gradient(circle at 60% 40%, #3a2321 0%, #1b1312 100%);
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -43,12 +23,16 @@
 .login-title {
   font-family: 'Dancing Script', cursive;
   font-size: 5.5rem;
-  color: linear-gradient(90deg, #E0A872, #F8E4BE, #FFF3E0, #E0A872);;
-  -webkit-text-stroke: 2.5px #f8e4be;
- 
-  text-shadow: 2px 4px 10px #2c1b1b, 0 2px 8px #000a;
+  color: #f8e4be; /* Fallback solid color */
+  -webkit-text-stroke: 1.5px #f8e4be;
+  text-shadow:
+    2px 4px 10px #2c1b1b,
+    0 2px 8px rgba(0, 0, 0, 0.66);
   margin-bottom: 40px;
   margin-top: -60px;
+  background: linear-gradient(90deg, #e0a872, #f8e4be, #fff3e0, #e0a872);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 
@@ -68,9 +52,8 @@
   height: 70px;
 }
 .input-wrapper input {
-  background: 
-  linear-gradient(#3F2F2A, #3F2F2A), 
-    linear-gradient(90deg, #E0A872, #F8E4BE, #FFF3E0, #E0A872); /* border gradient */
+  background: linear-gradient(#3f2f2a, #3f2f2a),
+    linear-gradient(90deg, #e0a872, #f8e4be, #fff3e0, #e0a872); /* border gradient */
   background-origin: border-box;
   background-clip: padding-box, border-box;
   border: 3px solid transparent;
@@ -86,7 +69,7 @@
 }
 
 .input-wrapper input:focus {
-  border-color:  #E0A872;
+  border-color: #e0a872;
 }
 .login-links {
   display: flex;
@@ -104,8 +87,8 @@
   color: #e3c08d;
 }
 .login-btn {
-  background: linear-gradient(#804627, #804627), 
-              linear-gradient(90deg, #E0A872, #F8E4BE, #FFF3E0, #E0A872);
+  background: linear-gradient(#804627, #804627),
+    linear-gradient(90deg, #e0a872, #f8e4be, #fff3e0, #e0a872);
   background-origin: border-box;
   background-clip: padding-box, border-box;
 
@@ -116,16 +99,13 @@
   width: 370px;
   padding: 13px 0;
   font-size: 1.18rem;
-  font-family: 'Abhaya Libre', serif;
+  font-family: "Abhaya Libre", serif;
   font-weight: 600;
   box-shadow: 0 6px 20px #2c1b1b33;
   margin-top: 8px;
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
 }
-
-
-
 
 .signup-link {
   color: #fff;
@@ -161,14 +141,13 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 600px;
- 
 }
 .login-logo img {
-  width:400px;
+  width: 400px;
   margin-top: 100px;
 }
 .brand-text {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   color: #fff;
   font-size: 1.2rem;
   letter-spacing: 3px;
@@ -190,7 +169,6 @@
   z-index: 2;
 
   /* Strong, centered, circular black shadow */
-
 }
 .login-art::before {
   content: "";
@@ -204,7 +182,7 @@
   z-index: 1;
   filter: blur(80px);
   pointer-events: none;
- 
+
   background: radial-gradient(
     circle,
     rgba(0, 0, 0, 0.4) 0%,
@@ -214,7 +192,6 @@
   );
 }
 
-
 .floating-bean {
   position: absolute;
   opacity: 1;
@@ -222,12 +199,43 @@
   width: 60px;
   pointer-events: none;
 }
-.bean1 { top:30%; left: 57%; rotate: 120deg; }
-.bean2 { top: 30%; left: 92%; width: 40px; rotate: 120deg; filter:blur(0.7px); }
-.bean3 { top: 25%; left: 36%; width: 36px; }
-.bean4 { top: 22%; left: 20%; width: 36px; rotate:-50deg; filter:blur(0.8px); }
-.bean5 { top: 48%; left: 61%; width: 36px; rotate:-50deg; filter:brightness(0.8); }
-.bean6{ top: 50%; left: 50%; width: 36px; filter:brightness(0.8); }
+.bean1 {
+  top: 30%;
+  left: 57%;
+  rotate: 120deg;
+}
+.bean2 {
+  top: 30%;
+  left: 92%;
+  width: 40px;
+  rotate: 120deg;
+  filter: blur(0.7px);
+}
+.bean3 {
+  top: 25%;
+  left: 36%;
+  width: 36px;
+}
+.bean4 {
+  top: 22%;
+  left: 20%;
+  width: 36px;
+  rotate: -50deg;
+  filter: blur(0.8px);
+}
+.bean5 {
+  top: 48%;
+  left: 61%;
+  width: 36px;
+  rotate: -50deg;
+  filter: brightness(0.8);
+}
+.bean6 {
+  top: 50%;
+  left: 50%;
+  width: 36px;
+  filter: brightness(0.8);
+}
 .social-media {
   position: absolute;
   bottom: 18px;
@@ -255,7 +263,8 @@
   .login-container {
     flex-direction: column;
   }
-  .login-left, .login-right {
+  .login-left,
+  .login-right {
     flex: none;
     width: 100%;
     min-height: 50vh;
