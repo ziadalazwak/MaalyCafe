@@ -1,0 +1,157 @@
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background: #f9f5f5;
+}
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+.sidebar {
+    width: 220px;
+    background: #faf9f9;
+    border-right: 1px solid #eee;
+    padding-top: 0;
+}
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.menu li {
+    padding: 18px 24px;
+    border-bottom: 1px solid #ececec;
+    cursor: pointer;
+    color: #444;
+    font-size: 16px;
+    position: relative;
+    transition: background 0.2s;
+}
+.menu li.active {
+    background: #f6f2ef;
+    font-weight: bold;
+    color: #7a4a1c;
+}
+.menu li .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #a66b3a;
+    border-radius: 50%;
+    margin-left: 8px;
+}
+.menu li:hover {
+    background: #f2e7e1;
+}
+.main-content {
+    flex: 1;
+    padding: 32px 32px 0 32px;
+    background: #f9f5f5;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+.header h2 {
+    font-size: 24px;
+    margin: 0;
+    color: #4a2d0b;
+}
+.add-store {
+    background: #7a4a1c;
+    color: #fff;
+    border: none;
+    padding: 10px 28px;
+    border-radius: 18px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.add-store:hover {
+    background: #a66b3a;
+}
+.stores-list {
+    display: flex;
+    gap: 32px;
+}
+.store-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(80,40,10,0.06);
+    display: flex;
+    align-items: center;
+    padding: 18px 28px;
+    min-width: 320px;
+    max-width: 360px;
+    margin-bottom: 18px;
+}
+.store-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 18px;
+}
+.store-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.store-name {
+    font-size: 22px;
+    color: #4a2d0b;
+    margin-bottom: 12px;
+}
+.store-actions {
+    display: flex;
+    gap: 14px;
+}
+.store-actions .edit {
+    background: #a66b3a;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 24px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.store-actions .edit:hover {
+    background: #7a4a1c;
+}
+.store-actions .delete {
+    background: #8c1d0d;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 24px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.store-actions .delete:hover {
+    background: #c13d1a;
+}
+@media (max-width: 900px) {
+    .stores-list {
+        flex-direction: column;
+        gap: 18px;
+    }
+    .main-content {
+        padding: 18px 8px 0 8px;
+    }
+    .store-card {
+        min-width: unset;
+        width: 100%;
+    }
+    .sidebar {
+        width: 140px;
+    }
+    .menu li {
+        font-size: 13px;
+        padding: 14px 10px;
+    }
+}

@@ -1,0 +1,335 @@
+/* Main POS Layout */
+.pos-main {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  background: #F6F3F3;
+}
+
+.pos-products-section {
+  flex: 2;
+  padding: 40px 0 0 0;
+}
+
+/* Sidebar */
+.pos-sidebar {
+  flex: 1;
+  background: #fff  ;
+  box-shadow: -2px 0 18px 0 rgba(0,0,0,0.05);
+  padding: 32px 0 24px 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 420px;
+  max-width: 520px;
+}
+
+#sidebar-toggle-btn {
+  position: absolute;
+  top: 120px;
+  right: 20px;
+
+
+  border-radius: 50%;
+  border: 1px solid #F6F3F3;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+  cursor: pointer;
+
+  padding: 0;
+}
+
+#sidebar-toggle-btn img {
+  width: 32px;
+  height: 32px;
+  display: block;
+  margin: auto;
+}
+
+.sidebar-user {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+  background: #fff;
+}
+.user-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #f8e4be;
+}
+.user-name {
+  font-size: 1.18rem;
+  font-family: 'Abhaya Libre', serif;
+  color: #3f2f2a;
+  font-weight: 600;
+}
+
+.sidebar-invoice {
+  background: #F9F6F6;
+  margin: 0;
+  flex: 1;
+  display: flex;
+
+  flex-direction: column;
+  width: 100%;
+  border-radius: 0;
+  padding: 18px 0; /* Only inner vertical padding for content spacing */
+  box-sizing: border-box;
+}
+.invoice-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 25px;
+  font-family: 'Abhaya Libre Medium', serif;
+  color: #3f2f2a;
+  font-weight: 500;
+  margin-left: 25px;
+
+}
+.new-invoice {
+  background: #A8715C;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 18px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  height: 45px;
+}
+
+.invoice-items {
+ 
+  margin-bottom: 16px;
+  margin-top: 6px;
+
+  font-size: 1.09rem;
+  font-family: 'Abhaya Libre Medium', serif;
+  margin-left: 15px;
+}
+.invoice-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #515050;
+  
+  color: #3f2f2a;
+  margin-left: 10px;
+  font-family: 'Abhaya Libre Medium', serif;
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+.invoice-row:last-child {
+  border-bottom: none;
+}
+.invoice-row span:first-child {
+  flex: 2;
+  text-align: left;
+}
+.invoice-row span:not(:first-child) {
+  flex: 1;
+  text-align: right;
+}
+.invoice-total {
+  margin-left: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 25px;
+  font-weight: bold;
+  margin: 10px 0 10px 0;
+  color: #2d2321;
+  margin-left: 20px;
+  font-family: 'Abhaya Libre Medium', serif;
+  letter-spacing: 0.5px;
+}
+.invoice-total span:first-child {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.invoice-total span:last-child {
+  font-weight: 700;
+}
+.invoice-payment {
+  
+  display: flex;
+  gap: 22px;
+  margin-bottom: 18px;
+  justify-content: space-between;
+}
+.pay-btn {
+  min-width: 180px;
+  max-width: 130px;
+  width: 40%;
+  background:#66371D;
+  color: #fff;
+  border: none;
+  border-radius: 26px;
+  padding: 10px 0;
+  margin-top: 15px;
+  font-size: 1.1rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin: 0 6px 0 6px;
+  box-shadow: 0 2px 8px 0 rgba(87, 78, 65, 0.10);
+  height: 44px;
+  display: inline-block;
+}
+.invoice-payment {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 18px;
+  justify-content: center;
+}
+.charge-btn {
+  width: 60%;
+  min-width: 160px;
+  max-width: 260px;
+  margin: 25px auto 0 auto;
+  display: block;
+  background: #66371D;
+  color: #fff;
+  border-color: #E0A872;
+  border-radius: 26px;
+  padding: 16px 0;
+  font-size: 1.17rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px 0 rgba(87, 78, 65, 0.10);
+}
+.pay-btn:hover {
+  background: #3f2f2a;
+}
+.charge-btn {
+  width: 100%;
+  background: #66371D;
+  color: #fff;
+  border-color: #E0A872;
+  border-radius: 26px;
+  padding: 16px 0;
+  font-size: 1.17rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  margin-top: 25px;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px 0 rgba(87, 78, 65, 0.10);
+}
+.charge-btn:hover {
+  background: #3f2f2a;
+}
+
+.Pos_Products_Categories {
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+  margin: 50px 0 0 40px;
+  margin-left: 110px;
+}
+.Pos_Products_Categories button {
+  background: linear-gradient(135deg, #e7d3c0 0%, #bfae9b 100%);
+  color: #f9fdd8;
+  border: none;
+  height: 70px;
+  width:130px;
+  min-width: 110px;
+  border-radius: 22px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 6px 24px;
+  box-shadow: 0 2px 16px 0 rgba(87, 78, 65, 0.07);
+  margin-left: 10px;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  outline: none;
+  cursor: pointer;
+  border: 1.5px solid #F8E4BE;
+  text-shadow: 0 1px 6px #fff8e8aa;
+}
+.Pos_Products_Categories button:hover,
+.Pos_Products_Categories button:focus {
+  background: #A8715C;
+  color: #fff;
+  box-shadow: 0 4px 24px 0 rgba(87, 78, 65, 0.14);
+}
+
+.Pos_ProductsGrid {
+    display: grid;
+    margin-left: 150px;
+    grid-template-columns: repeat(4, minmax(100px, 270px)); /* dynamic columns */
+    gap: 8px; /* adjust as needed */
+    justify-content: flex-start;
+    padding: 0;
+
+  }
+  .Pos_ProductCard {
+    width: 100%; /* take full grid column */
+    max-width: 200px; /* control size */
+    height: 200px;
+    margin: 0; /* no outside spacing */
+    padding: 8px 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 18px;
+    transition: box-shadow 0.2s, transform 0.2s;
+    cursor: pointer;
+    margin-top: 80px;
+  }
+.Pos_ProductCard:hover {
+  box-shadow: 0 6px 28px 0 rgba(87, 78, 65, 0.16);
+  transform: translateY(-6px) scale(1.03);
+}
+.Pos_ProductCard img {
+  width: 220px;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+.product-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 6px;
+  text-align: left;
+}
+.product-name {
+  font-family: 'Abhaya Libre', serif;
+  font-weight: 700;
+  color: #3f2f2a;
+  font-size: 1.08rem;
+  margin: 0;
+  white-space: nowrap;
+}
+.product-separator {
+  display: inline-block;
+  width: 1px;
+  height: 18px;
+  background: #d6d1c7;
+  margin: 0 8px;
+}
+.product-price {
+  font-family: 'Abhaya Libre', serif;
+  font-weight: 400;
+  color: #7a5d47;
+  font-size: 1rem;
+  margin: 0;
+  white-space: nowrap;
+}

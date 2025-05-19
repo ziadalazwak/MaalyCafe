@@ -1,0 +1,27 @@
+/* Extra style for Edit Table modal two-column row */
+#editTableModal .modal-content form > div[style*="display: flex;"] {
+    gap: 18px;
+    margin-bottom: 22px;
+}
+#editTableModal .modal-content label {
+    font-size: 17px;
+    margin-bottom: 8px;
+    color: #4a2d0b;
+    font-family: 'Georgia', serif;
+}
+#editTableModal .modal-content input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 0;
+    border-radius: 18px;
+    border: 1px solid #d6cfcf;
+    font-size: 16px;
+    font-family: 'Georgia', serif;
+    background: #faf9f9;
+    color: #4a2d0b;
+    outline: none;
+    transition: border 0.2s;
+}
+#editTableModal .modal-content input[type="text"]:focus {
+    border: 1.5px solid #a66b3a;
+}
