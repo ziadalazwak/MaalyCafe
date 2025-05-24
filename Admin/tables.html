@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tables</title>
-    <link rel="stylesheet" href="css/tables.css">
-    <link rel="stylesheet" href="css/admin_sidebar.css">
+    <link rel="stylesheet" href="../css/tables.css">
+    <link rel="stylesheet" href="../css/admin_sidebar.css">
+    <link rel="stylesheet" href="../css/stores-modal.css">
 </head>
 <body>
-    <div include-html="components/admin_header.html"></div>
-    <script src="js/admin_sidebar.js"></script>
+    <div include-html="../components/admin_header.html"></div>
     <div class="container">
-        <div include-html="components/admin_sidebar.html" active-menu="Tabels"></div>
+        <div include-html="../components/admin_sidebar.html" active-menu="Tabels"></div>
         <main class="main-content">
             <div class="header">
                 <h2>Tables</h2>
@@ -92,7 +92,6 @@
         </main>
     </div>
     <!-- Add Table Modal -->
-    <link rel="stylesheet" href="css/stores-modal.css">
     <div id="addTableModal" class="modal">
         <div class="modal-content">
             <span class="close" id="closeAddTableModal">&times;</span>
@@ -123,7 +122,7 @@
                 <label for="editTableNameEn">Name In English</label>
                 <input type="text" id="editTableNameEn" name="editTableNameEn" required>
                 <div style="display: flex; gap: 18px;">
-                    <div style="flex:1; display:flex; flex-direction:column;">
+                    <div style="display:flex; flex-direction:column; margin-right: 18px;">
                         <label for="editTablePerson">No Person</label>
                         <input type="text" id="editTablePerson" name="editTablePerson" required>
                     </div>
@@ -136,7 +135,11 @@
             </form>
         </div>
     </div>
-    <script src="js/include-html.js"></script>
-    <script src="js/table-modal.js"></script>
+
+    <!-- Load scripts -->
+    <script src="../js/include-html.js"></script>
+        <script src="../js/admin_sidebar.js"></script>
+        <script src="../js/table-modal.js"></script>
+    <script src="../js/page_initializer.js"></script>
 </body>
 </html>

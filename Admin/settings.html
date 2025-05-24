@@ -4,39 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Settings</title>
-    <link rel="stylesheet" href="css/settings.css">
-<link rel="stylesheet" href="css/admin_sidebar.css">
+    <link rel="stylesheet" href="../css/settings.css">
+<link rel="stylesheet" href="../css/admin_sidebar.css">
 </head>
 <body>
-    <div include-html="components/admin_header.html"></div>
-    <script src="js/admin_sidebar.js"></script>
+    <div include-html="../components/admin_header.html"></div>
+    <script src="../js/admin_sidebar.js"></script>
     <div class="container">
-        <div include-html="components/admin_sidebar.html" active-menu="Settings"></div>
+        <div include-html="../components/admin_sidebar.html" active-menu="Settings"></div>
         <main class="main-content">
             <h2>Settings</h2>
             <div class="settings-section">
                 <h3>Admin Settings</h3>
                 <div class="admin-settings">
                     <div class="setting-row">
-                        <span>Adding 15%Tax</span>
+                        <span class="setting-label">Adding 15%Tax</span>
                         <span class="setting-action">Add</span>
                         <input type="checkbox">
                     </div>
                     <div class="setting-row">
-                        <span>Cancel Reservation</span>
+                        <span class="setting-label">Cancel Reservation</span>
                         <span class="setting-action">Before 1 Hour</span>
                         <input type="checkbox">
                     </div>
                     <div class="setting-row">
-                        <span>Send A Message After Reservation</span>
+                        <span class="setting-label">Send A Message After Reservation</span>
                         <input type="checkbox">
                     </div>
                     <div class="setting-row">
-                        <span>Send A Message After Payment</span>
+                        <span class="setting-label">Send A Message After Payment</span>
                         <input type="checkbox">
                     </div>
                     <div class="setting-row">
-                        <span>Send A Message After Canceling Order</span>
+                        <span class="setting-label">Send A Message After Canceling Order</span>
                         <input type="checkbox">
                     </div>
                 </div>
@@ -60,6 +60,7 @@
             <button class="add-btn">Add</button>
         </main>
     </div>
-    <script src="js/include-html.js"></script>
+    <script src="../js/include-html.js"></script>
+    <script src="../js/page_initializer.js"></script>
 </body>
 </html>

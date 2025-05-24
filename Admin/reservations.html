@@ -4,31 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservations</title>
-    <link rel="stylesheet" href="css/reservations.css">
-    <link rel="stylesheet" href="css/admin_sidebar.css">
-    <link rel="stylesheet" href="css/search-modal.css">
+    <link rel="stylesheet" href="../css/reservations.css">
+    <link rel="stylesheet" href="../css/admin_sidebar.css">
+    <link rel="stylesheet" href="../css/stores-modal.css">
+    <link rel="stylesheet" href="../css/search-modal.css">
 </head>
 <body>
-    <div include-html="components/admin_header.html"></div>
-    <script src="js/admin_sidebar.js"></script>
+    <div include-html="../components/admin_header.html"></div>
     <div class="container">
-        <div include-html="components/admin_sidebar.html" active-menu="Reservations"></div>
+        <div include-html="../components/admin_sidebar.html" active-menu="Reservations"></div>
         <main class="main-content">
             <div class="header">
-                <h2>Reservations</h2>
-                <div class="header-actions">
-                    <div class="search-section">
-                        <span class="search-icon">🔍</span>
-                        <span class="search-label">Search By</span>
-                        <span class="search-arrow">&#709;</span>
-                    </div>
-                    <button class="add-reservation" id="openAddReservationModal">
-                        <span class="plus-circle">&#9711;</span> New Reservation
-                    </button>
-                </div>
-            </div>
+    <h2>Reservations</h2>
+    <div class="header-actions">
+        <div class="search-section">
+            <span style="margin-right: 8px; color: #4a2d0b; font-size: 18px;">
+                <img src="images/search.png" class="search-icon" alt="Search Icon">
+            </span>
+            <input type="text" placeholder="Search By" style="border:none;outline:none;background:transparent;font-size:16px;color:#4a2d0b;">
+            <span style="margin-left: 4px; cursor:pointer;">
+                <img src="images/search.png" class="search-icon" alt="Search Icon">
+            </span>
+        </div>
+        <button class="add-reservation" id="openAddReservationModal" style="background:#a66b3a;min-width:160px;font-weight:500;font-size:15px;">New Reservation</button>
+    </div>
+</div>
             <div class="reservations-list">
-                <!-- Repeat this card for each reservation -->
+                <!-- Repeat this block for each reservation -->
                 <div class="reservation-card">
                     <div class="reservation-row reservation-header">
                         <span>Reservation No :</span>
@@ -142,7 +144,6 @@
         </main>
     </div>
     <!-- New Reservation Modal -->
-    <link rel="stylesheet" href="css/stores-modal.css">
     <div id="addReservationModal" class="modal">
         <div class="modal-content">
             <span class="close" id="closeAddReservationModal">&times;</span>
@@ -175,7 +176,6 @@
         </div>
     </div>
     <!-- Search Modal -->
-    <link rel="stylesheet" href="css/search-modal.css">
     <div id="searchModal" class="modal">
         <div class="modal-content" style="max-width: 650px;">
             <span class="close" id="closeSearchModal">&times;</span>
@@ -186,7 +186,7 @@
                         <label class="search-label">Search By Date</label>
                         <div class="search-row">
                             <div class="search-field">
-                                <img src="images/search.png" class="search-icon" alt="Search Icon">
+                                <img src="../images/search.png" class="search-icon" alt="Search Icon">
                                 <input type="text" class="search-input" placeholder="Start Date" onfocus="(this.type='date')">
                             </div>
                             <div class="search-field">
@@ -200,14 +200,14 @@
                             <div style="flex:1; display:flex; flex-direction:column;">
                                 <label class="search-label">Search By Name</label>
                                 <div class="search-field">
-                                    <img src="images/search.png" class="search-icon" alt="Search Icon">
+                                    <img src="../images/search.png" class="search-icon" alt="Search Icon">
                                     <input type="text" class="search-input" placeholder="Name">
                                 </div>
                             </div>
                             <div style="flex:1; display:flex; flex-direction:column;">
                                 <label class="search-label">Search By Table</label>
                                 <div class="search-field">
-                                    <img src="images/search.png" class="search-icon" alt="Search Icon">
+                                    <img src="../images/search.png" class="search-icon" alt="Search Icon">
                                     <input type="text" class="search-input" placeholder="Table No">
                                 </div>
                             </div>
@@ -218,7 +218,7 @@
                         <label class="search-label">Search By Phone Number</label>
                         <div class="search-row">
                             <div class="search-field">
-                                <img src="images/search.png" class="search-icon" alt="Search Icon">
+                                <img src="../images/search.png" class="search-icon" alt="Search Icon">
                                 <input type="text" class="search-input" placeholder="Phone Number">
                             </div>
                             <button class="search-btn">Search</button>
@@ -228,10 +228,11 @@
                         <label class="search-label">Search By Time</label>
                         <div class="search-row">
                             <div class="search-field">
-                                <img src="images/search.png" class="search-icon" alt="Search Icon">
+                                <img src="../images/search.png" class="search-icon" alt="Search Icon">
                                 <input type="text" class="search-input" placeholder="Start Time" onfocus="(this.type='time')">
                             </div>
                             <div class="search-field">
+                                <img src="../images/search.png" class="search-icon" alt="Search Icon">
                                 <input type="text" class="search-input" placeholder="End Time" onfocus="(this.type='time')">
                             </div>
                             <button class="search-btn">Search</button>
@@ -241,8 +242,15 @@
             </div>
         </div>
     </div>
-    <script src="js/search-modal.js"></script>
-    <script src="js/reservation-modal.js"></script>
-    <script src="js/include-html.js"></script>
+    
+    <!-- Load scripts -->
+    <script src="../js/include-html.js"></script>
+    <script src="../js/admin_sidebar.js"></script>
+    <script src="../js/reservation-modal.js"></script>
+    <script src="../js/search-modal.js"></script>
+
+    <!-- The inline script block will be removed -->
+
+    <script src="../js/page_initializer.js"></script>
 </body>
 </html>

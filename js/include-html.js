@@ -1,21 +1,34 @@
 // Simple HTML include utility for static projects
-function includeHTML() {
+async function includeHTML() {
   const elements = document.querySelectorAll('[include-html]');
-  elements.forEach(async (el) => {
+  const promises = [];
+
+  elements.forEach((el) => {
     const file = el.getAttribute('include-html');
     if (file) {
-      try {
-        const resp = await fetch(file);
-        if (resp.ok) {
-          el.innerHTML = await resp.text();
-        } else {
-          el.innerHTML = "Component not found.";
-        }
-      } catch (e) {
-        el.innerHTML = "Error loading component.";
-      }
+      const promise = fetch(file)
+        .then(resp => {
+          if (resp.ok) {
+            return resp.text();
+          }
+          throw new Error(`Failed to load ${file}`);
+        })
+        .then(html => {
+          el.innerHTML = html;
+        })
+        .catch(e => {
+          console.error(`Error loading component ${file}:`, e);
+          el.innerHTML = "Error loading component.";
+        });
+      
+      promises.push(promise);
     }
   });
+
+  // Wait for all components to load
+  await Promise.all(promises);
+  console.log('All components loaded');
 }
 
-document.addEventListener('DOMContentLoaded', includeHTML);
+// Export the function for use in other scripts
+window.includeHTML = includeHTML;

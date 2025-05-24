@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Report</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap" />
+  <link rel="stylesheet" href="../css/daily_report.css">
+
+</head>
+<body>
+  <div include-html="../components/admin_header.html"></div>
+  <div class="container">
+    <div class="sidebar">
+      <div include-html="../components/admin_sidebar.html" active-menu="Daily Reports"></div>
+    </div>
+    <div class="main-content">
+      <div class="header-row">
+        <span style="font-size:28px; font-family:'Abhaya Libre',serif; margin-right:10px;">Pre</span>
+        <button class="date-btn nav-btn"><b>&#8249;</b></button>
+        <span class="date-label" style="font-size:32px; font-family:'Abhaya Libre',serif; margin:0 24px;">12 JUN 2025</span>
+        <button class="date-btn nav-btn"><b>&#8250;</b></button>
+        <span style="font-size:28px; font-family:'Abhaya Libre',serif; margin-left:10px;">Next</span>
+        <div class="search-bar">
+          <span class="search-icon">
+            <img src="images/search.png" class="search-icon" alt="Search Icon">
+          </span>
+          <span>Search By</span>
+        </div>
+      </div>
+
+      <!-- Inline Time Search Bar -->
+
+      <div class="report-table-container">
+        <table class="report-table">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Date</th>
+              <th>Type</th>
+              <th>In</th>
+              <th>Out</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>254567</td>
+              <td>22 Jan 2025</td>
+              <td>Coustmer</td>
+              <td>2000</td>
+              <td>000</td>
+            </tr>
+            <tr>
+              <td>65432</td>
+              <td>22 Jan 2025</td>
+              <td>Coustmer</td>
+              <td>1000</td>
+              <td>000</td>
+            </tr>
+            <tr>
+              <td>76543</td>
+              <td>22 Jan 2025</td>
+              <td>Coustmer</td>
+              <td style="text-align:center;">1500</td>
+              <td>000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="summary-cards">
+        <div class="summary-card">Total Of (CASH) <span class="summary-value">1500</span> <span class="summary-value">000</span></div>
+        <div class="summary-card">Total Of (Sdjf) <span class="summary-value">1500</span> <span class="summary-value">000</span></div>
+        <div class="summary-card">Total <span class="summary-value">1500</span> <span class="summary-value">000</span></div>
+        <div class="summary-card">Total Cash Balance <span class="summary-value"> 1500</span> <span class="summary-value">000</span></div>
+      </div>
+    </div>
+  </div>
+  <script src="../js/daily_report.js"></script>
+  <script src="../js/daily_report_search_modal.js"></script>
+  <script src="../js/daily_report_datepicker.js"></script>
+  <script src="../js/admin_sidebar.js"></script>
+  <script src="../js/include-html.js"></script>
+  <script src="../js/page_initializer.js"></script>
+</body>
+</html>

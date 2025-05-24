@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bills</title>
+    <link rel="stylesheet" href="../css/bills.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap"
+    />
+  </head>
+  <body>
+    <div include-html="../components/admin_header.html"></div>
+    <div class="container">
+      <div class="sidebar">
+        <div
+          include-html="../components/admin_sidebar.html"
+          active-menu="Bills"
+        ></div>
+      </div>
+      <main class="main-content">
+        <div class="bills-header-row">
+          <h2>Bills</h2>
+          <button class="search-section" id="openDateSearch" type="button">
+            <span class="search-icon">
+              <img
+                src="../images/search.png"
+                class="search-icon"
+                alt="Search Icon"
+              />
+            </span>
+            <span class="search-label">Search By Date</span>
+          </button>
+        </div>
+        <div
+          class="date-search-modal"
+          id="dateSearchModal"
+          style="display: none"
+        >
+          <div class="date-search-modal-content">
+            <button class="close-modal-btn" id="closeDateSearchModal">
+              &times;
+            </button>
+            <form>
+              <span class="search-icon">
+                <img
+                  src="../images/search.png"
+                  class="search-icon"
+                  alt="Search Icon"
+                />
+              </span>
+              <div class="date-input-wrapper">
+                <input
+                  type="date"
+                  class="date-input"
+                  id="startDate"
+                  placeholder=" "
+                />
+                <label for="startDate" class="date-placeholder"
+                  >Start Date</label
+                >
+              </div>
+              <div class="date-input-wrapper">
+                <input
+                  type="date"
+                  class="date-input"
+                  id="endDate"
+                  placeholder=" "
+                />
+                <label for="endDate" class="date-placeholder">End Date</label>
+              </div>
+              <button type="submit" class="date-search-btn">Search</button>
+            </form>
+          </div>
+        </div>
+        <div class="bills-list">
+          <div class="bill-card">
+            <div class="bill-id"><strong>Bill : 23456</strong></div>
+            <div class="bill-info">
+              <span>Date : 31 Jun 2025 2:30 PM</span>
+              <span>Total : 400 Egp</span>
+              <span>Tax : 10%</span>
+            </div>
+          </div>
+          <div class="bill-card">
+            <div class="bill-id"><strong>Bill : 23456</strong></div>
+            <div class="bill-info">
+              <span>Date : 31 Jun 2025 2:30 PM</span>
+              <span>Total : 400 Egp</span>
+              <span>Tax : 10%</span>
+            </div>
+          </div>
+          <div class="bill-card">
+            <div class="bill-id"><strong>Bill : 23456</strong></div>
+            <div class="bill-info">
+              <span>Date : 31 Jun 2025 2:30 PM</span>
+              <span>Total : 400 Egp</span>
+              <span>Tax : 10%</span>
+            </div>
+          </div>
+          <div class="bill-card">
+            <div class="bill-id"><strong>Bill : 23456</strong></div>
+            <div class="bill-info">
+              <span>Date : 31 Jun 2025 2:30 PM</span>
+              <span>Total : 400 Egp</span>
+              <span>Tax : 10%</span>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="../js/admin_sidebar.js"></script>
+    <script src="../js/include-html.js"></script>
+    <script src="../js/page_initializer.js"></script>
+  </body>
+</html>

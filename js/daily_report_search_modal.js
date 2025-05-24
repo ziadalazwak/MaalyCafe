@@ -7,8 +7,8 @@ const searchModalHtml = `
         <div class="dr-modal-title">Search By Date</div>
         <div class="dr-modal-row">
           <span class="dr-modal-icon">&#128269;</span>
-          <input type="date" id="dr-start-date" class="dr-modal-input" placeholder="Start Date">
-          <input type="date" id="dr-end-date" class="dr-modal-input" placeholder="End Date">
+          <input type="text" id="dr-start-date" class="dr-modal-input" placeholder="Start Date" onfocus="this.type='date'" onblur="if(!this.value)this.type='text'">
+          <input type="text" id="dr-end-date" class="dr-modal-input" placeholder="End Date" onfocus="this.type='date'" onblur="if(!this.value)this.type='text'">
           <button class="dr-modal-btn">Search</button>
         </div>
       </div>
@@ -16,8 +16,8 @@ const searchModalHtml = `
         <div class="dr-modal-title">Search By Time</div>
         <div class="dr-modal-row">
           <span class="dr-modal-icon">&#128269;</span>
-          <input type="time" id="dr-start-time" class="dr-modal-input" placeholder="Start Time">
-          <input type="time" id="dr-end-time" class="dr-modal-input" placeholder="End Time">
+          <input type="text" id="dr-start-time" class="dr-modal-input" placeholder="Start Time" onfocus="this.type='time'" onblur="if(!this.value)this.type='text'">
+          <input type="text" id="dr-end-time" class="dr-modal-input" placeholder="End Time" onfocus="this.type='time'" onblur="if(!this.value)this.type='text'">
           <button class="dr-modal-btn">Search</button>
         </div>
       </div>

@@ -1,0 +1,247 @@
+body {
+  font-family: 'Abhaya Libre', serif;
+  background: #f9f5f5;
+  margin: 0;
+  color: #4a2d0b;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 32px 32px 0 32px;
+  background: #f9f5f5;
+}
+
+.pos-vouchers-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.pos-vouchers-header-row h2 {
+  font-size: 24px;
+  margin: 0;
+  color: #4a2d0b;
+}
+
+.pos-vouchers-search-model {
+  background: #fff;
+  border-radius: 4px;
+  margin-bottom: 32px;
+  padding: 32px 24px 24px 24px;
+  box-shadow: 0 2px 8px rgba(80,40,10,0.06);
+  max-width: 100%;
+}
+
+.search-block {
+  margin-bottom: 32px;
+}
+
+.search-title {
+  display: block;
+  font-size: 22px;
+  color: #4a2d0b;
+  margin-bottom: 16px;
+  font-family: inherit;
+}
+
+.search-by-date-form,
+.search-by-invoice-form {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.date-input-wrapper, .invoice-input-wrapper {
+  position: relative;
+  display: inline-block;
+  min-width: 220px;
+}
+
+.date-input, .invoice-input {
+  border: none;
+  border-bottom: 2px solid #a67c6b;
+  background: transparent;
+  font-size: 22px;
+  color: #a67c6b;
+  padding: 8px 16px 8px 0;
+  outline: none;
+  width: 180px;
+}
+
+.date-placeholder, .invoice-placeholder {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a67c6b;
+  font-size: 22px;
+  pointer-events: none;
+  transition: 0.2s;
+  font-family: inherit;
+}
+
+.date-input:focus + .date-placeholder,
+.date-input:not(:placeholder-shown) + .date-placeholder,
+.invoice-input:focus + .invoice-placeholder,
+.invoice-input:not(:placeholder-shown) + .invoice-placeholder {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.date-input::-webkit-input-placeholder,
+.invoice-input::-webkit-input-placeholder { color: transparent; }
+.date-input:-moz-placeholder,
+.invoice-input:-moz-placeholder { color: transparent; }
+.date-input::-moz-placeholder,
+.invoice-input::-moz-placeholder { color: transparent; }
+.date-input:-ms-input-placeholder,
+.invoice-input:-ms-input-placeholder { color: transparent; }
+.date-input::placeholder,
+.invoice-input::placeholder { color: transparent; }
+
+.date-search-btn {
+  background: #a67c6b;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 38px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-left: 16px;
+}
+
+.date-search-btn:hover {
+  background: #7a4a1c;
+}
+
+.search-icon {
+  font-size: 22px;
+  margin-right: 8px;
+  color: #a67c6b;
+}
+
+.pos-vouchers-table-wrapper {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(80,40,10,0.06);
+  padding: 18px 18px;
+  margin-top: 6px;
+  width: 100%;
+  max-width: 950px;
+}
+
+.pos-vouchers-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: transparent;
+}
+
+.pos-vouchers-table th, .pos-vouchers-table td {
+  padding: 16px 12px;
+  text-align: center;
+  font-size: 17px;
+  border-bottom: 1px solid #eee;
+  color: #4a2d0b;
+}
+
+.pos-vouchers-table th {
+  background: #faf9f9;
+  font-weight: bold;
+  font-size: 18px;
+  color: #4a2d0b;
+}
+
+.pos-vouchers-table tr:last-child td {
+  border-bottom: none;
+}
+
+@media (max-width: 900px) {
+  .main-content {
+    padding: 18px 8px 0 8px;
+  }
+  .pos-vouchers-table-wrapper {
+    padding: 8px 2px;
+    max-width: 100%;
+  }
+  .pos-vouchers-table th, .pos-vouchers-table td {
+    padding: 10px 2px;
+    font-size: 14px;
+  }
+  .pos-vouchers-search-model {
+    padding: 12px 4px 12px 4px;
+  }
+  .search-by-date-form, .search-by-invoice-form {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .date-input, .invoice-input {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+.pos-vouchers-search-modal {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(60, 40, 20, 0.18);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.pos-vouchers-search-modal-content {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(80,40,10,0.13);
+  padding: 38px 48px 32px 48px;
+  min-width: 520px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.close-modal-btn {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 2.2rem;
+  color: #a67c6b;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.close-modal-btn:hover {
+  color: #7a4a1c;
+}
+@media (max-width: 600px) {
+  .pos-vouchers-search-modal-content {
+    min-width: 90vw;
+    padding: 18px 8px 18px 8px;
+  }
+}
+
+.search-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 17px;
+  color: #7a4a1c;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  transition: background 0.2s;
+}
+
+.search-section:hover {
+  background: #f6f2ef;
+} 

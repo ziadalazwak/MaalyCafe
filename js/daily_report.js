@@ -22,12 +22,7 @@ nextBtn.addEventListener('click', () => {
 // --- Search Logic ---
 const searchBar = document.querySelector('.search-bar');
 searchBar.style.cursor = 'pointer';
-searchBar.addEventListener('click', () => {
-  const searchTerm = prompt('Enter date (e.g. 12 JUN 2025):');
-  if (searchTerm) {
-    dateLabel.textContent = searchTerm.toUpperCase();
-  }
-});
+// The modal will be triggered by clicking the search icon (handled in daily_report_search_modal.js), so no prompt or popout here.
 
 // --- Table Border Styling (for clarity, JS not needed, use CSS) ---
 // (Table border handled in CSS)

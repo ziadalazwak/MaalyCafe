@@ -1,48 +1,48 @@
 /* Independent Sidebar Styles for Admin */
 .admin-sidebar {
-    width: 220px;
-    background: #faf9f9;
-    border-right: 1px solid #eee;
-    padding-top: 0;
-    min-height: 100vh;
+  width: 220px;
+  background: #faf9f9;
+  border-right: 1px solid #eee;
+  padding-top: 0;
+  min-height: 100vh;
 }
 .admin-sidebar .menu {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 .admin-sidebar .menu li {
-    padding: 18px 24px;
-    border-bottom: 1px solid #ececec;
-    cursor: pointer;
-    color: #444;
-    font-size: 16px;
-    position: relative;
-    transition: background 0.2s;
-    background: none;
+  padding: 18px 24px;
+  border-bottom: 1px solid #ececec;
+  cursor: pointer;
+  color: #1b1a1a;
+  font-size: 16px;
+  position: relative;
+  transition: background 0.2s;
+  background: none;
 }
 .admin-sidebar .menu li.active {
-    background: #f6f2ef;
-    font-weight: bold;
-    color: #7a4a1c;
+  background: #f6f2ef;
+  font-weight: bold;
+  color: #7a4a1c;
 }
 .admin-sidebar .menu li .dot {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    background: #a66b3a;
-    border-radius: 50%;
-    margin-left: 8px;
+  display: inline-block;
+  width: 18px;
+  height: 14px;
+  background: #a66b3a;
+  border-radius: 50%;
+  margin-left: 8px;
 }
 .admin-sidebar .menu li:hover {
-    background: #f2e7e1;
+  background: #f2e7e1;
 }
 @media (max-width: 900px) {
-    .admin-sidebar {
-        width: 140px;
-    }
-    .admin-sidebar .menu li {
-        font-size: 13px;
-        padding: 14px 10px;
-    }
+  .admin-sidebar {
+    width: 140px;
+  }
+  .admin-sidebar .menu li {
+    font-size: 13px;
+    padding: 14px 10px;
+  }
 }

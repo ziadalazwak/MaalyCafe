@@ -1,0 +1,283 @@
+/* Modal Overlay */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: rgba(0,0,0,0.18);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff; /* White background */
+  border-radius: 20px; /* Adjusted border radius */
+  margin: 40px auto; /* Keep margin */
+  padding: 30px; /* Adjusted padding */
+  width: 500px; /* Adjusted width */
+  max-width: 95%; /* Responsive width */
+  box-shadow: 0 4px 16px rgba(80,40,10,0.1); /* Adjusted shadow */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* Stretch items */
+}
+
+.close-modal {
+  position: absolute;
+  top: 15px; /* Adjusted position */
+  right: 15px; /* Adjusted position */
+  font-size: 28px; /* Adjusted size */
+  color: #4a2d0b; /* Darker color */
+  cursor: pointer;
+}
+
+.modal-title {
+  font-size: 25px; /* Adjusted size */
+  text-align: center;
+  color: #000000; /* Darker color */
+  margin-bottom: 24px; /* Adjusted margin */
+  font-family: 'Georgia', serif; /* Font from image */
+}
+
+.edit-item-form {
+  width: 100%;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px; /* Adjusted gap */
+  margin-bottom: 18px; /* Adjusted margin */
+  align-items: flex-start; /* Align items to top */
+}
+
+.form-group {
+  flex: 1; /* Let form groups flex */
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: bold;
+  font-size: 20px; /* Adjusted size */
+  color: #000000; /* Black font color */
+  margin-bottom: 6px; /* Adjusted margin */
+  margin-left: 0; /* Remove left margin */
+  font-family: 'Abhaya Libre', serif; /* Font from image */
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="date"],
+.form-group input[type="time"],
+.form-group textarea {
+  border: 1px solid #d6cfcf; /* Adjusted border */
+  border-radius: 16px; /* Adjusted border radius */
+  padding: 10px 15px; /* Adjusted padding */
+  font-size: 15px; /* Adjusted size */
+  font-family: 'Georgia', serif; /* Font from image */
+  background: #fff; /* White background */
+  color: #000000; /* Black font color */
+  outline: none;
+  margin-bottom: 0;
+  resize: none;
+  transition: border-color 0.2s;
+  min-width: 0; /* Allow inputs to shrink */
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus,
+.form-group input[type="date"]:focus,
+.form-group input[type="time"]:focus,
+.form-group textarea:focus {
+  border-color: #a66b3a; /* Focus border color */
+}
+
+.form-group textarea {
+  height: 80px; /* Adjusted height */
+  padding: 10px 15px; /* Ensure consistent padding */
+}
+
+/* Specific layout for Item Stock / Item Ordered and Photo */
+.form-row.item-stock-order {
+  display: flex; /* Ensure it's a flex container */
+  gap: 5px; /* Further reduced gap */
+  margin-bottom: 8px; /* Further reduced margin between this row and the next */
+  align-items: flex-start; /* Align items to top */
+}
+
+.form-row.item-stock-order > .form-group {
+  flex: 1 1 calc(50% - 2.5px); /* Flex grow, shrink, and set basis, adjusted for smaller gap */
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row.item-stock-order > .photo-group {
+    flex: none; /* Prevent photo group from flexing equally */
+    width: 220px; /* Adjusted width for photo section */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align photo content to start */
+}
+
+/* Specific layout for Price / Discount / Date */
+.form-row.price-discount-date {
+    display: flex; /* Ensure it's a flex container */
+    gap: 10px; /* Keep consistent gap */
+    margin-bottom: 18px; /* Keep consistent margin */
+    align-items: flex-start; /* Align items to top */
+}
+
+.form-row.price-discount-date > .form-group {
+    flex: 1; /* Let these flex equally to fill the space */
+    display: flex;
+    flex-direction: column;
+    min-width: 0; /* Allow items to shrink below content size */
+}
+
+/* Photo preview and add button container */
+.photo-row {
+  display: flex;
+  align-items: center; /* Vertically align items in photo row */
+  gap: 20px; /* Space between photo preview and add button */
+  margin-top: 8px; /* Space below label */
+}
+
+.item-photo-preview,
+.photo-add {
+  width: 80px; /* Adjusted size */
+  height: 80px; /* Adjusted size */
+  border-radius: 12px; /* Adjusted border radius */
+  border: 1px solid #d6cfcf; /* Adjusted border */
+  background: #fff; /* White background */
+  box-shadow: 0 2px 8px rgba(80,40,10,0.06); /* Adjusted shadow */
+}
+
+.item-photo-preview {
+  object-fit: cover;
+  display: none; /* Hide by default */
+}
+
+.item-photo-preview[src]:not([src=""]) {
+  display: block; /* Show if src is set */
+}
+
+.photo-add {
+  display: flex; /* Use flex to center content */
+  align-items: center;
+  justify-content: center;
+  font-size: 36px; /* Adjusted size for plus icon */
+  color: #4a2d0b; /* Darker color for plus */
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.photo-add:hover {
+  border-color: #a66b3a; /* Hover border color */
+  background: #f9f6f4; /* Light hover background */
+}
+
+/* Radio Button Styles */
+.radio-row {
+  display: flex; /* Use flex for layout */
+  justify-content: flex-start; /* Align to start */
+  gap: 20px; /* Space between radio groups */
+  margin-top: 18px; /* Space above radio buttons */
+  margin-bottom: 24px; /* Space below radio buttons */
+}
+
+.radio-label {
+  font-size: 15px; /* Consistent font size */
+  color: #000000; /* Black font color */
+  display: flex;
+  align-items: center; /* Vertically align label and input */
+  gap: 6px; /* Space between radio input and label text */
+  cursor: pointer;
+}
+
+.radio-label input[type="checkbox"], .radio-label input[type="radio"] { /* Style the actual radio/checkbox input */
+    /* Appearance properties hide the default input */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 18px; /* Size of the custom radio circle */
+    height: 18px;
+    border: 1px solid #d6cfcf; /* Border color */
+    border-radius: 50%; /* Make it circular */
+    outline: none; /* Remove focus outline */
+    cursor: pointer;
+    position: relative; /* Needed for the checked indicator */
+    background: #fff; /* White background */
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.radio-label input[type="checkbox"]:checked, .radio-label input[type="radio"]:checked {
+    border-color: #a66b3a; /* Border color when checked */
+    box-shadow: inset 0 0 0 5px #a66b3a; /* Inner circle for checked state */
+}
+
+.radio-label input[type="checkbox"]:focus, .radio-label input[type="radio"]:focus {
+    border-color: #7a4a1c; /* Focus style */
+    box-shadow: 0 0 0 3px rgba(166, 107, 58, 0.3); /* Add a subtle outer glow on focus */
+}
+
+/* Save Button */
+.save-btn {
+  width: 100%;
+  background: #7a4a1c; /* Brown background */
+  color: #f0e9e9; /* Light text color */
+  border: none;
+  border-radius: 22px; /* Adjusted border radius */
+  padding: 12px 0; /* Adjusted padding */
+  font-size: 18px; /* Adjusted font size */
+  font-family: 'Abhaya Libre', serif; /* Font */
+  margin-top: 18px; /* Adjusted margin */
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 2px 6px rgba(80,40,10,0.1);
+}
+
+.save-btn:hover {
+  background: #a66b3a; /* Hover background */
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 600px) {
+  .modal-content {
+    padding: 20px;
+  }
+  .modal-title {
+    font-size: 20px;
+  }
+  .form-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .form-row.item-stock-order > .photo-group {
+    width: 100%;
+    align-items: center;
+  }
+  .photo-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .radio-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .save-btn {
+    font-size: 16px;
+  }
+}
+
+/* Specific layout for the form-group containing Item Ordered */
+.form-row:has(label:contains("Item Ordered")) > .form-group.item-stock-order {
+  flex: 0 1 120px; /* Prevent growing, allow shrinking, set basis to a fixed width */
+  max-width: 120px; /* Ensure it doesn't exceed this width */
+}
