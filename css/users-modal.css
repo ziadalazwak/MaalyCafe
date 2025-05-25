@@ -8,7 +8,7 @@
   width: 100vw;
   height: 100vh;
   overflow: auto;
-  background: rgba(0,0,0,0.18);
+  background: rgba(0, 0, 0, 0.18);
   justify-content: center;
   align-items: center;
 }
@@ -19,7 +19,7 @@
   margin: 40px auto;
   padding: 32px 32px 18px 32px;
   width: 440px;
-  box-shadow: 0 4px 24px rgba(80,40,10,0.13);
+  box-shadow: 0 4px 24px rgba(80, 40, 10, 0.13);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -38,9 +38,9 @@
 .modal-title {
   font-size: 28px;
   text-align: center;
-  color: #4a2d0b;
+  color: #000000;
   margin-bottom: 18px;
-  font-family: 'Abhaya Libre', serif;
+  font-family: "Abhaya Libre", serif;
 }
 
 .new-user-form {
@@ -58,7 +58,7 @@
 }
 .form-group label {
   font-size: 15px;
-  color: #4d3c31;
+  color: #000000;
   margin-bottom: 4px;
   margin-left: 8px;
 }
@@ -69,9 +69,9 @@
   border-radius: 22px;
   padding: 8px 18px;
   font-size: 16px;
-  font-family: 'Abhaya Libre', serif;
+  font-family: "Abhaya Libre", serif;
   background: #fff;
-  color: #4d3c31;
+  color: #000000;
   outline: none;
   margin-bottom: 0;
 }
@@ -103,7 +103,7 @@
   border-radius: 28px;
   padding: 12px 0;
   font-size: 22px;
-  font-family: 'Abhaya Libre', serif;
+  font-family: "Abhaya Libre", serif;
   margin-top: 12px;
   cursor: pointer;
   transition: background 0.2s;

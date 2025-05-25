@@ -1,27 +1,28 @@
-// Modal open/close logic for Search Modal
-const searchSection = document.querySelector('.search-section');
-const searchModal = document.getElementById('searchModal');
-const closeSearchBtn = document.getElementById('closeSearchModal');
+document.addEventListener('DOMContentLoaded', function() {
+  const searchModal = document.getElementById('searchModal');
+  const searchSection = document.querySelector('.search-section');
+  const searchIcon = document.querySelector('.search-icon-wrapper');
+  const searchText = document.querySelector('.search-text');
 
-if (searchSection && searchModal && closeSearchBtn) {
-    searchSection.onclick = function() {
-        searchModal.style.display = 'flex';
-    };
-    closeSearchBtn.onclick = function() {
-        searchModal.style.display = 'none';
-    };
-    window.onclick = function(event) {
-        if (event.target === searchModal) {
-            searchModal.style.display = 'none';
-        }
-    };
-}
-// Prevent form submission default
-const searchReservationForm = document.getElementById('searchReservationForm');
-if (searchReservationForm) {
-    searchReservationForm.onsubmit = function(e) {
-        e.preventDefault();
-        // Add logic to handle search here
-        searchModal.style.display = 'none';
-    };
-}
+  // Function to open modal
+  function openSearchModal() {
+    searchModal.style.display = 'block';
+  }
+
+  // Function to close modal
+  function closeSearchModal() {
+    searchModal.style.display = 'none';
+  }
+
+  // Event listeners for opening modal
+  searchSection.addEventListener('click', openSearchModal);
+  searchIcon.addEventListener('click', openSearchModal);
+  searchText.addEventListener('click', openSearchModal);
+
+  // Close modal when clicking outside
+  window.addEventListener('click', function(event) {
+    if (event.target === searchModal) {
+      closeSearchModal();
+    }
+  });
+});

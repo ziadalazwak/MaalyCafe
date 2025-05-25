@@ -25,25 +25,56 @@ const searchModalHtml = `
   </div>
 `;
 
+// Functions to show/hide the modal - Keep these global if they are called directly
 function showDrSearchModal() {
-  if (document.getElementById('dr-search-modal-overlay')) return;
-  document.body.insertAdjacentHTML('beforeend', searchModalHtml);
-  document.getElementById('dr-search-modal-close').onclick = closeDrSearchModal;
-  document.getElementById('dr-search-modal-overlay').onclick = function(e) {
-    if (e.target === this) closeDrSearchModal();
-  }
+  // Use the existing modal HTML in bills.html instead of inserting template
+  const modal = document.getElementById('dateSearchModal');
+  if (modal) modal.style.display = 'flex';
 }
 
 function closeDrSearchModal() {
-  const modal = document.getElementById('dr-search-modal-overlay');
-  if (modal) modal.remove();
+  // Use the existing modal HTML in bills.html instead of removing template
+  const modal = document.getElementById('dateSearchModal');
+  if (modal) modal.style.display = 'none';
 }
 
-// Attach to search icon
-window.addEventListener('DOMContentLoaded', function() {
-  const searchIcon = document.querySelector('.search-icon');
-  if (searchIcon) {
-    searchIcon.style.cursor = 'pointer';
-    searchIcon.addEventListener('click', showDrSearchModal);
-  }
-});
+// Wrap initialization logic in a global function
+window.initDailyReportSearchModal = function() {
+    console.log('Initializing Daily Report/Bills Search Modal...');
+    // Get references to the elements within the currently loaded page
+    const openDateSearchBtn = document.getElementById("openDateSearch");
+    const closeDateSearchModalBtn = document.getElementById("closeDateSearchModal");
+    const dateSearchModal = document.getElementById("dateSearchModal"); // Get the modal element
+
+    // Attach event listeners
+    if (openDateSearchBtn) {
+        console.log('Attaching click listener to openDateSearchBtn');
+        openDateSearchBtn.onclick = function () {
+            console.log('openDateSearchBtn clicked, showing modal');
+            showDrSearchModal(); // Call the show function
+        };
+    }
+
+    if (closeDateSearchModalBtn) {
+        console.log('Attaching click listener to closeDateSearchModalBtn');
+        closeDateSearchModalBtn.onclick = function () {
+            console.log('closeDateSearchModalBtn clicked, hiding modal');
+            closeDrSearchModal(); // Call the close function
+        };
+    }
+
+    // Close modal when clicking outside content (assuming modal has id dateSearchModal)
+    if (dateSearchModal) {
+        console.log('Attaching click listener to dateSearchModal overlay');
+        dateSearchModal.onclick = function (e) {
+            if (e.target === this) {
+                 console.log('Modal overlay clicked, hiding modal');
+                 closeDrSearchModal();
+            }
+        };
+    }
+     console.log('Daily Report/Bills Search Modal initialization finished.');
+};
+
+// REMOVE: document.addEventListener('DOMContentLoaded', function() { ... });
+// This initialization will now be triggered by page_initializer.js

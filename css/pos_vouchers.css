@@ -2,7 +2,7 @@ body {
   font-family: 'Abhaya Libre', serif;
   background: #f9f5f5;
   margin: 0;
-  color: #4a2d0b;
+  color: #1B1A1A;
 }
 
 .container {
@@ -26,7 +26,7 @@ body {
 .pos-vouchers-header-row h2 {
   font-size: 24px;
   margin: 0;
-  color: #4a2d0b;
+  color: #1B1A1A;
 }
 
 .pos-vouchers-search-model {
@@ -45,7 +45,7 @@ body {
 .search-title {
   display: block;
   font-size: 22px;
-  color: #4a2d0b;
+  color: #1B1A1A;
   margin-bottom: 16px;
   font-family: inherit;
 }
@@ -54,112 +54,134 @@ body {
 .search-by-invoice-form {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 20px;
 }
 
-.date-input-wrapper, .invoice-input-wrapper {
-  position: relative;
-  display: inline-block;
-  min-width: 220px;
+.input-with-icon {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  border-bottom: 1px solid #b38165;
+  padding-bottom: 5px;
 }
 
-.date-input, .invoice-input {
+.input-with-icon .search-icon {
+  /* No specific styling needed for the span itself, just its content */
+}
+
+.input-with-icon .search-icon img {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  filter: brightness(0.5) sepia(1) hue-rotate(300deg) saturate(2);
+}
+
+.date-input,
+.invoice-input {
   border: none;
-  border-bottom: 2px solid #a67c6b;
-  background: transparent;
-  font-size: 22px;
-  color: #a67c6b;
-  padding: 8px 16px 8px 0;
+  background: none;
+  font-size: 18px;
+  color: #4d3c31;
   outline: none;
-  width: 180px;
+  padding: 0;
+  flex-grow: 1;
+}
+
+.date-input::placeholder,
+.invoice-input::placeholder {
+  color: #b38165;
+  opacity: 1;
 }
 
 .date-placeholder, .invoice-placeholder {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #a67c6b;
-  font-size: 22px;
-  pointer-events: none;
-  transition: 0.2s;
-  font-family: inherit;
+  display: none;
 }
 
-.date-input:focus + .date-placeholder,
-.date-input:not(:placeholder-shown) + .date-placeholder,
-.invoice-input:focus + .invoice-placeholder,
-.invoice-input:not(:placeholder-shown) + .invoice-placeholder {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.date-input::-webkit-input-placeholder,
-.invoice-input::-webkit-input-placeholder { color: transparent; }
-.date-input:-moz-placeholder,
-.invoice-input:-moz-placeholder { color: transparent; }
-.date-input::-moz-placeholder,
-.invoice-input::-moz-placeholder { color: transparent; }
-.date-input:-ms-input-placeholder,
-.invoice-input:-ms-input-placeholder { color: transparent; }
-.date-input::placeholder,
-.invoice-input::placeholder { color: transparent; }
-
-.date-search-btn {
-  background: #a67c6b;
-  color: #fff;
+.search-btn {
+  background-color: #a66b3a;
+  color: white;
   border: none;
+  padding: 10px 20px;
   border-radius: 8px;
-  padding: 10px 38px;
-  font-size: 20px;
   cursor: pointer;
-  transition: background 0.2s;
-  margin-left: 16px;
+  font-size: 18px;
+  font-weight: 500;
+  transition: background-color 0.2s;
 }
 
-.date-search-btn:hover {
-  background: #7a4a1c;
-}
-
-.search-icon {
-  font-size: 22px;
-  margin-right: 8px;
-  color: #a67c6b;
+.search-btn:hover {
+  background-color: #8a542b;
 }
 
 .pos-vouchers-table-wrapper {
   background: #fff;
-  border-radius: 14px;
+  border-radius: 12px;
   box-shadow: 0 2px 8px rgba(80,40,10,0.06);
-  padding: 18px 18px;
-  margin-top: 6px;
-  width: 100%;
-  max-width: 950px;
+  overflow: hidden;
+  padding: 16px 0;
 }
 
 .pos-vouchers-table {
   width: 100%;
   border-collapse: collapse;
-  background: transparent;
+  border-spacing: 0;
 }
 
 .pos-vouchers-table th, .pos-vouchers-table td {
-  padding: 16px 12px;
+  padding: 40px 15px;
   text-align: center;
-  font-size: 17px;
-  border-bottom: 1px solid #eee;
-  color: #4a2d0b;
+  color: #1B1A1A;
+  border-bottom: 1px solid #a7a5a5;
+  border-right: 1px solid #a7a5a5;
 }
 
-.pos-vouchers-table th {
-  background: #faf9f9;
+.pos-vouchers-table th:last-child, .pos-vouchers-table td:last-child {
+  border-right: none;
+}
+
+.pos-vouchers-table thead {
+  background-color: #ffffff;
+  border-bottom: none;
+}
+
+.pos-vouchers-table thead th {
+  background-color: #fff;
   font-weight: bold;
   font-size: 18px;
-  color: #4a2d0b;
+  color: #1B1A1A;
+  border-bottom: none;
+  text-align: center;
+  padding: 15px 15px;
 }
 
-.pos-vouchers-table tr:last-child td {
+.pos-vouchers-table thead th:first-child {
+  border-top-left-radius: 12px;
+}
+
+.pos-vouchers-table thead th:last-child {
+  border-top-right-radius: 12px;
+}
+
+.pos-vouchers-table tbody tr {
+  background-color: #F9F9F9;
+
+}
+
+.pos-vouchers-table tbody tr:last-child td {
   border-bottom: none;
+}
+
+.pos-vouchers-table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 12px;
+}
+
+.pos-vouchers-table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 12px;
+}
+
+.pos-vouchers-table th, .pos-vouchers-table td {
+  border-top: none;
+  border-left: none;
 }
 
 @media (max-width: 900px) {
@@ -167,11 +189,10 @@ body {
     padding: 18px 8px 0 8px;
   }
   .pos-vouchers-table-wrapper {
-    padding: 8px 2px;
-    max-width: 100%;
+    padding: 8px 0;
   }
   .pos-vouchers-table th, .pos-vouchers-table td {
-    padding: 10px 2px;
+    padding: 10px 8px;
     font-size: 14px;
   }
   .pos-vouchers-search-model {
@@ -235,13 +256,27 @@ body {
   gap: 8px;
   font-size: 17px;
   color: #7a4a1c;
-  cursor: pointer;
   background: none;
   border: none;
+  cursor: pointer;
   outline: none;
   transition: background 0.2s;
 }
 
 .search-section:hover {
   background: #f6f2ef;
+}
+
+.search-icon img {
+  width: 28px;
+  height: 28px;
+  vertical-align: middle;
+  filter: brightness(0); 
+  margin-bottom: 2px;
+}
+
+.search-label {
+  color: #1B1A1A;
+  font-weight: bold;
+  font-size: 20px;
 } 

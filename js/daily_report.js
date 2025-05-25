@@ -26,3 +26,19 @@ searchBar.style.cursor = 'pointer';
 
 // --- Table Border Styling (for clarity, JS not needed, use CSS) ---
 // (Table border handled in CSS)
+
+// Add this JavaScript to handle the modal
+document.addEventListener('DOMContentLoaded', function() {
+  const searchBar = document.querySelector('.search-bar');
+  const searchModal = document.getElementById('searchModal');
+
+  searchBar.addEventListener('click', function() {
+    searchModal.style.display = 'block';
+  });
+
+  searchModal.addEventListener('click', function(e) {
+    if (e.target === searchModal) {
+      searchModal.style.display = 'none';
+    }
+  });
+});

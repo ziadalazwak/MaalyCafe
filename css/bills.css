@@ -1,5 +1,5 @@
 body {
-  font-family: "Abhaya Libre", serif;
+  font-family: 'Abhaya Libre', serif;
   background: #f9f5f5;
   margin: 0;
   color: #4a2d0b;
@@ -10,9 +10,16 @@ body {
   min-height: 100vh;
 }
 
+.sidebar {
+  width: 220px;
+  background: #faf9f9;
+  border-right: 1px solid #eee;
+  padding-top: 0;
+}
+
 .main-content {
   flex: 1;
-  padding: 32px 32px 0 32px;
+  padding: 24px 32px 0 32px;
   background: #f9f5f5;
 }
 
@@ -26,7 +33,7 @@ body {
 .bills-header-row h2 {
   font-size: 24px;
   margin: 0;
-  color: #4a2d0b;
+  color: #1B1A1A;
 }
 
 .search-section {
@@ -42,13 +49,33 @@ body {
   transition: background 0.2s;
 }
 
+.search-section .search-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-section .search-icon img {
+  filter: brightness(0);
+  width: 24px;
+  height: 24px;
+}
+
+.search-section .search-label {
+  display: inline-flex;
+  align-items: center;
+  color: #000;
+}
+
 .search-section:hover {
   background: #f6f2ef;
 }
 
 .search-icon {
-  font-size: 20px;
-  margin-right: 4px;
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  vertical-align: middle;
 }
 
 .bills-list {
@@ -60,7 +87,7 @@ body {
 .bill-card {
   background: #fff;
   border-radius: 16px;
-  box-shadow: 0 2px 8px rgba(80, 40, 10, 0.06);
+  box-shadow: 0 2px 8px rgba(80,40,10,0.06);
   padding: 24px 32px;
   font-size: 18px;
   display: flex;
@@ -70,15 +97,24 @@ body {
 
 .bill-id {
   font-size: 20px;
-  color: #4a2d0b;
+  color: #1B1A1A;
   margin-bottom: 8px;
+}
+
+.bill-details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .bill-info {
   display: flex;
-  gap: 32px;
+  flex-direction: row;
+  gap: 40px;
   font-size: 17px;
-  color: #7a4a1c;
+  color: #1B1A1A;
 }
 
 .date-search-form {
@@ -93,8 +129,9 @@ body {
 }
 
 .date-search-form .search-icon {
-  font-size: 28px;
-  color: #a67c6b;
+  width: 32px;
+  height: 32px;
+  color: #1B1A1A;
   margin-right: 8px;
 }
 
@@ -117,21 +154,11 @@ body {
 }
 
 /* Hide browser default placeholder for date input */
-.date-input::-webkit-input-placeholder {
-  color: transparent;
-}
-.date-input:-moz-placeholder {
-  color: transparent;
-}
-.date-input::-moz-placeholder {
-  color: transparent;
-}
-.date-input:-ms-input-placeholder {
-  color: transparent;
-}
-.date-input::placeholder {
-  color: transparent;
-}
+.date-input::-webkit-input-placeholder { color: transparent; }
+.date-input:-moz-placeholder { color: transparent; }
+.date-input::-moz-placeholder { color: transparent; }
+.date-input:-ms-input-placeholder { color: transparent; }
+.date-input::placeholder { color: transparent; }
 
 .date-placeholder {
   position: absolute;
@@ -184,7 +211,7 @@ body {
 .date-search-modal-content {
   background: #fff;
   border-radius: 18px;
-  box-shadow: 0 4px 32px rgba(80, 40, 10, 0.13);
+  box-shadow: 0 4px 32px rgba(80,40,10,0.13);
   padding: 38px 48px 32px 48px;
   min-width: 420px;
   position: relative;
@@ -214,9 +241,20 @@ body {
   gap: 32px;
 }
 
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: flex-end;
+  min-width: 90px;
+}
+
 @media (max-width: 900px) {
   .main-content {
     padding: 18px 8px 0 8px;
+  }
+  .sidebar {
+    width: 140px;
   }
   .bills-list {
     gap: 12px;
@@ -242,3 +280,4 @@ body {
     width: 100%;
   }
 }
+ 

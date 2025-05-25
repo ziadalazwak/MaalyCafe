@@ -1,0 +1,121 @@
+/* Styles for the search modal to match the provided image */
+
+/* Modal Overlay */
+.modal {
+  display: flex; /* Use flexbox for centering */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+}
+
+/* Modal Content */
+.modal-content {
+  background: #fff; /* White background */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 30px; /* Padding inside the modal */
+  width: 90%; /* Adjust width */
+  max-width: 500px; /* Maximum width */
+  position: relative;
+}
+
+/* Headings */
+.modal-content h2 {
+  font-size: 18px; /* Font size from image */
+  font-weight: normal; /* Font weight from image */
+  color: #4d3c31; /* Text color from image (approximately) */
+  margin-bottom: 15px; /* Space below heading */
+}
+
+/* Search Form Layout */
+.search-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between search sections */
+}
+
+.date-search,
+.name-search,
+.table-search,
+.phone-search,
+.time-search {
+  display: flex; /* Use flexbox for side-by-side layout */
+  align-items: center; /* Align items vertically */
+  gap: 20px; /* Space between the heading and the search row */
+}
+
+.search-form > div {
+    margin-bottom: 0; /* Remove previous bottom margin */
+}
+
+.search-row {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Space between elements in a row */
+  flex-grow: 1; /* Allow the search row to take available space */
+}
+
+.search-input-group {
+  display: flex;
+  align-items: center;
+  flex-grow: 1; /* Allow input group to take available space */
+}
+
+/* Input Fields */
+#searchModal .modal-content .search-input-group input[type="date"],
+#searchModal .modal-content .search-input-group input[type="text"],
+#searchModal .modal-content .search-input-group input[type="time"] {
+  font-family: inherit;
+  border: none; /* Explicitly remove border */
+  border-bottom: 1px solid #d3b5a5; /* Subtle bottom border from image */
+  background: transparent;
+  font-size: 16px; /* Font size */
+  color: #4d3c31; /* Text color */
+  padding: 5px 0; /* Padding */
+  outline: none;
+  width: 100%; /* Full width within its container */
+}
+
+#searchModal .modal-content .search-input-group input[type="date"]::placeholder,
+#searchModal .modal-content .search-input-group input[type="text"]::placeholder,
+#searchModal .modal-content .search-input-group input[type="time"]::placeholder {
+  color: #d3b5a5; /* Placeholder color from image */
+  opacity: 1;
+}
+
+#searchModal .modal-content .search-input-group input[type="date"]:focus,
+#searchModal .modal-content .search-input-group input[type="text"]:focus,
+#searchModal .modal-content .search-input-group input[type="time"]:focus {
+  border-bottom-color: #a8715c; /* Slightly darker border on focus */
+}
+
+/* Search Icon */
+.search-icon img {
+    width: 16px; /* Icon size from image */
+    height: 16px; /* Icon size */
+    margin-right: 8px; /* Space between icon and input */
+    /* The color of the icon will likely need to be handled by an SVG filter or by using an SVG directly */
+}
+
+/* Search Button */
+.search-btn {
+  background: #a8715c; /* Button background color from image */
+  color: #fff; /* Button text color */
+  border: none;
+  border-radius: 8px; /* Rounded corners */
+  padding: 8px 20px; /* Padding */
+  font-size: 16px; /* Font size */
+  cursor: pointer;
+  transition: background 0.2s ease; /* Smooth hover effect */
+}
+
+.search-btn:hover {
+  background: #8a542b; /* Darker background on hover */
+} 

@@ -85,7 +85,7 @@ body {
     justify-content: center;
 }
 .store-actions .edit {
-    background: #a66b3a;
+    background: #C36532;
     color: #fff;
     border: none;
     border-radius: 22px;
@@ -106,7 +106,7 @@ body {
     background: #7a4a1c;
 }
 .store-actions .delete {
-    background: #8c1d0d;
+    background: #8F0C0E;
     color: #fff;
     border: none;
     border-radius: 22px;

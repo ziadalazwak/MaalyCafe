@@ -40,7 +40,7 @@ window.initStoresModal = function() {
     if (event.target === storeModal) {
       console.log('Clicked outside modal');
       storeModal.style.display = 'none';
-    }
+      }
   });
 
   // Handle form submission

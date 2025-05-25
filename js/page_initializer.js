@@ -10,6 +10,23 @@ async function initializePage() {
     // If a page has its own initialization function (e.g., window.initItemsPage),
     // it should define it before this script runs and call it here.
 
+    // Ensure includeHTML runs first before initializing page-specific components
+    if (window.includeHTML) {
+        try {
+            await window.includeHTML();
+            console.log('includeHTML finished.');
+            // After includeHTML, check for key elements
+            const searchSectionCheck = document.querySelector('.search-section');
+            const openReservationBtnCheck = document.getElementById('openAddReservationModal');
+            console.log('After includeHTML: Search section found?', !!searchSectionCheck);
+            console.log('After includeHTML: New Reservation button found?', !!openReservationBtnCheck);
+
+        } catch (e) {
+            console.error('Error during includeHTML:', e);
+            // Continue initialization even if includeHTML fails, as some elements might be present
+        }
+    }
+
     // Example calls (these depend on page-specific scripts defining these functions):
     if (window.initItemsModal) { console.log('Calling initItemsModal...'); window.initItemsModal(); }
     if (window.initStoresModal) { console.log('Calling initStoresModal...'); window.initStoresModal(); }
@@ -18,6 +35,8 @@ async function initializePage() {
     if (window.initUsersModal) { console.log('Calling initUsersModal...'); window.initUsersModal(); }
     if (window.initBannerModal) { console.log('Calling initBannerModal...'); window.initBannerModal(); }
     if (window.initDailyReport) { console.log('Calling initDailyReport...'); window.initDailyReport(); }
+    if (window.initDailyReportSearchModal) { console.log('Calling initDailyReportSearchModal for Bills page...'); window.initDailyReportSearchModal(); }
+    if (window.initSearchModal) { console.log('Calling initSearchModal...'); window.initSearchModal(); }
     // Add more specific initialization calls as needed for other pages
 
     console.log('Generic page initialization finished.');
@@ -27,24 +46,12 @@ async function initializePage() {
 window.initializePage = initializePage;
 
 // Handle initial page load (when not navigated via sidebar)
-// Ensure includeHTML runs first, then call initializePage.
+// Call initializePage directly, which now handles waiting for includeHTML
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
-    if(window.includeHTML) {
-      window.includeHTML().then(() => {
-        if(window.initializePage) window.initializePage();
-      }).catch(e => console.error('Error during includeHTML on DOMContentLoaded:', e));
-    } else if(window.initializePage) {
-      window.initializePage();
-    }
+      if(window.initializePage) window.initializePage();
   });
 } else {
   // DOM already loaded
-   if(window.includeHTML) {
-      window.includeHTML().then(() => {
-        if(window.initializePage) window.initializePage();
-      }).catch(e => console.error('Error during includeHTML on direct load:', e));
-    } else if(window.initializePage) {
-      window.initializePage();
-    }
+     if(window.initializePage) window.initializePage();
 } 

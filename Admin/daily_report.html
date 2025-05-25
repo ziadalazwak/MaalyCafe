@@ -1,85 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daily Report</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap" />
-  <link rel="stylesheet" href="../css/daily_report.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Report</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap"
+    />
+    <link rel="stylesheet" href="../css/daily_report.css" />
+  </head>
+  <body>
+    <div include-html="../components/admin_header.html"></div>
+    <div class="container">
+      <div class="sidebar">
+        <div
+          include-html="../components/admin_sidebar.html"
+          active-menu="Daily Reports"
+        ></div>
+      </div>
+      <div class="main-content">
+        <div class="header-row">
+          <span
+            style="
+              font-size: 28px;
+              font-family: 'Abhaya Libre', serif;
+              margin-right: 10px;
+            "
+            >Pre</span
+          >
+          <button class="date-btn nav-btn"><b>&#8249;</b></button>
+          <span
+            class="date-label"
+            style="
+              font-size: 32px;
+              font-family: 'Abhaya Libre', serif;
+              margin: 0 24px;
+            "
+            >12 JUN 2025</span
+          >
+          <button class="date-btn nav-btn"><b>&#8250;</b></button>
+          <span
+            style="
+              font-size: 28px;
+              font-family: 'Abhaya Libre', serif;
+              margin-left: 10px;
+            "
+            >Next</span
+          >
+          <div class="search-bar" id="openDailyReportSearch">
+            <span class="search-icon">
+              <img
+                src="../images/iconoir_search.png"
+                class="search-icon"
+                alt="Search Icon"
+              />
+            </span>
+            <span style="margin-left: 8px">Search By</span>
+            <span class="dropdown-icon" style="margin-left: 4px">▼</span>
+          </div>
+        </div>
 
-</head>
-<body>
-  <div include-html="../components/admin_header.html"></div>
-  <div class="container">
-    <div class="sidebar">
-      <div include-html="../components/admin_sidebar.html" active-menu="Daily Reports"></div>
-    </div>
-    <div class="main-content">
-      <div class="header-row">
-        <span style="font-size:28px; font-family:'Abhaya Libre',serif; margin-right:10px;">Pre</span>
-        <button class="date-btn nav-btn"><b>&#8249;</b></button>
-        <span class="date-label" style="font-size:32px; font-family:'Abhaya Libre',serif; margin:0 24px;">12 JUN 2025</span>
-        <button class="date-btn nav-btn"><b>&#8250;</b></button>
-        <span style="font-size:28px; font-family:'Abhaya Libre',serif; margin-left:10px;">Next</span>
-        <div class="search-bar">
-          <span class="search-icon">
-            <img src="images/search.png" class="search-icon" alt="Search Icon">
-          </span>
-          <span>Search By</span>
+        <div class="daily-report-search-modal" id="dailyReportSearchModal" style="display: none;">
+          <div class="daily-report-search-modal-content">
+            <button class="close-modal-btn" id="closeDailyReportSearchModal">&times;</button>
+            <div class="search-block">
+              <label class="search-title">Search By Date</label>
+              <form class="search-by-date-form">
+                <div class="input-wrapper">
+                  <span class="search-icon">
+                    <img src="../images/iconoir_search.png" alt="Search Icon">
+                  </span>
+                  <input type="text" class="date-input" id="startDate" placeholder=" ">
+                  <label for="startDate" class="input-placeholder">Start Date</label>
+                </div>
+                <div class="input-wrapper">
+                
+                  <input type="text" class="date-input" id="endDate" placeholder=" ">
+                  <label for="endDate" class="input-placeholder">End Date</label>
+                </div>
+                <button type="submit" class="search-btn">Search</button>
+              </form>
+            </div>
+            <div class="search-block">
+              <label class="search-title">Search By Time</label>
+              <form class="search-by-time-form">
+                <div class="input-wrapper">
+                  <span class="search-icon">
+                    <img src="../images/iconoir_search.png" alt="Search Icon">
+                  </span>
+                  <input type="text" class="time-input" id="startTime" placeholder=" ">
+                  <label for="startTime" class="input-placeholder">Start Time</label>
+                </div>
+                <div class="input-wrapper">
+                  
+                  <input type="text" class="time-input" id="endTime" placeholder=" ">
+                  <label for="endTime" class="input-placeholder">End Time</label>
+                </div>
+                <button type="submit" class="search-btn">Search</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="report-table-container">
+          <table class="report-table">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Date</th>
+                <th>Type</th>
+                <th>In</th>
+                <th>Out</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>254567</td>
+                <td>22 Jan 2025</td>
+                <td>Coustmer</td>
+                <td>2000</td>
+                <td>000</td>
+              </tr>
+              <tr>
+                <td>65432</td>
+                <td>22 Jan 2025</td>
+                <td>Coustmer</td>
+                <td>1000</td>
+                <td>000</td>
+              </tr>
+              <tr>
+                <td>76543</td>
+                <td>22 Jan 2025</td>
+                <td>Coustmer</td>
+                <td>1500</td>
+                <td>000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="summary-cards">
+          <div class="summary-card">
+            <span class="summary-label">Total Of (CASH)</span>
+            <div class="summary-values">
+              <span class="summary-in-value">1500</span>
+              <span class="summary-out-value">000</span>
+            </div>
+          </div>
+          <div class="summary-card">
+            <span class="summary-label">Total Of (Sdjf)</span>
+            <div class="summary-values">
+              <span class="summary-in-value">1500</span>
+              <span class="summary-out-value">000</span>
+            </div>
+          </div>
+          <div class="summary-card">
+            <span class="summary-label">Total</span>
+            <div class="summary-values">
+              <span class="summary-in-value">1500</span>
+              <span class="summary-out-value">000</span>
+            </div>
+          </div>
+          <div class="summary-card">
+            <span class="summary-label">Total Cash Balance</span>
+            <div class="summary-values">
+              <span class="summary-in-value"> 1500</span>
+              <span class="summary-out-value">000</span>
+            </div>
+          </div>
         </div>
       </div>
-
-      <!-- Inline Time Search Bar -->
-
-      <div class="report-table-container">
-        <table class="report-table">
-          <thead>
-            <tr>
-              <th>Id</th>
-              <th>Date</th>
-              <th>Type</th>
-              <th>In</th>
-              <th>Out</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>254567</td>
-              <td>22 Jan 2025</td>
-              <td>Coustmer</td>
-              <td>2000</td>
-              <td>000</td>
-            </tr>
-            <tr>
-              <td>65432</td>
-              <td>22 Jan 2025</td>
-              <td>Coustmer</td>
-              <td>1000</td>
-              <td>000</td>
-            </tr>
-            <tr>
-              <td>76543</td>
-              <td>22 Jan 2025</td>
-              <td>Coustmer</td>
-              <td style="text-align:center;">1500</td>
-              <td>000</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="summary-cards">
-        <div class="summary-card">Total Of (CASH) <span class="summary-value">1500</span> <span class="summary-value">000</span></div>
-        <div class="summary-card">Total Of (Sdjf) <span class="summary-value">1500</span> <span class="summary-value">000</span></div>
-        <div class="summary-card">Total <span class="summary-value">1500</span> <span class="summary-value">000</span></div>
-        <div class="summary-card">Total Cash Balance <span class="summary-value"> 1500</span> <span class="summary-value">000</span></div>
-      </div>
     </div>
-  </div>
-  <script src="../js/daily_report.js"></script>
-  <script src="../js/daily_report_search_modal.js"></script>
-  <script src="../js/daily_report_datepicker.js"></script>
-  <script src="../js/admin_sidebar.js"></script>
-  <script src="../js/include-html.js"></script>
-  <script src="../js/page_initializer.js"></script>
-</body>
+    <script src="../js/daily_report.js"></script>
+    <script src="../js/daily_report_search_modal.js"></script>
+    <script src="../js/daily_report_datepicker.js"></script>
+    <script src="../js/admin_sidebar.js"></script>
+    <script src="../js/include-html.js"></script>
+    <script src="../js/page_initializer.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById('openDailyReportSearch').onclick = function() {
+          document.getElementById('dailyReportSearchModal').style.display = 'flex';
+        };
+        
+        document.getElementById('closeDailyReportSearchModal').onclick = function() {
+          document.getElementById('dailyReportSearchModal').style.display = 'none';
+        };
+        
+        document.getElementById('dailyReportSearchModal').onclick = function(e) {
+          if (e.target === this) {
+            this.style.display = 'none';
+          }
+        };
+      });
+    </script>
+  </body>
 </html>

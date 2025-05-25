@@ -8,7 +8,7 @@ async function includeHTML() {
     if (file) {
       const promise = fetch(file)
         .then(resp => {
-          if (resp.ok) {
+        if (resp.ok) {
             return resp.text();
           }
           throw new Error(`Failed to load ${file}`);
@@ -18,7 +18,7 @@ async function includeHTML() {
         })
         .catch(e => {
           console.error(`Error loading component ${file}:`, e);
-          el.innerHTML = "Error loading component.";
+        el.innerHTML = "Error loading component.";
         });
       
       promises.push(promise);

@@ -24,22 +24,22 @@ window.initTableModal = function() {
   openTableBtn.addEventListener('click', function(e) {
     console.log('Add Table button clicked');
     e.preventDefault();
-    tableModal.style.display = 'flex';
+      tableModal.style.display = 'flex';
   });
   
   // Add click handler to close button
   closeTableBtn.addEventListener('click', function(e) {
     console.log('Close button clicked');
     e.preventDefault();
-    tableModal.style.display = 'none';
+      tableModal.style.display = 'none';
   });
   
   // Add click handler to close when clicking outside
   window.addEventListener('click', function(event) {
-    if (event.target === tableModal) {
+      if (event.target === tableModal) {
       console.log('Clicked outside modal');
-      tableModal.style.display = 'none';
-    }
+        tableModal.style.display = 'none';
+      }
   });
 
   // Handle form submission
@@ -62,7 +62,7 @@ window.initTableModal = function() {
     document.querySelectorAll('.table-actions .edit').forEach(function(btn) {
       btn.addEventListener('click', function(e) {
         e.preventDefault();
-        editTableModal.style.display = 'flex';
+      editTableModal.style.display = 'flex';
       });
     });
 
@@ -98,5 +98,5 @@ document.addEventListener('DOMContentLoaded', function() {
     window.initTableModal();
   } else {
     console.error('initTableModal function not found');
-  }
+}
 });

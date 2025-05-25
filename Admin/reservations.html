@@ -1,256 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reservations</title>
-    <link rel="stylesheet" href="../css/reservations.css">
-    <link rel="stylesheet" href="../css/admin_sidebar.css">
-    <link rel="stylesheet" href="../css/stores-modal.css">
-    <link rel="stylesheet" href="../css/search-modal.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../css/reservations.css" />
+
+    <link rel="stylesheet" href="../css/search_reservation.css" />
+  </head>
+  <body>
     <div include-html="../components/admin_header.html"></div>
     <div class="container">
-        <div include-html="../components/admin_sidebar.html" active-menu="Reservations"></div>
-        <main class="main-content">
-            <div class="header">
-    <h2>Reservations</h2>
-    <div class="header-actions">
-        <div class="search-section">
-            <span style="margin-right: 8px; color: #4a2d0b; font-size: 18px;">
-                <img src="images/search.png" class="search-icon" alt="Search Icon">
-            </span>
-            <input type="text" placeholder="Search By" style="border:none;outline:none;background:transparent;font-size:16px;color:#4a2d0b;">
-            <span style="margin-left: 4px; cursor:pointer;">
-                <img src="images/search.png" class="search-icon" alt="Search Icon">
-            </span>
-        </div>
-        <button class="add-reservation" id="openAddReservationModal" style="background:#a66b3a;min-width:160px;font-weight:500;font-size:15px;">New Reservation</button>
-    </div>
-</div>
-            <div class="reservations-list">
-                <!-- Repeat this block for each reservation -->
-                <div class="reservation-card">
-                    <div class="reservation-row reservation-header">
-                        <span>Reservation No :</span>
-                        <span>234567</span>
-                    </div>
-                    <div class="reservation-row">
-                        <span>Name</span>
-                        <span>Ahmed Sayed</span>
-                        <span>Table</span>
-                        <span>4</span>
-                        <span>Phone</span>
-                        <span>012345678</span>
-                        <span>Total</span>
-                        <span>220 Egp</span>
-                    </div>
-                    <div class="reservation-row">
-                        <span>Date</span>
-                        <span>22 Jun 2025</span>
-                        <span>Time</span>
-                        <span>From 12:00 Pm</span>
-                        <span>To 12:00 Pm</span>
-                    </div>
-                    <div class="reservation-actions">
-                        <button class="edit">Edit</button>
-                        <button class="delete">Delete</button>
-                    </div>
-                </div>
-                <!-- Repeat End -->
-                <div class="reservation-card">
-                    <div class="reservation-row reservation-header">
-                        <span>Reservation No :</span>
-                        <span>234567</span>
-                    </div>
-                    <div class="reservation-row">
-                        <span>Name</span>
-                        <span>Ahmed Sayed</span>
-                        <span>Table</span>
-                        <span>4</span>
-                        <span>Phone</span>
-                        <span>012345678</span>
-                        <span>Total</span>
-                        <span>220 Egp</span>
-                    </div>
-                    <div class="reservation-row">
-                        <span>Date</span>
-                        <span>22 Jun 2025</span>
-                        <span>Time</span>
-                        <span>From 12:00 Pm</span>
-                        <span>To 12:00 Pm</span>
-                    </div>
-                    <div class="reservation-actions">
-                        <button class="edit">Edit</button>
-                        <button class="delete">Delete</button>
-                    </div>
-                </div>
-                <div class="reservation-card">
-                    <div class="reservation-row reservation-header">
-                        <span>Reservation No :</span>
-                        <span>234567</span>
-                    </div>
-                    <div class="reservation-row">
-                        <span>Name</span>
-                        <span>Ahmed Sayed</span>
-                        <span>Table</span>
-                        <span>4</span>
-                        <span>Phone</span>
-                        <span>012345678</span>
-                        <span>Total</span>
-                        <span>220 Egp</span>
-                    </div>
-                    <div class="reservation-row">
-                        <span>Date</span>
-                        <span>22 Jun 2025</span>
-                        <span>Time</span>
-                        <span>From 12:00 Pm</span>
-                        <span>To 12:00 Pm</span>
-                    </div>
-                    <div class="reservation-actions">
-                        <button class="edit">Edit</button>
-                        <button class="delete">Delete</button>
-                    </div>
-                </div>
-                <div class="reservation-card">
-                    <div class="reservation-row reservation-header">
-                        <span>Reservation No :</span>
-                        <span>234567</span>
-                    </div>
-                    <div class="reservation-row">
-                        <span>Name</span>
-                        <span>Ahmed Sayed</span>
-                        <span>Table</span>
-                        <span>4</span>
-                        <span>Phone</span>
-                        <span>012345678</span>
-                        <span>Total</span>
-                        <span>220 Egp</span>
-                    </div>
-                    <div class="reservation-row">
-                        <span>Date</span>
-                        <span>22 Jun 2025</span>
-                        <span>Time</span>
-                        <span>From 12:00 Pm</span>
-                        <span>To 12:00 Pm</span>
-                    </div>
-                    <div class="reservation-actions">
-                        <button class="edit">Edit</button>
-                        <button class="delete">Delete</button>
-                    </div>
-                </div>
+      <div
+        include-html="../components/admin_sidebar.html"
+        active-menu="Reservations"
+      ></div>
+      <main class="main-content">
+        <div class="header">
+          <h2>Reservations</h2>
+          <div class="header-actions">
+            <div class="search-section">
+              <span class="search-icon-wrapper">
+                <img
+                  src="../images/search.png"
+                  class="search-icon"
+                  alt="Search Icon"
+                />
+              </span>
+              <span class="search-text">Search By</span>
+              <span class="dropdown-icon-wrapper">
+                <img
+                  src="../images/iconoir_nav-arrow-right.png"
+                  class="dropdown-icon"
+                  alt="Dropdown arrow icon"
+                />
+              </span>
             </div>
-        </main>
-    </div>
-    <!-- New Reservation Modal -->
-    <div id="addReservationModal" class="modal">
-        <div class="modal-content">
-            <span class="close" id="closeAddReservationModal">&times;</span>
-            <h2>New Reservation</h2>
-            <form id="addReservationForm">
-                <label for="reservationNo">Reservation No</label>
-                <input type="text" id="reservationNo" name="reservationNo" required>
-                <label for="reservationName">Name</label>
-                <input type="text" id="reservationName" name="reservationName" required>
-                <label for="reservationTable">Table</label>
-                <input type="text" id="reservationTable" name="reservationTable" required>
-                <label for="reservationPhone">Phone</label>
-                <input type="text" id="reservationPhone" name="reservationPhone" required>
-                <label for="reservationTotal">Total</label>
-                <input type="text" id="reservationTotal" name="reservationTotal" required>
-                <label for="reservationDate">Date</label>
-                <input type="date" id="reservationDate" name="reservationDate" required>
-                <div style="display: flex; gap: 18px;">
-                    <div style="flex:1; display:flex; flex-direction:column;">
-                        <label for="reservationTimeFrom">Time From</label>
-                        <input type="time" id="reservationTimeFrom" name="reservationTimeFrom" required>
-                    </div>
-                    <div style="flex:1; display:flex; flex-direction:column;">
-                        <label for="reservationTimeTo">Time To</label>
-                        <input type="time" id="reservationTimeTo" name="reservationTimeTo" required>
-                    </div>
-                </div>
-                <button type="submit" class="modal-add-btn">Add</button>
-            </form>
+            <button class="add-reservation" id="openAddReservationModal">
+              <img
+                src="../images/plus.png"
+                alt="Plus Icon"
+                class="plus-circle-icon"
+              />
+              New Reservation
+            </button>
+          </div>
         </div>
-    </div>
-    <!-- Search Modal -->
-    <div id="searchModal" class="modal">
-        <div class="modal-content" style="max-width: 650px;">
-            <span class="close" id="closeSearchModal">&times;</span>
-            <h2>Search Reservations</h2>
-            <div class="reservation-search-section">
-                <form id="searchReservationForm">
-                    <div class="search-group">
-                        <label class="search-label">Search By Date</label>
-                        <div class="search-row">
-                            <div class="search-field">
-                                <img src="../images/search.png" class="search-icon" alt="Search Icon">
-                                <input type="text" class="search-input" placeholder="Start Date" onfocus="(this.type='date')">
-                            </div>
-                            <div class="search-field">
-                                <input type="text" class="search-input" placeholder="End Date" onfocus="(this.type='date')">
-                            </div>
-                            <button class="search-btn">Search</button>
-                        </div>
-                    </div>
-                    <div class="search-group">
-                        <div class="search-row">
-                            <div style="flex:1; display:flex; flex-direction:column;">
-                                <label class="search-label">Search By Name</label>
-                                <div class="search-field">
-                                    <img src="../images/search.png" class="search-icon" alt="Search Icon">
-                                    <input type="text" class="search-input" placeholder="Name">
-                                </div>
-                            </div>
-                            <div style="flex:1; display:flex; flex-direction:column;">
-                                <label class="search-label">Search By Table</label>
-                                <div class="search-field">
-                                    <img src="../images/search.png" class="search-icon" alt="Search Icon">
-                                    <input type="text" class="search-input" placeholder="Table No">
-                                </div>
-                            </div>
-                            <button class="search-btn">Search</button>
-                        </div>
-                    </div>
-                    <div class="search-group">
-                        <label class="search-label">Search By Phone Number</label>
-                        <div class="search-row">
-                            <div class="search-field">
-                                <img src="../images/search.png" class="search-icon" alt="Search Icon">
-                                <input type="text" class="search-input" placeholder="Phone Number">
-                            </div>
-                            <button class="search-btn">Search</button>
-                        </div>
-                    </div>
-                    <div class="search-group">
-                        <label class="search-label">Search By Time</label>
-                        <div class="search-row">
-                            <div class="search-field">
-                                <img src="../images/search.png" class="search-icon" alt="Search Icon">
-                                <input type="text" class="search-input" placeholder="Start Time" onfocus="(this.type='time')">
-                            </div>
-                            <div class="search-field">
-                                <img src="../images/search.png" class="search-icon" alt="Search Icon">
-                                <input type="text" class="search-input" placeholder="End Time" onfocus="(this.type='time')">
-                            </div>
-                            <button class="search-btn">Search</button>
-                        </div>
-                    </div>
-                </form>
+        <div class="reservations-list">
+          <!-- Repeat this block for each reservation -->
+          <div class="reservation-card">
+            <div class="reservation-row reservation-header">
+              <span>Reservation No :</span>
+              <span>234567</span>
             </div>
+            <div class="reservation-row">
+              <span>Name</span>
+              <span>Ahmed Sayed</span>
+              <span>Table</span>
+              <span>4</span>
+              <span>Phone</span>
+              <span>012345678</span>
+              <span>Total</span>
+              <span>220 Egp</span>
+            </div>
+            <div class="reservation-row">
+              <span>Date</span>
+              <span>22 Jun 2025</span>
+              <span>Time</span>
+              <span>From 12:00 Pm</span>
+              <span>To 12:00 Pm</span>
+            </div>
+            <div class="reservation-actions">
+              <button class="edit">Edit</button>
+              <button class="delete">Delete</button>
+            </div>
+          </div>
+          <!-- Repeat End -->
+          <div class="reservation-card">
+            <div class="reservation-row reservation-header">
+              <span>Reservation No :</span>
+              <span>234567</span>
+            </div>
+            <div class="reservation-row">
+              <span>Name</span>
+              <span>Ahmed Sayed</span>
+              <span>Table</span>
+              <span>4</span>
+              <span>Phone</span>
+              <span>012345678</span>
+              <span>Total</span>
+              <span>220 Egp</span>
+            </div>
+            <div class="reservation-row">
+              <span>Date</span>
+              <span>22 Jun 2025</span>
+              <span>Time</span>
+              <span>From 12:00 Pm</span>
+              <span>To 12:00 Pm</span>
+            </div>
+            <div class="reservation-actions">
+              <button class="edit">Edit</button>
+              <button class="delete">Delete</button>
+            </div>
+          </div>
+          <div class="reservation-card">
+            <div class="reservation-row reservation-header">
+              <span>Reservation No :</span>
+              <span>234567</span>
+            </div>
+            <div class="reservation-row">
+              <span>Name</span>
+              <span>Ahmed Sayed</span>
+              <span>Table</span>
+              <span>4</span>
+              <span>Phone</span>
+              <span>012345678</span>
+              <span>Total</span>
+              <span>220 Egp</span>
+            </div>
+            <div class="reservation-row">
+              <span>Date</span>
+              <span>22 Jun 2025</span>
+              <span>Time</span>
+              <span>From 12:00 Pm</span>
+              <span>To 12:00 Pm</span>
+            </div>
+            <div class="reservation-actions">
+              <button class="edit">Edit</button>
+              <button class="delete">Delete</button>
+            </div>
+          </div>
+          <div class="reservation-card">
+            <div class="reservation-row reservation-header">
+              <span>Reservation No :</span>
+              <span>234567</span>
+            </div>
+            <div class="reservation-row">
+              <span>Name</span>
+              <span>Ahmed Sayed</span>
+              <span>Table</span>
+              <span>4</span>
+              <span>Phone</span>
+              <span>012345678</span>
+              <span>Total</span>
+              <span>220 Egp</span>
+            </div>
+            <div class="reservation-row">
+              <span>Date</span>
+              <span>22 Jun 2025</span>
+              <span>Time</span>
+              <span>From 12:00 Pm</span>
+              <span>To 12:00 Pm</span>
+            </div>
+            <div class="reservation-actions">
+              <button class="edit">Edit</button>
+              <button class="delete">Delete</button>
+            </div>
+          </div>
         </div>
+      </main>
     </div>
-    
+
+    <!-- Reservation Modal -->
+    <div id="reservationModal" class="modal">
+      <div class="modal-content">
+        <h2>Edit Reservation</h2>
+        <form id="reservationForm">
+          <div class="form-group">
+            <label for="id">ID</label>
+            <input type="text" id="id" name="id" required />
+          </div>
+          <div class="form-group">
+            <label for="nameArabic">Name In Arabic</label>
+            <input type="text" id="nameArabic" name="nameArabic" required />
+          </div>
+          <div class="form-group">
+            <label for="nameEnglish">Name In English</label>
+            <input type="text" id="nameEnglish" name="nameEnglish" required />
+          </div>
+          <div class="form-row">
+            <div class="form-group half-width">
+              <label for="noPerson">No Person</label>
+              <input type="number" id="noPerson" name="noPerson" required />
+            </div>
+            <div class="form-group half-width">
+              <label for="priceBasedOnHours">Price Based On Hours</label>
+              <input type="number" id="priceBasedOnHours" name="priceBasedOnHours" required />
+            </div>
+          </div>
+          <button type="submit" class="save-btn">Save</button>
+        </form>
+      </div>
+    </div>
+    <span class="close" id="closeReservationModal">&times;</span>
+   
+   
     <!-- Load scripts -->
+    <!-- At the bottom of your body tag -->
     <script src="../js/include-html.js"></script>
     <script src="../js/admin_sidebar.js"></script>
+    
     <script src="../js/reservation-modal.js"></script>
-    <script src="../js/search-modal.js"></script>
-
-    <!-- The inline script block will be removed -->
-
     <script src="../js/page_initializer.js"></script>
-</body>
+  </body>
 </html>
+
+<!-- Search Modal -->
+<div id="searchModal" class="modal">
+  <div class="modal-content">
+    <h2>Search By Date</h2>
+    <div class="search-form">
+      <div class="date-search">
+        <div class="search-row">
+          <div class="search-input-group">
+            <span class="search-icon">
+              <img src="../images/search.png" alt="Search" />
+            </span>
+            <input type="date" placeholder="Start Date" />
+          </div>
+          <input type="date" placeholder="End Date" />
+          <button class="search-btn">Search</button>
+        </div>
+      </div>
+
+      <h2>Search By Name</h2>
+      <div class="name-search">
+        <div class="search-row">
+          <div class="search-input-group">
+            <span class="search-icon">
+              <img src="../images/search.png" alt="Search" />
+            </span>
+            <input type="text" placeholder="Name" />
+          </div>
+          <button class="search-btn">Search</button>
+        </div>
+      </div>
+
+      <h2>Search By Table</h2>
+      <div class="table-search">
+        <div class="search-row">
+          <div class="search-input-group">
+            <span class="search-icon">
+              <img src="../images/search.png" alt="Search" />
+            </span>
+            <input type="text" placeholder="Table No" />
+          </div>
+          <button class="search-btn">Search</button>
+        </div>
+      </div>
+
+      <h2>Search By Phone Number</h2>
+      <div class="phone-search">
+        <div class="search-row">
+          <div class="search-input-group">
+            <span class="search-icon">
+              <img src="../images/search.png" alt="Search" />
+            </span>
+            <input type="text" placeholder="Phone Number" />
+          </div>
+          <button class="search-btn">Search</button>
+        </div>
+      </div>
+
+      <h2>Search By Time</h2>
+      <div class="time-search">
+        <div class="search-row">
+          <div class="search-input-group">
+            <span class="search-icon">
+              <img src="../images/search.png" alt="Search" />
+            </span>
+            <input type="time" placeholder="Start Time" />
+          </div>
+          <input type="time" placeholder="End Time" />
+          <button class="search-btn">Search</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Add this before the closing body tag -->
+<script src="../js/search-modal.js"></script>
+

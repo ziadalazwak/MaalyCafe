@@ -15,7 +15,7 @@ body {
 .main-content h2 {
     font-size: 24px;
     margin: 0 0 28px 0;
-    color: #4a2d0b;
+    color: #1B1A1A;
 }
 .settings-section {
     background: #fff;
@@ -26,7 +26,7 @@ body {
 }
 .settings-section h3 {
     margin-top: 0;
-    color: #4a2d0b;
+    color:#1B1A1A;
     font-size: 20px;
     margin-bottom: 18px;
 }
@@ -41,7 +41,7 @@ body {
     justify-content: space-between;
     border-bottom: 1px solid #eee;
     padding: 10px 0;
-    font-size: 16px;
+    font-size: 17px;
     color: #333;
     gap: 16px;
 }
@@ -53,7 +53,7 @@ body {
 .setting-row .setting-action {
     margin-left: auto;
     margin-right: 8px;
-    color: #7a4a1c;
+    color: #1B1A1A;
     font-size: 15px;
 }
 
@@ -111,7 +111,7 @@ body {
     transition: .4s;
 }
 .switch input:checked + .slider {
-    background-color: #7a4a1c;
+    background-color: #000000;
 }
 .slider:before {
     position: absolute;
@@ -130,7 +130,7 @@ body {
 .add-btn {
     display: block;
     margin: 40px 0 0 auto;
-    background: #7a4a1c;
+    background: #66371D;
     color: #fff;
     border: none;
     padding: 12px 70px;
