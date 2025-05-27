@@ -49,10 +49,10 @@
             >Next</span
           >
           <div class="search-bar" id="openDailyReportSearch">
-            <span class="search-icon">
+            <span class="search-icon-main">
               <img
                 src="../images/iconoir_search.png"
-                class="search-icon"
+                class="search-icon-main"
                 alt="Search Icon"
               />
             </span>
@@ -61,23 +61,42 @@
           </div>
         </div>
 
-        <div class="daily-report-search-modal" id="dailyReportSearchModal" style="display: none;">
+        <div
+          class="daily-report-search-modal"
+          id="dailyReportSearchModal"
+          style="display: none"
+        >
           <div class="daily-report-search-modal-content">
-            <button class="close-modal-btn" id="closeDailyReportSearchModal">&times;</button>
+            <button class="close-modal-btn" id="closeDailyReportSearchModal">
+              &times;
+            </button>
             <div class="search-block">
               <label class="search-title">Search By Date</label>
               <form class="search-by-date-form">
                 <div class="input-wrapper">
                   <span class="search-icon">
-                    <img src="../images/iconoir_search.png" alt="Search Icon">
+                    <img src="../images/iconoir_search.png" alt="Search Icon" />
                   </span>
-                  <input type="text" class="date-input" id="startDate" placeholder=" ">
-                  <label for="startDate" class="input-placeholder">Start Date</label>
+                  <input
+                    type="text"
+                    class="date-input"
+                    id="startDate"
+                    placeholder=" "
+                  />
+                  <label for="startDate" class="input-placeholder"
+                    >Start Date</label
+                  >
                 </div>
                 <div class="input-wrapper">
-                
-                  <input type="text" class="date-input" id="endDate" placeholder=" ">
-                  <label for="endDate" class="input-placeholder">End Date</label>
+                  <input
+                    type="text"
+                    class="date-input"
+                    id="endDate"
+                    placeholder=" "
+                  />
+                  <label for="endDate" class="input-placeholder"
+                    >End Date</label
+                  >
                 </div>
                 <button type="submit" class="search-btn">Search</button>
               </form>
@@ -87,15 +106,28 @@
               <form class="search-by-time-form">
                 <div class="input-wrapper">
                   <span class="search-icon">
-                    <img src="../images/iconoir_search.png" alt="Search Icon">
+                    <img src="../images/iconoir_search.png" alt="Search Icon" />
                   </span>
-                  <input type="text" class="time-input" id="startTime" placeholder=" ">
-                  <label for="startTime" class="input-placeholder">Start Time</label>
+                  <input
+                    type="text"
+                    class="time-input"
+                    id="startTime"
+                    placeholder=" "
+                  />
+                  <label for="startTime" class="input-placeholder"
+                    >Start Time</label
+                  >
                 </div>
                 <div class="input-wrapper">
-                  
-                  <input type="text" class="time-input" id="endTime" placeholder=" ">
-                  <label for="endTime" class="input-placeholder">End Time</label>
+                  <input
+                    type="text"
+                    class="time-input"
+                    id="endTime"
+                    placeholder=" "
+                  />
+                  <label for="endTime" class="input-placeholder"
+                    >End Time</label
+                  >
                 </div>
                 <button type="submit" class="search-btn">Search</button>
               </form>
@@ -171,28 +203,108 @@
         </div>
       </div>
     </div>
+
     <script src="../js/daily_report.js"></script>
-    <script src="../js/daily_report_search_modal.js"></script>
-    <script src="../js/daily_report_datepicker.js"></script>
-    <script src="../js/admin_sidebar.js"></script>
     <script src="../js/include-html.js"></script>
     <script src="../js/page_initializer.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        document.getElementById('openDailyReportSearch').onclick = function() {
-          document.getElementById('dailyReportSearchModal').style.display = 'flex';
+        document.getElementById("openDailyReportSearch").onclick = function () {
+          document.getElementById("dailyReportSearchModal").style.display =
+            "flex";
         };
-        
-        document.getElementById('closeDailyReportSearchModal').onclick = function() {
-          document.getElementById('dailyReportSearchModal').style.display = 'none';
-        };
-        
-        document.getElementById('dailyReportSearchModal').onclick = function(e) {
+
+        document.getElementById("closeDailyReportSearchModal").onclick =
+          function () {
+            document.getElementById("dailyReportSearchModal").style.display =
+              "none";
+          };
+
+        document.getElementById("dailyReportSearchModal").onclick = function (
+          e
+        ) {
           if (e.target === this) {
-            this.style.display = 'none';
+            this.style.display = "none";
           }
         };
       });
     </script>
+
+    <!-- Search Modal -->
+    <div id="dailyReportSearchModal" class="daily-report-search-modal">
+      <div class="daily-report-search-modal-content">
+        <button class="close-modal-btn" id="closeDailyReportSearchModal">
+          &times;
+        </button>
+        <div class="search-block">
+          <label class="search-title">Search By Date</label>
+          <form class="search-by-date-form">
+            <div class="input-wrapper">
+              <span class="search-icon">
+                <img src="../images/iconoir_search.png" alt="Search Icon" />
+              </span>
+              <input
+                type="text"
+                class="date-input"
+                id="startDate"
+                placeholder=" "
+              />
+              <label for="startDate" class="input-placeholder"
+                >Start Date</label
+              >
+            </div>
+            <div class="input-wrapper">
+              <input
+                type="text"
+                class="date-input"
+                id="endDate"
+                placeholder=" "
+              />
+              <label for="endDate" class="input-placeholder">End Date</label>
+            </div>
+            <button type="submit" class="search-btn">Search</button>
+          </form>
+        </div>
+        <div class="search-block">
+          <label class="search-title">Search By Time</label>
+          <form class="search-by-time-form">
+            <div class="input-wrapper">
+              <span class="search-icon">
+                <img src="../images/iconoir_search.png" alt="Search Icon" />
+              </span>
+              <input
+                type="text"
+                class="time-input"
+                id="startTime"
+                placeholder=" "
+              />
+              <label for="startTime" class="input-placeholder"
+                >Start Time</label
+              >
+            </div>
+            <div class="input-wrapper">
+              <input
+                type="text"
+                class="time-input"
+                id="endTime"
+                placeholder=" "
+              />
+              <label for="endTime" class="input-placeholder">End Time</label>
+            </div>
+            <button type="submit" class="search-btn">Search</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Date Selection Modal -->
+    <div id="dateSelectionModal" class="date-selection-modal-overlay">
+      <div class="date-selection-modal-content">
+        <h2>Select Date</h2>
+        <input type="date" id="selectedDateInput" />
+        <button id="selectDateBtn">Select Date</button>
+        <button id="closeDateSelectionModal">&times;</button>
+      </div>
+    </div>
   </body>
 </html>

@@ -1,81 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Invoice List</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap" />
- <link rel="stylesheet" href="../css/invoices.css">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap"
+    />
+    <link rel="stylesheet" href="../css/invoices.css" />
+  </head>
+  <body>
+    <div include-html="../components/PosHeader.html"></div>
 
-</head>
-<body>
-  <div include-html="components/PosHeader.html"></div>
-  
     <div class="invoice-container">
-    <div class="header-row">
-      <div class="search-box">
-        <img src="../images/search.png" alt="Search Icon" style="cursor: pointer;">
-        <input type="search" placeholder="Search For Invoices">
+      <div class="header-row">
+        <div class="search-box">
+          <img
+            src="../images/search.png"
+            alt="Search Icon"
+            style="cursor: pointer"
+          />
+          <input type="search" placeholder="Search For Invoices" />
+        </div>
+        <button class="new-invoice-btn">
+          <img src="../images/plus.png" alt="New Invoice" />
+          New Invoice
+        </button>
       </div>
-      <button class="new-invoice-btn">
-        <img src="../images/plus.png" alt="New Invoice">
-        New Invoice
-      </button>
+      <div class="invoice-list-title">
+        List Of Invoices <span class="invoice-list-count">(12)</span>
+      </div>
+      <div class="invoice-list">
+        <div class="invoice-card">
+          <div class="invoice-main-row">
+            <span class="invoice-no">No : 234567</span>
+            <span class="invoice-date">22 Jun 2025</span>
+            <span class="invoice-time">12:00 Pm</span>
+          </div>
+          <div class="invoice-details-row">
+            <span
+              ><span class="invoice-details-label">Name</span>
+              <span class="invoice-details-value">Ahmed Sayed</span></span
+            >
+            <span
+              ><span class="invoice-details-label">Tax</span>
+              <span class="invoice-details-value">200 Egp</span></span
+            >
+            <span
+              ><span class="invoice-total-label">Total</span>
+              <span class="invoice-total-value">220 Egp</span></span
+            >
+          </div>
+        </div>
+        <div class="invoice-card">
+          <div class="invoice-main-row">
+            <span class="invoice-no">No : 234567</span>
+            <span class="invoice-date">22 Jun 2025</span>
+            <span class="invoice-time">12:00 Pm</span>
+          </div>
+          <div class="invoice-details-row">
+            <span
+              ><span class="invoice-details-label">Name</span>
+              <span class="invoice-details-value">Ahmed Sayed</span></span
+            >
+            <span
+              ><span class="invoice-details-label">Tax</span>
+              <span class="invoice-details-value">200 Egp</span></span
+            >
+            <span
+              ><span class="invoice-total-label">Total</span>
+              <span class="invoice-total-value">220 Egp</span></span
+            >
+          </div>
+        </div>
+        <div class="invoice-card">
+          <div class="invoice-main-row">
+            <span class="invoice-no">No : 234567</span>
+            <span class="invoice-date">22 Jun 2025</span>
+            <span class="invoice-time">12:00 Pm</span>
+          </div>
+          <div class="invoice-details-row">
+            <span
+              ><span class="invoice-details-label">Name</span>
+              <span class="invoice-details-value">Ahmed Sayed</span></span
+            >
+            <span
+              ><span class="invoice-details-label">Tax</span>
+              <span class="invoice-details-value">200 Egp</span></span
+            >
+            <span
+              ><span class="invoice-total-label">Total</span>
+              <span class="invoice-total-value">220 Egp</span></span
+            >
+          </div>
+        </div>
+        <div class="invoice-card">
+          <div class="invoice-main-row">
+            <span class="invoice-no">No : 234567</span>
+            <span class="invoice-date">22 Jun 2025</span>
+            <span class="invoice-time">12:00 Pm</span>
+          </div>
+          <div class="invoice-details-row">
+            <span
+              ><span class="invoice-details-label">Name</span>
+              <span class="invoice-details-value">Ahmed Sayed</span></span
+            >
+            <span
+              ><span class="invoice-details-label">Tax</span>
+              <span class="invoice-details-value">200 Egp</span></span
+            >
+            <span
+              ><span class="invoice-total-label">Total</span>
+              <span class="invoice-total-value">220 Egp</span></span
+            >
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="invoice-list-title">
-      List Of Invoices <span class="invoice-list-count">(12)</span>
-    </div>
-    <div class="invoice-list">
-      <div class="invoice-card">
-        <div class="invoice-main-row">
-          <span class="invoice-no">No : 234567</span>
-          <span class="invoice-date">22 Jun 2025</span>
-          <span class="invoice-time">12:00 Pm</span>
-        </div>
-        <div class="invoice-details-row">
-          <span><span class="invoice-details-label">Name</span> <span class="invoice-details-value">Ahmed Sayed</span></span>
-          <span><span class="invoice-details-label">Tax</span> <span class="invoice-details-value">200 Egp</span></span>
-          <span><span class="invoice-total-label">Total</span> <span class="invoice-total-value">220 Egp</span></span>
-        </div>
-      </div>
-      <div class="invoice-card">
-        <div class="invoice-main-row">
-          <span class="invoice-no">No : 234567</span>
-          <span class="invoice-date">22 Jun 2025</span>
-          <span class="invoice-time">12:00 Pm</span>
-        </div>
-        <div class="invoice-details-row">
-          <span><span class="invoice-details-label">Name</span> <span class="invoice-details-value">Ahmed Sayed</span></span>
-          <span><span class="invoice-details-label">Tax</span> <span class="invoice-details-value">200 Egp</span></span>
-          <span><span class="invoice-total-label">Total</span> <span class="invoice-total-value">220 Egp</span></span>
-        </div>
-      </div>
-      <div class="invoice-card">
-        <div class="invoice-main-row">
-          <span class="invoice-no">No : 234567</span>
-          <span class="invoice-date">22 Jun 2025</span>
-          <span class="invoice-time">12:00 Pm</span>
-        </div>
-        <div class="invoice-details-row">
-          <span><span class="invoice-details-label">Name</span> <span class="invoice-details-value">Ahmed Sayed</span></span>
-          <span><span class="invoice-details-label">Tax</span> <span class="invoice-details-value">200 Egp</span></span>
-          <span><span class="invoice-total-label">Total</span> <span class="invoice-total-value">220 Egp</span></span>
-        </div>
-      </div>
-      <div class="invoice-card">
-        <div class="invoice-main-row">
-          <span class="invoice-no">No : 234567</span>
-          <span class="invoice-date">22 Jun 2025</span>
-          <span class="invoice-time">12:00 Pm</span>
-        </div>
-        <div class="invoice-details-row">
-          <span><span class="invoice-details-label">Name</span> <span class="invoice-details-value">Ahmed Sayed</span></span>
-          <span><span class="invoice-details-label">Tax</span> <span class="invoice-details-value">200 Egp</span></span>
-          <span><span class="invoice-total-label">Total</span> <span class="invoice-total-value">220 Egp</span></span>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-<script src="../js/include-html.js"></script>
+  </body>
+  <script src="../js/include-html.js"></script>
 </html>

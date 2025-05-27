@@ -1,8 +1,8 @@
 /* Styles for the search modal to match the provided image */
 
 /* Modal Overlay */
-.modal {
-  display: flex; /* Use flexbox for centering */
+.search-modal-overlay {
+  display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1000; /* Sit on top */
   left: 0;
@@ -16,7 +16,7 @@
 }
 
 /* Modal Content */
-.modal-content {
+.search-modal-content {
   background: #fff; /* White background */
   border-radius: 12px; /* Rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
@@ -27,7 +27,7 @@
 }
 
 /* Headings */
-.modal-content h2 {
+.search-modal-content h2 {
   font-size: 18px; /* Font size from image */
   font-weight: normal; /* Font weight from image */
   color: #4d3c31; /* Text color from image (approximately) */
@@ -42,17 +42,36 @@
 }
 
 .date-search,
-.name-search,
-.table-search,
 .phone-search,
 .time-search {
-  display: flex; /* Use flexbox for side-by-side layout */
+  display: flex; /* Use flexbox for layout */
   align-items: center; /* Align items vertically */
   gap: 20px; /* Space between the heading and the search row */
 }
 
+.name-and-table-search-row {
+    display: flex; /* Use flexbox to put name and table sections side-by-side */
+    gap: 20px; /* Space between Name and Table sections */
+}
+
+.name-search,
+.table-search {
+    flex: 1; /* Allow Name and Table sections to take equal space */
+    display: flex; /* Use flexbox for layout within each section */
+    flex-direction: column; /* Stack heading, input group, and button vertically */
+}
+
+.name-search h2,
+.table-search h2 {
+    margin-bottom: 8px; /* Space between heading and input row */
+}
+
 .search-form > div {
-    margin-bottom: 0; /* Remove previous bottom margin */
+    margin-bottom: 20px; /* Add bottom margin back to separate sections */
+}
+
+.search-form > div:last-child {
+    margin-bottom: 0; /* No bottom margin for the last section */
 }
 
 .search-row {
@@ -69,11 +88,11 @@
 }
 
 /* Input Fields */
-#searchModal .modal-content .search-input-group input[type="date"],
-#searchModal .modal-content .search-input-group input[type="text"],
-#searchModal .modal-content .search-input-group input[type="time"] {
+.search-input-group input[type="date"],
+.search-input-group input[type="text"],
+.search-input-group input[type="time"] {
   font-family: inherit;
-  border: none; /* Explicitly remove border */
+  border: none; /* No border */
   border-bottom: 1px solid #d3b5a5; /* Subtle bottom border from image */
   background: transparent;
   font-size: 16px; /* Font size */
@@ -83,16 +102,16 @@
   width: 100%; /* Full width within its container */
 }
 
-#searchModal .modal-content .search-input-group input[type="date"]::placeholder,
-#searchModal .modal-content .search-input-group input[type="text"]::placeholder,
-#searchModal .modal-content .search-input-group input[type="time"]::placeholder {
+.search-input-group input[type="date"]::placeholder,
+.search-input-group input[type="text"]::placeholder,
+.search-input-group input[type="time"]::placeholder {
   color: #d3b5a5; /* Placeholder color from image */
   opacity: 1;
 }
 
-#searchModal .modal-content .search-input-group input[type="date"]:focus,
-#searchModal .modal-content .search-input-group input[type="text"]:focus,
-#searchModal .modal-content .search-input-group input[type="time"]:focus {
+.search-input-group input[type="date"]:focus,
+.search-input-group input[type="text"]:focus,
+.search-input-group input[type="time"]:focus {
   border-bottom-color: #a8715c; /* Slightly darker border on focus */
 }
 
@@ -118,4 +137,4 @@
 
 .search-btn:hover {
   background: #8a542b; /* Darker background on hover */
-} 
+}

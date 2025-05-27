@@ -1,0 +1,47 @@
+body {
+    font-family: 'Abhaya Libre', serif;
+    background-color: #f8f6f3;
+    margin: 0;
+    padding: 0;
+    color: #4d3c31;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #4d3c31;
+    margin-bottom: 20px;
+}
+
+.terms-section {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(80, 40, 10, 0.06);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.terms-section h2 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #4d3c31;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.terms-section p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin: 0;
+} 

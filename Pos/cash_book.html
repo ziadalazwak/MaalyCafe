@@ -1,74 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cash Book</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap" />
-  <link rel="stylesheet" href="../css/cash_book.css">
-
-</head>
-<body>
-  <div include-html="components/PosHeader.html"></div>
-  <div class="cashbook-container">
-    <div class="cashbook-header-row">
-  <div class="cashbook-search-row">
-    <img src="../images/search.png" alt="Search Icon" class="cashbook-search-icon">
-    <input type="search" placeholder="Search By Day" class="cashbook-search-input">
-  </div>
-</div>
-    <div class="cashbook-date-nav">
-  <span>Pre</span>
-  <button class="cashbook-date-btn"><b>&#8249;</b></button>
-  <span class="cashbook-date-label">12 JUN 2025</span>
-  <button class="cashbook-date-btn"><b>&#8250;</b></button>
-  <span>Next</span>
-</div>
-    <div class="cashbook-list">
-      <table class="cashbook-table">
-  <thead class="cashbook-table-head">
-    <tr class="cashbook-table-row">
-      <th class="cashbook-table-cell cashbook-table-th first-th">Date</th>
-      <th class="cashbook-table-cell cashbook-table-th">Type</th>
-      <th class="cashbook-table-cell cashbook-table-th">No</th>
-      <th class="cashbook-table-cell cashbook-table-th">Member</th>
-      <th class="cashbook-table-cell cashbook-table-th">Payment</th>
-      <th class="cashbook-table-cell cashbook-table-th">Credit</th>
-      <th class="cashbook-table-cell cashbook-table-th last-th">Debts</th>
-    </tr>
-  </thead>
-  <tbody class="cashbook-table-body">
-    <tr class="cashbook-table-row">
-      <td class="cashbook-table-cell">22 Jun 2025</td>
-      <td class="cashbook-table-cell">Cash In</td>
-      <td class="cashbook-table-cell">3</td>
-      <td class="cashbook-table-cell">Ahmed</td>
-      <td class="cashbook-table-cell">1,200</td>
-      <td class="cashbook-table-cell">1,200</td>
-      <td class="cashbook-table-cell">0</td>
-    </tr>
-    <tr class="cashbook-table-row">
-      <td class="cashbook-table-cell">22 Jun 2025</td>
-      <td class="cashbook-table-cell">Cash In</td>
-      <td class="cashbook-table-cell">2</td>
-      <td class="cashbook-table-cell">Mohamed</td>
-      <td class="cashbook-table-cell">1,600</td>
-      <td class="cashbook-table-cell">800</td>
-      <td class="cashbook-table-cell">0</td>
-    </tr>
-    <tr class="cashbook-table-row">
-      <td class="cashbook-table-cell">22 Jun 2025</td>
-      <td class="cashbook-table-cell">Cash Out</td>
-      <td class="cashbook-table-cell">4</td>
-      <td class="cashbook-table-cell">Khalid</td>
-      <td class="cashbook-table-cell">900</td>
-      <td class="cashbook-table-cell">0</td>
-      <td class="cashbook-table-cell">200</td>
-    </tr>
-  </tbody>
-</table>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cash Book</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap"
+    />
+    <link rel="stylesheet" href="../css/cash_book.css" />
+  </head>
+  <body>
+    <div include-html="../components/PosHeader.html"></div>
+    <div class="cashbook-container">
+      <div class="cashbook-header-row">
+        <div class="cashbook-search-row">
+          <img
+            src="../images/search.png"
+            alt="Search Icon"
+            class="cashbook-search-icon"
+          />
+          <input
+            type="search"
+            placeholder="Search By Day"
+            class="cashbook-search-input"
+          />
+        </div>
+      </div>
+      <div class="cashbook-date-nav">
+        <span>Pre</span>
+        <button class="cashbook-date-btn"><b>&#8249;</b></button>
+        <span class="cashbook-date-label">12 JUN 2025</span>
+        <button class="cashbook-date-btn"><b>&#8250;</b></button>
+        <span>Next</span>
+      </div>
+      <div class="cashbook-list">
+        <table class="cashbook-table">
+          <thead class="cashbook-table-head">
+            <tr class="cashbook-table-row">
+              <th class="cashbook-table-cell cashbook-table-th first-th">
+                Date
+              </th>
+              <th class="cashbook-table-cell cashbook-table-th">Type</th>
+              <th class="cashbook-table-cell cashbook-table-th">No</th>
+              <th class="cashbook-table-cell cashbook-table-th">Member</th>
+              <th class="cashbook-table-cell cashbook-table-th">Payment</th>
+              <th class="cashbook-table-cell cashbook-table-th">Credit</th>
+              <th class="cashbook-table-cell cashbook-table-th last-th">
+                Debts
+              </th>
+            </tr>
+          </thead>
+          <tbody class="cashbook-table-body">
+            <tr class="cashbook-table-row">
+              <td class="cashbook-table-cell">22 Jun 2025</td>
+              <td class="cashbook-table-cell">Cash In</td>
+              <td class="cashbook-table-cell">3</td>
+              <td class="cashbook-table-cell">Ahmed</td>
+              <td class="cashbook-table-cell">1,200</td>
+              <td class="cashbook-table-cell">1,200</td>
+              <td class="cashbook-table-cell">0</td>
+            </tr>
+            <tr class="cashbook-table-row">
+              <td class="cashbook-table-cell">22 Jun 2025</td>
+              <td class="cashbook-table-cell">Cash In</td>
+              <td class="cashbook-table-cell">2</td>
+              <td class="cashbook-table-cell">Mohamed</td>
+              <td class="cashbook-table-cell">1,600</td>
+              <td class="cashbook-table-cell">800</td>
+              <td class="cashbook-table-cell">0</td>
+            </tr>
+            <tr class="cashbook-table-row">
+              <td class="cashbook-table-cell">22 Jun 2025</td>
+              <td class="cashbook-table-cell">Cash Out</td>
+              <td class="cashbook-table-cell">4</td>
+              <td class="cashbook-table-cell">Khalid</td>
+              <td class="cashbook-table-cell">900</td>
+              <td class="cashbook-table-cell">0</td>
+              <td class="cashbook-table-cell">200</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-  </div>
-</body>
-<script src="../js/include-html.js"></script>
+  </body>
+  <script src="../js/include-html.js"></script>
 </html>

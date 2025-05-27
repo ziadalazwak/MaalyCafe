@@ -208,31 +208,51 @@ body {
 
 /* Table scroll on mobile */
 /* Modal Styles */
-.dr-modal-overlay {
+.daily-report-search-modal {
+
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(60, 40, 20, 0.15);
-  z-index: 9999;
-  display: flex;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: none;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
-.dr-modal {
+
+.daily-report-search-modal.active {
+  display: flex;
+  opacity: 1;
+}
+
+.daily-report-search-modal-content {
   background: #fff;
-  border-radius: 11px;
-  box-shadow: 0 6px 30px #e9e2db;
-  padding: 38px 32px 32px 32px;
-  min-width: 500px;
-  max-width: 98vw;
+  padding: 20px;
+  border-radius: 8px;
+  width: 600px;
+  height: 150p;
+  max-width: 95%;
+  text-align: left;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   position: relative;
+  transform: scale(0.7);
+  opacity: 0;
+  transition: all 0.3s ease;
 }
+
+.daily-report-search-modal.active .daily-report-search-modal-content {
+  transform: scale(1);
+  opacity: 1;
+}
+
 .dr-modal-close {
   position: absolute;
-  top: 18px;
-  right: 18px;
+  top: 10px;
+  right: 10px;
   background: none;
   border: none;
   font-size: 28px;
@@ -241,9 +261,10 @@ body {
 }
 .dr-modal-title {
   font-size: 22px;
-  font-weight: 500;
-  color: #6d4f37;
-  margin-bottom: 18px;
+  font-weight: bold;
+  color: #4d3c31;
+  margin-bottom: 15px;
+  text-align: left;
 }
 .dr-modal-section {
   margin-bottom: 30px;
@@ -315,4 +336,186 @@ body {
     padding: 10px 8px;
     font-size: 14px;
   }
+}
+
+.search-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #4d3c31;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.search-block {
+  margin-bottom: 20px;
+}
+
+.search-by-date-form,
+.search-by-time-form {
+  display: flex;
+  gap: 100px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.input-wrapper {
+  position: relative;
+  flex-grow: 0;
+  flex-basis: 200px;
+  min-width: 160px;
+}
+
+/* Specific style for the input wrapper containing the Start Date input */
+div.input-wrapper:has(input#startDate) {
+  flex-basis: 150px; /* Reduced width for Start Date input wrapper */
+  min-width: 120px; /* Adjusted min-width */
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+.search-icon-main {
+  position: absolute;
+ width: 25px;
+ right: 65px;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.search-icon img {
+  width: 20px;
+  height: 20px;
+}
+
+.date-input,
+.time-input {
+  width: 100%;
+  padding: 10px 10px 10px 40px;
+  border: none;
+  border-bottom: 1px solid #b38165;
+  border-radius: 0;
+  font-size: 16px;
+  color: #333;
+  outline: none;
+  transition: border-color 0.2s;
+  background: transparent;
+}
+
+.date-input:focus,
+.time-input:focus {
+  border-bottom-color: #a17553;
+}
+
+.input-placeholder {
+  position: absolute;
+  left: 40px;
+  top: 10px;
+  font-size: 16px;
+  color: #a8715c;
+  pointer-events: none;
+  transition: all 0.2s ease-out;
+}
+
+.date-input:focus + .input-placeholder,
+.date-input:not(:placeholder-shown) + .input-placeholder,
+.time-input:focus + .input-placeholder,
+.time-input:not(:placeholder-shown) + .input-placeholder {
+  top: -10px;
+  font-size: 12px;
+  color: #a17553;
+}
+
+.search-btn {
+  background: #a17553;
+  
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.search-btn:hover {
+  background-color: #7b4c2f;
+}
+
+/* Styles for the close button */
+#closeDailyReportSearchModal {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #c39a7c;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Date Selection Modal Styles */
+.date-selection-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: 1000; /* Above other content */
+  display: none; /* Initially hidden */
+  align-items: center;
+  justify-content: center;
+}
+
+.date-selection-modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center; /* Center content within the modal */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.date-selection-modal-content h2 {
+  color: #4d3c31; /* Match other headings */
+  margin-top: 0;
+}
+
+.date-selection-modal-content input[type="date"] {
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.date-selection-modal-content button {
+  padding: 10px 20px;
+  background-color: #a17553; /* Match other buttons */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.date-selection-modal-content button:hover {
+  background-color: #7b4c2f; /* Match hover effect */
+}
+
+/* Style for the close button within the date selection modal */
+#closeDateSelectionModal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #c39a7c; /* Match other close button color */
+  cursor: pointer;
 }

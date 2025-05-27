@@ -198,16 +198,17 @@
     <!-- Load scripts -->
     <!-- At the bottom of your body tag -->
     <script src="../js/include-html.js"></script>
-    <script src="../js/admin_sidebar.js"></script>
+ 
     
     <script src="../js/reservation-modal.js"></script>
     <script src="../js/page_initializer.js"></script>
+    <script src="../js/search-modal.js"></script>
   </body>
 </html>
 
 <!-- Search Modal -->
-<div id="searchModal" class="modal">
-  <div class="modal-content">
+<div id="searchModal" class="search-modal-overlay">
+  <div class="search-modal-content">
     <h2>Search By Date</h2>
     <div class="search-form">
       <div class="date-search">
@@ -216,36 +217,40 @@
             <span class="search-icon">
               <img src="../images/search.png" alt="Search" />
             </span>
-            <input type="date" placeholder="Start Date" />
+            <input type="text" placeholder="Start Date" />
           </div>
-          <input type="date" placeholder="End Date" />
-          <button class="search-btn">Search</button>
-        </div>
-      </div>
-
-      <h2>Search By Name</h2>
-      <div class="name-search">
-        <div class="search-row">
           <div class="search-input-group">
-            <span class="search-icon">
-              <img src="../images/search.png" alt="Search" />
-            </span>
-            <input type="text" placeholder="Name" />
+         
+            <input type="text" placeholder="End Date" />
           </div>
           <button class="search-btn">Search</button>
         </div>
       </div>
 
-      <h2>Search By Table</h2>
-      <div class="table-search">
-        <div class="search-row">
-          <div class="search-input-group">
-            <span class="search-icon">
-              <img src="../images/search.png" alt="Search" />
-            </span>
-            <input type="text" placeholder="Table No" />
+      <div class="name-and-table-search-row">
+        <div class="name-search">
+          <h2>Search By Name</h2>
+          <div class="search-row">
+            <div class="search-input-group">
+              <span class="search-icon">
+                <img src="../images/search.png" alt="Search" />
+              </span>
+              <input type="text" placeholder="Name" />
+            </div>
           </div>
-          <button class="search-btn">Search</button>
+        </div>
+
+        <div class="table-search">
+          <h2>Search By Table</h2>
+          <div class="search-row">
+            <div class="search-input-group">
+              <span class="search-icon">
+                <img src="../images/search.png" alt="Search" />
+              </span>
+              <input type="text" placeholder="Table No" />
+            </div>
+            <button class="search-btn">Search</button>
+          </div>
         </div>
       </div>
 
@@ -269,9 +274,12 @@
             <span class="search-icon">
               <img src="../images/search.png" alt="Search" />
             </span>
-            <input type="time" placeholder="Start Time" />
+            <input type="text" placeholder="Start Time" />
           </div>
-          <input type="time" placeholder="End Time" />
+          <div class="search-input-group">
+          
+            <input type="text" placeholder="End Time" />
+          </div>
           <button class="search-btn">Search</button>
         </div>
       </div>
@@ -279,5 +287,5 @@
   </div>
 </div>
 <!-- Add this before the closing body tag -->
-<script src="../js/search-modal.js"></script>
+
 

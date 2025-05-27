@@ -41,5 +41,7 @@ window.initReservationModal = function() {
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    initReservationModal();
+    // Removed the direct call to initReservationModal() here
 });
+
+// Call initReservationModal() only when needed, e.g., by user interaction.

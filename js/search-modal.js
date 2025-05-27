@@ -3,26 +3,42 @@ document.addEventListener('DOMContentLoaded', function() {
   const searchSection = document.querySelector('.search-section');
   const searchIcon = document.querySelector('.search-icon-wrapper');
   const searchText = document.querySelector('.search-text');
+  const modalContent = searchModal ? searchModal.querySelector('.search-modal-content') : null;
 
   // Function to open modal
   function openSearchModal() {
-    searchModal.style.display = 'block';
+    if (searchModal) {
+      searchModal.style.display = 'flex';
+    }
   }
 
   // Function to close modal
   function closeSearchModal() {
-    searchModal.style.display = 'none';
+    if (searchModal) {
+      searchModal.style.display = 'none';
+    }
   }
 
   // Event listeners for opening modal
-  searchSection.addEventListener('click', openSearchModal);
+  if (searchSection) {
+    searchSection.addEventListener('click', openSearchModal);
+  }
   searchIcon.addEventListener('click', openSearchModal);
   searchText.addEventListener('click', openSearchModal);
 
   // Close modal when clicking outside
-  window.addEventListener('click', function(event) {
-    if (event.target === searchModal) {
-      closeSearchModal();
-    }
-  });
+  if (searchModal) {
+    searchModal.addEventListener('click', function(event) {
+      if (event.target === searchModal) {
+        closeSearchModal();
+      }
+    });
+  }
+
+  // Prevent clicks inside the modal content from closing the modal
+  if (modalContent) {
+    modalContent.addEventListener('click', function(event) {
+      event.stopPropagation();
+    });
+  }
 });
