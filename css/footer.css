@@ -7,44 +7,122 @@
   color: #fff;
 
   width: 100vw;
-  min-height: 600px;
+  min-height: auto;
+  padding-bottom: 20px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  overflow: hidden;
 }
-
 
 .footer-art img {
-  width: 300px;
-  position: absolute;
-  left: 60px;
-  top: 50px;
+  width: clamp(150px, 20vw, 300px);
+  position: relative;
+  display: block;
+  margin: 50px auto 20px auto;
 }
+
 .footer-content {
   display: flex;
   justify-content: center;
-  gap: 120px;
-  margin-left: 200px;
+  gap: clamp(30px, 8vw, 120px);
+  margin: 0 auto;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  padding: 0 20px;
 }
+
 .footer-content > div {
   margin-right: 0;
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
 }
+
 .footer-content > div:not(:last-child) {
-  margin-right: 80px;
+  margin-right: 0;
 }
+
 @media (max-width: 900px) {
   .footer-content {
     flex-direction: column;
-    gap: 48px;
+    gap: 32px;
     margin-left: 0;
     align-items: center;
+    padding: 0 15px;
+  }
+  .footer-content > div {
+    margin-bottom: 20px;
+    text-align: center;
   }
   .footer-content > div:not(:last-child) {
     margin-right: 0;
-    margin-bottom: 32px;
+    margin-bottom: 20px;
+  }
+  .footer-art img {
+    margin: 30px auto 15px auto;
+  }
+  .footer-content h4 {
+    margin-top: 50px;
+  }
+  .footer-content li {
+    padding-top: 10px;
   }
 }
+
+@media (max-width: 600px) {
+  .footer-art img {
+    width: clamp(100px, 30vw, 200px);
+    margin: 20px auto 10px auto;
+  }
+  .footer-content {
+    gap: 20px;
+    padding: 0 10px;
+  }
+  .footer-content h4 {
+    font-size: 1.2rem;
+    margin-top: 30px;
+  }
+  .footer-content ul {
+    font-size: 0.9rem;
+  }
+  .footer-content li {
+    padding-top: 5px;
+  }
+  .footer-social a {
+    font-size: 1rem;
+  }
+  .footer-bottom {
+    font-size: 0.85rem;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-content {
+    gap: 15px;
+    padding: 0 5px;
+  }
+  .footer-content h4 {
+    font-size: 1.1rem;
+    margin-top: 20px;
+  }
+  .footer-content ul {
+    font-size: 0.85rem;
+  }
+  .footer-content li {
+    padding-top: 3px;
+  }
+  .footer-social a {
+    font-size: 0.9rem;
+  }
+  .footer-bottom {
+    font-size: 0.8rem;
+    margin-top: 15px;
+  }
+}
+
 .footer-content h4 {
   font-family: "Abhaya Libre Medium", cursive;
   margin-bottom: 12px;
