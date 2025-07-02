@@ -114,10 +114,79 @@
 @media (max-width: 600px) {
   .modal-content {
     width: 98vw;
-    padding: 18px 2vw 12px 2vw;
+    max-width: 98vw;
+    min-width: 0;
+    padding: 10px 2vw 8px 2vw;
+    margin: 8px auto;
+    border-radius: 12px;
+    box-sizing: border-box;
+    max-height: 90vh;
+    overflow-y: auto;
+    align-items: stretch;
+  }
+  .modal-title {
+    font-size: 16px;
   }
   .form-row {
-    flex-direction: column;
-    gap: 8px;
+
+    gap: 6px;
+  }
+  .form-group label {
+    font-size: 12px;
+    margin-left: 2px;
+  }
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="password"] {
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 12px;
+  }
+  .expire-input {
+    width: 36px;
+  }
+  .radio-label {
+    font-size: 12px;
+    gap: 4px;
+    margin-left: 2px;
+  }
+  .save-btn {
+    font-size: 14px;
+    padding: 8px 0;
+    border-radius: 12px;
+  }
+}
+@media (max-width: 400px) {
+  .modal-content {
+    width: 99vw;
+    padding: 10px 1vw 8px 1vw;
+    border-radius: 14px;
+  }
+  .modal-title {
+    font-size: 18px;
+  }
+  .form-group label {
+    font-size: 12px;
+    margin-left: 2px;
+  }
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="password"] {
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 14px;
+  }
+  .expire-input {
+    width: 40px;
+  }
+  .radio-label {
+    font-size: 12px;
+    gap: 4px;
+    margin-left: 2px;
+  }
+  .save-btn {
+    font-size: 15px;
+    padding: 8px 0;
+    border-radius: 16px;
   }
 }

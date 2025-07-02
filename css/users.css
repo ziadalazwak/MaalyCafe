@@ -191,3 +191,70 @@ body {
     align-items: flex-start;
   }
 }
+@media (max-width: 600px) {
+  .main-content {
+    padding: 8px 2px 0 2px;
+  }
+  .users-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .users-header-row h2 {
+    font-size: 16px;
+  }
+  .add-user-btn {
+    font-size: 13px;
+    padding: 6px 10px;
+    width: 100%;
+    min-width: 0;
+    margin-top: 6px;
+  }
+  .user-list {
+    gap: 10px;
+  }
+  .user-card-wrapper {
+    flex-direction: column;
+    gap: 6px;
+    margin: 0 0 12px 0;
+    align-items: stretch;
+  }
+  .user-card {
+    padding: 10px 6px 8px 6px;
+    border-radius: 8px;
+    width: 100%;
+    min-width: 0;
+    height: auto;
+  }
+  .user-card-row {
+    margin-bottom: 6px;
+  }
+  .user-title {
+    font-size: 13px;
+  }
+  .user-status {
+    font-size: 12px;
+    margin-left: 8px;
+  }
+  .user-info-row {
+    gap: 4px;
+    font-size: 11px;
+    flex-wrap: wrap;
+  }
+  .user-info-row span,
+  .user-info-row span b {
+    font-size: 11px;
+  }
+  .user-actions-outside {
+    flex-direction: row;
+    gap: 8px;
+    margin-left: 0;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .edit-action,
+  .delete-action {
+    font-size: 11px;
+    padding: 0 2px;
+  }
+}

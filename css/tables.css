@@ -107,7 +107,7 @@ body {
   }
   .table-card {
     padding: 12px 8px;
-    flex-direction: column;
+    
     align-items: flex-start;
   }
   .table-details {
@@ -118,5 +118,59 @@ body {
   .table-actions .delete {
     padding: 8px 18px;
     font-size: 13px;
+  }
+}
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .header h2 {
+    font-size: 18px;
+  }
+  .add-table {
+    font-size: 14px;
+    padding: 8px 12px;
+    min-width: 100px;
+    min-height: 34px;
+    width: 100%;
+    margin-top: 8px;
+  }
+  .tables-list {
+    gap: 12px;
+  }
+  .table-card {
+    padding: 8px 4px;
+    flex-direction: column;
+    align-items: stretch;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .table-info {
+    gap: 6px;
+  }
+  .table-name {
+    font-size: 15px;
+  }
+  .table-details {
+    flex-direction: column;
+    gap: 4px;
+    font-size: 12px;
+    margin-top: 8px;
+  }
+  .table-actions {
+    flex-direction: row;
+    gap: 8px;
+    margin-top: 10px;
+    justify-content: center;
+  }
+  .table-actions .edit,
+  .table-actions .delete {
+    font-size: 12px;
+    padding: 6px 10px;
+    min-width: 60px;
+    min-height: 28px;
   }
 }

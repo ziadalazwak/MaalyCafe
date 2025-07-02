@@ -3,147 +3,208 @@ body {
     font-family: 'Abhaya Libre Medium', serif;
     background: #f9f5f5;
 }
+
 .container {
     display: flex;
     min-height: 100vh;
 }
+
 .main-content {
     flex: 1;
-    padding: 32px 32px 0 32px;
+    padding: clamp(16px, 4vw, 32px);
     background: #f9f5f5;
 }
+
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 32px;
+    margin-bottom: clamp(16px, 4vw, 32px);
+    flex-wrap: wrap;
+    gap: 16px;
 }
+
 .header h2 {
-    font-size: 24px;
+    font-size: clamp(20px, 3vw, 24px);
     margin: 0;
     color: #4a2d0b;
 }
+
 .add-store {
     background: #7a4a1c;
     color: #fff;
     border: none;
     padding: 10px 28px;
     border-radius: 18px;
-    font-size: 16px;
+    font-size: clamp(14px, 2vw, 16px);
     cursor: pointer;
     transition: background 0.2s;
+    white-space: nowrap;
 }
+
 .add-store:hover {
     background: #a66b3a;
 }
+
 .stores-list {
-    display: flex;
-    gap: 32px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: clamp(16px, 3vw, 32px);
 }
+
 .store-card {
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(80,40,10,0.06);
     display: flex;
     align-items: center;
-    padding: 18px 28px;
-    min-width: 320px;
-    max-width: 360px;
-    margin-bottom: 18px;
-    height: 100px;
+    padding: 18px;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 100px;
 }
+
 .store-card img {
-    width: 64px;
-    height: 64px;
+    width: clamp(48px, 8vw, 64px);
+    height: clamp(48px, 8vw, 64px);
     border-radius: 10px;
     object-fit: cover;
     margin-right: 18px;
+    flex-shrink: 0;
 }
+
 .store-info {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100%;
+    min-width: 0; /* Allows text to wrap properly */
 }
+
 .store-name {
-    font-size: 25px;
+    font-size: clamp(18px, 3vw, 25px);
     color: #4a2d0b;
-    margin-bottom: -50px;
-    display: flex;
-    align-items: center;
-    margin-left: 15px;
+    margin: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
+
 .store-actions {
     display: flex;
-    gap: 14px;
-}
-.vertical-actions {
     flex-direction: column;
-    align-items: flex-end;
     gap: 8px;
+    align-items: flex-end;
     justify-content: center;
+    flex-shrink: 0;
 }
-.store-actions .edit {
-    background: #C36532;
-    color: #fff;
+
+.store-actions .edit,
+.store-actions .delete {
     border: none;
     border-radius: 22px;
-    padding: 8px 0;
-    font-size: 14px;
+    padding: 8px 16px;
+    font-size: clamp(12px, 1.5vw, 14px);
     cursor: pointer;
     transition: background 0.2s;
     font-weight: 300;
     box-shadow: none;
-    min-width: 80px;
+    min-width: 70px;
     min-height: 32px;
-    display: inline-block;
     text-align: center;
     line-height: 1;
-    vertical-align: middle;
+    color: #fff;
 }
+
+.store-actions .edit {
+    background: #C36532;
+}
+
 .store-actions .edit:hover {
     background: #7a4a1c;
 }
+
 .store-actions .delete {
     background: #8F0C0E;
-    color: #fff;
-    border: none;
-    border-radius: 22px;
-    padding: 8px 0;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background 0.2s;
-    font-weight: 300;
-    box-shadow: none;
-    min-width: 80px;
-    min-height: 32px;
-    display: inline-block;
-    text-align: center;
-    line-height: 1;
-    vertical-align: middle;
 }
+
 .store-actions .delete:hover {
     background: #c13d1a;
 }
-@media (max-width: 900px) {
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
     .stores-list {
-        flex-direction: column;
-        gap: 18px;
+        grid-template-columns: 1fr;
+        gap: 16px;
     }
-    .main-content {
-        padding: 18px 8px 0 8px;
-    }
+    
     .store-card {
-        min-width: unset;
-        width: 100%;
+        padding: 16px;
+        min-height: 80px;
     }
-    .store-card {
-        min-width: unset;
-        width: 100%;
+    
+    .store-card img {
+        margin-right: 12px;
     }
-    .store-card {
-        min-width: unset;
-        width: 100%;
+    
+    .store-actions {
+        gap: 6px;
+    }
+    
+    .store-actions .edit,
+    .store-actions .delete {
+        min-width: 60px;
+        padding: 6px 12px;
+        font-size: 12px;
     }
 }
+
+/* Very small screens */
+@media (max-width: 480px) {
+    .header {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+    
+    .add-store {
+        width: 100%;
+        margin-top: 8px;
+    }
+    
+    .store-card {
+        padding: 12px;
+        flex-direction: column;
+        text-align: center;
+        min-height: auto;
+    }
+    
+    .store-card img {
+        margin-right: 0;
+        margin-bottom: 12px;
+        align-self: center;
+    }
+    
+    .store-info {
+        margin-bottom: 12px;
+    }
+    
+    .store-actions {
+        flex-direction: row;
+        justify-content: center;
+        gap: 12px;
+    }
+}
+
+/* Very large screens */
+@media (min-width: 1400px) {
+    .stores-list {
+        grid-template-columns: repeat(auto-fit, minmax(360px, 400px));
+    }
+}
+
+html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+

@@ -1,31 +1,46 @@
+/* Base styles */
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Abhaya Libre", serif;
   background: #f8f6f3;
   margin: 0;
   color: #4d3c31;
+  overflow-x: hidden;
 }
 
 .container {
   display: flex;
   min-height: 100vh;
+  width: 100%;
 }
+
 .sidebar {
   min-width: 220px;
+  flex-shrink: 0;
 }
+
 .main-content {
   flex: 1;
   padding: 36px 38px 0 38px;
   background: #f8f6f3;
+  width: 0;
+  min-width: 0;
 }
 
+/* Header responsive design */
 .header-row {
   display: flex;
   align-items: center;
   gap: 15px;
   font-size: 19px;
   margin-bottom: 30px;
+  flex-wrap: wrap;
 }
-.date-btn {
+
+.date-btn, .nav-btn {
   background: #6b3a18;
   border: none;
   color: #fff;
@@ -37,26 +52,21 @@ body {
   box-shadow: 0 2px 6px #e6d3c5;
   transition: background 0.2s;
   cursor: pointer;
+  flex-shrink: 0;
 }
+
 .date-btn:active,
 .date-btn:focus {
   background: #a8715c;
   outline: none;
 }
+
 .nav-btn {
-  background: #6b3a18;
-  color: #fff;
-  border-radius: 12px;
-  padding: 6px 14px;
-  font-size: 24px;
-  font-weight: bold;
-  margin: 0 5px;
-  border: none;
-  box-shadow: 0 2px 6px #e6d3c5;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
+
 .nav-btn b {
   color: #fff;
   font-size: 24px;
@@ -66,12 +76,15 @@ body {
 .date-btn:hover {
   background: #a66b3a;
 }
+
 .date-label {
   font-weight: 700;
   color: #4d3c31;
   margin: 0 10px;
   font-size: 28px;
+  white-space: nowrap;
 }
+
 .search-bar {
   margin-left: auto;
   display: flex;
@@ -79,6 +92,7 @@ body {
   font-size: 17px;
   color: #4d3c31;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .search-icon img {
@@ -91,10 +105,12 @@ body {
   font-size: 12px;
   color: #4d3c31;
 }
+
 .search-bar span {
   color: #4d3c31;
 }
 
+/* Table container with horizontal scroll */
 .report-table-container {
   margin-top: 12px;
   border-radius: 12px;
@@ -103,49 +119,53 @@ body {
   padding: 0 18px 0 18px;
   background-color: #f9f9f9;
   margin-bottom: 30px;
+  width: 100%;
+  overflow-x: auto;
 }
+
 .report-table {
   width: 100%;
+  min-width: 600px;
   border-collapse: collapse;
   border: none;
 }
+
 .report-table th,
 .report-table td {
   padding: 18px 25px;
   text-align: center;
   border-right: 1px solid #313131;
   color: #1b1a1a;
+  white-space: nowrap;
 }
+
 .report-table thead th {
   font-weight: bold;
   color: #1b1a1a;
   font-size: 20px;
   border-bottom: none;
-  text-align: center;
 }
+
 .report-table td {
   font-size: 30px;
   color: #555;
   font-weight: bold;
-  text-align: center;
 }
+
 .report-table th:last-child,
 .report-table td:last-child {
   border-right: none;
 }
+
 .report-table thead {
   background-color: #ffffff;
   border-bottom: 1px solid #313131;
 }
-.report-table thead th {
-  font-weight: bold;
-  color: #1b1a1a;
-  font-size: 20px;
-  border-bottom: none;
-}
+
 .report-table thead th:first-child {
   border-top-left-radius: 12px;
 }
+
 .report-table thead th:last-child {
   border-top-right-radius: 12px;
 }
@@ -154,26 +174,25 @@ body {
   background-color: transparent;
   border-bottom: 1px solid #313131;
 }
+
 .report-table tbody tr:last-child td {
   border-bottom: none;
-}
-.report-table td {
-  font-size: 30px;
-  color: #555;
-  font-weight: bold;
 }
 
 .report-table tbody tr:last-child td:first-child {
   border-bottom-left-radius: 12px;
 }
+
 .report-table tbody tr:last-child td:last-child {
   border-bottom-right-radius: 12px;
 }
 
+/* Summary cards responsive design */
 .summary-cards {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  width: 100%;
 }
 
 .summary-card {
@@ -183,6 +202,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .summary-label {
@@ -194,6 +215,7 @@ body {
 .summary-values {
   display: flex;
   gap: 80px;
+  flex-wrap: wrap;
 }
 
 .summary-in-value,
@@ -206,10 +228,8 @@ body {
   margin-right: 80px;
 }
 
-/* Table scroll on mobile */
 /* Modal Styles */
 .daily-report-search-modal {
-
   position: fixed;
   top: 0;
   left: 0;
@@ -222,6 +242,7 @@ body {
   justify-content: center;
   opacity: 0;
   transition: opacity 0.3s ease;
+  padding: 20px;
 }
 
 .daily-report-search-modal.active {
@@ -233,9 +254,10 @@ body {
   background: #fff;
   padding: 20px;
   border-radius: 8px;
-  width: 600px;
-  height: 150p;
-  max-width: 95%;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
   text-align: left;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -259,26 +281,36 @@ body {
   color: #c39a7c;
   cursor: pointer;
 }
-.dr-modal-title {
+
+.dr-modal-title, .search-title {
   font-size: 22px;
   font-weight: bold;
   color: #4d3c31;
   margin-bottom: 15px;
   text-align: left;
 }
+
+.dr-modal-section, .search-block {
+  margin-bottom: 20px;
+}
+
 .dr-modal-section {
   margin-bottom: 30px;
 }
+
 .dr-modal-row {
   display: flex;
   align-items: center;
   gap: 28px;
+  flex-wrap: wrap;
 }
+
 .dr-modal-icon {
   font-size: 26px;
   color: #b38165;
   margin-right: 5px;
 }
+
 .dr-modal-input {
   font-family: inherit;
   border: none;
@@ -292,15 +324,18 @@ body {
   width: 170px;
   transition: border-color 0.2s;
 }
+
 .dr-modal-input::placeholder {
   color: #a8715c;
   font-size: 20px;
   font-family: inherit;
   opacity: 1;
 }
+
 .dr-modal-input:focus {
   border-bottom: 2.5px solid #a17553;
 }
+
 .dr-modal-btn {
   background: #7b4c2f;
   border: none;
@@ -317,45 +352,18 @@ body {
   margin: 0 5px;
   transition: background 0.2s;
 }
-.dr-modal-btn:hover {
-  background: #5c3320;
-}
+
 .dr-modal-btn:hover {
   background: #a17553;
-}
-@media (max-width: 900px) {
-  .main-content {
-    margin-left: 0;
-    padding: 20px 10px;
-  }
-  .report-table-container {
-    padding: 8px 0;
-  }
-  .report-table th,
-  .report-table td {
-    padding: 10px 8px;
-    font-size: 14px;
-  }
-}
-
-.search-title {
-  font-size: 22px;
-  font-weight: bold;
-  color: #4d3c31;
-  margin-bottom: 15px;
-  text-align: left;
-}
-
-.search-block {
-  margin-bottom: 20px;
 }
 
 .search-by-date-form,
 .search-by-time-form {
   display: flex;
-  gap: 100px;
+  gap: 20px;
   align-items: center;
   justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 .input-wrapper {
@@ -365,10 +373,9 @@ body {
   min-width: 160px;
 }
 
-/* Specific style for the input wrapper containing the Start Date input */
 div.input-wrapper:has(input#startDate) {
-  flex-basis: 150px; /* Reduced width for Start Date input wrapper */
-  min-width: 120px; /* Adjusted min-width */
+  flex-basis: 150px;
+  min-width: 120px;
 }
 
 .search-icon {
@@ -378,17 +385,13 @@ div.input-wrapper:has(input#startDate) {
   transform: translateY(-50%);
   z-index: 1;
 }
+
 .search-icon-main {
   position: absolute;
- width: 25px;
- right: 65px;
+  width: 25px;
+  right: 65px;
   transform: translateY(-50%);
   z-index: 1;
-}
-
-.search-icon img {
-  width: 20px;
-  height: 20px;
 }
 
 .date-input,
@@ -431,7 +434,6 @@ div.input-wrapper:has(input#startDate) {
 
 .search-btn {
   background: #a17553;
-  
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -439,13 +441,13 @@ div.input-wrapper:has(input#startDate) {
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  flex-shrink: 0;
 }
 
 .search-btn:hover {
   background-color: #7b4c2f;
 }
 
-/* Styles for the close button */
 #closeDailyReportSearchModal {
   position: absolute;
   top: 15px;
@@ -465,24 +467,27 @@ div.input-wrapper:has(input#startDate) {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
-  z-index: 1000; /* Above other content */
-  display: none; /* Initially hidden */
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: none;
   align-items: center;
   justify-content: center;
+  padding: 20px;
 }
 
 .date-selection-modal-content {
   background: #fff;
   padding: 20px;
   border-radius: 8px;
-  text-align: center; /* Center content within the modal */
+  text-align: center;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   position: relative;
+  width: 100%;
+  max-width: 400px;
 }
 
 .date-selection-modal-content h2 {
-  color: #4d3c31; /* Match other headings */
+  color: #4d3c31;
   margin-top: 0;
 }
 
@@ -492,11 +497,13 @@ div.input-wrapper:has(input#startDate) {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
+  width: 100%;
+  max-width: 200px;
 }
 
 .date-selection-modal-content button {
   padding: 10px 20px;
-  background-color: #a17553; /* Match other buttons */
+  background-color: #a17553;
   color: white;
   border: none;
   border-radius: 4px;
@@ -505,10 +512,9 @@ div.input-wrapper:has(input#startDate) {
 }
 
 .date-selection-modal-content button:hover {
-  background-color: #7b4c2f; /* Match hover effect */
+  background-color: #7b4c2f;
 }
 
-/* Style for the close button within the date selection modal */
 #closeDateSelectionModal {
   position: absolute;
   top: 10px;
@@ -516,6 +522,177 @@ div.input-wrapper:has(input#startDate) {
   background: none;
   border: none;
   font-size: 24px;
-  color: #c39a7c; /* Match other close button color */
+  color: #c39a7c;
   cursor: pointer;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1200px) {
+  .summary-values {
+    gap: 40px;
+  }
+  
+  .summary-in-value,
+  .summary-out-value {
+    margin-right: 40px;
+  }
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    min-width: 180px;
+  }
+  
+  .main-content {
+    padding: 20px 10px;
+  }
+  
+  .header-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  
+  .search-bar {
+    margin-left: 0;
+    justify-content: center;
+  }
+  
+  .date-label {
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  .report-table-container {
+    padding: 8px 0;
+    margin: 0 -10px;
+  }
+  
+  .report-table th,
+  .report-table td {
+    padding: 10px 8px;
+    font-size: 14px;
+  }
+  
+  .report-table td {
+    font-size: 18px;
+  }
+  
+  .summary-card {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .summary-values {
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .summary-in-value,
+  .summary-out-value {
+    margin-right: 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .sidebar {
+    min-width: 150px;
+  }
+  
+  .main-content {
+    padding: 15px 5px;
+  }
+  
+  .date-btn, .nav-btn {
+    font-size: 18px;
+    padding: 4px 8px;
+    margin: 0 2px;
+  }
+  
+  .date-label {
+    font-size: 20px;
+    margin: 0 5px;
+  }
+  
+  .report-table {
+    min-width: 500px;
+  }
+  
+  .report-table th,
+  .report-table td {
+    padding: 8px 6px;
+    font-size: 12px;
+  }
+  
+  .report-table td {
+    font-size: 16px;
+  }
+  
+  .summary-label {
+    font-size: 18px;
+  }
+  
+  .summary-in-value,
+  .summary-out-value {
+    font-size: 18px;
+  }
+  
+  .dr-modal-row {
+    gap: 15px;
+  }
+  
+  .dr-modal-input {
+    width: 140px;
+    font-size: 18px;
+  }
+  
+  .search-by-date-form,
+  .search-by-time-form {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    min-width: 120px;
+  }
+  
+  .report-table {
+    min-width: 450px;
+  }
+  
+  .report-table th,
+  .report-table td {
+    padding: 6px 4px;
+    font-size: 11px;
+  }
+  
+  .report-table td {
+    font-size: 14px;
+  }
+  
+  .summary-values {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .dr-modal-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  
+  .search-by-date-form,
+  .search-by-time-form {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .input-wrapper {
+    flex-basis: auto;
+    min-width: auto;
+  }
 }

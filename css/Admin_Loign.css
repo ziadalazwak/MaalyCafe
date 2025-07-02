@@ -3,7 +3,6 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: 'Abhaya Libre', serif;
-  
 }
 
 .admin-login-bg {
@@ -27,26 +26,35 @@ body, html {
   max-width: 480px;
   z-index: 2;
   position: relative;
+
+}
+
+.admin-login-logo {
+  display: flex;
+  justify-content: center;
+
 }
 
 .admin-login-logo img {
-    width: 400px;
-    margin-top: -250px;
+  width: clamp(200px, 35vw, 400px);
+  max-width: 400px;
+  height: auto;
 }
 
 .admin-login-title {
-  font-size: 2.6rem;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
   color: #fff;
-  margin-top: -60px;
   margin-bottom: 8px;
   font-weight: 700;
   letter-spacing: 1px;
+  text-align: center;
 }
 
 .admin-login-subtitle {
   color: #fff;
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
   margin-bottom: 28px;
+  text-align: center;
 }
 
 .admin-login-form {
@@ -71,10 +79,10 @@ body, html {
   max-width: 400px;
   height: 48px;
   border-radius: 32px;
-  border: 2px solid transparent; /* Make border transparent */
+  border: 2px solid transparent;
   background-image: 
-    linear-gradient(#7e5f48,#7e5f48), /* inner background */
-    linear-gradient(90deg, #e0a872, #f8e4be, #fff3e0, #e0a872); /* border gradient */
+    linear-gradient(#7e5f48,#7e5f48),
+    linear-gradient(90deg, #e0a872, #f8e4be, #fff3e0, #e0a872);
   background-origin: border-box;
   background-clip: padding-box, border-box;
   color: #E9E2E2;
@@ -91,6 +99,7 @@ body, html {
 .admin-login-form input[type="password"]:focus {
   border: 2.5px solid #E9E2E2;
 }
+
 .admin-login-type-select option {
   color: #42362B;
 }
@@ -105,11 +114,10 @@ body, html {
   max-width: 400px;
   height: 48px;
   border-radius: 32px;
-
   background: linear-gradient(#7B4C2F, #7B4C2F),
   linear-gradient(90deg, #e0a872, #f8e4be, #fff3e0, #e0a872);
-background-origin: border-box;
-background-clip: padding-box, border-box;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
   border: 2px solid transparent;
   color: #fff;
   font-size: 1.1rem;
@@ -119,70 +127,207 @@ background-clip: padding-box, border-box;
   cursor: pointer;
   transition: background 0.2s, border 0.2s;
 }
+
 .admin-login-btn:hover {
   background: #5c3320;
   border: 2.5px solid #e0a872;
 }
 
 .admin-login-art {
-  position: absolute;
-  right:0px;
-  bottom: 175px ;
+  position: fixed;
+  bottom: 0;
+  right: 0;
   z-index: 1;
+  pointer-events: none;
+  padding: clamp(10px, 2vw, 30px);
 }
 
 .admin-login-art img {
-    width: 600px;
-    max-width: 38vw;
-   margin-left:200px;
-
-    display: block;
-    position:absolute;
-    z-index: 2;
-
+  width: clamp(150px, 25vw, 500px);
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 2;
 }
-.admin-login-art::before {
-    content: "";
-    position: absolute;
-    top: 220%;
-    left:270px;
 
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    z-index: 1;
-    filter: blur(60px);
-    pointer-events: none;
-  
-    background: radial-gradient(
-      circle,
-      rgba(0, 0, 0, 0.4) 0%,
-      rgba(0, 0, 0, 0.2) 40%,
-      rgba(0, 0, 0, 0.05) 80%,
-      rgba(0, 0, 0, 0) 100%
-    );
-  }
+.admin-login-art::before {
+  content: "";
+  position: absolute;
+  bottom: 10%;
+  right: 20%;
+  width: clamp(100px, 20vw, 300px);
+  height: clamp(100px, 20vw, 300px);
+  border-radius: 50%;
+  z-index: 1;
+  filter: blur(clamp(20px, 4vw, 60px));
+  pointer-events: none;
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.2) 40%,
+    rgba(0, 0, 0, 0.05) 80%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
 .floating-bean {
   position: absolute;
   z-index: 0;
-  width: 54px;
+  width: clamp(20px, 3vw, 54px);
   filter: drop-shadow(0 4px 8px rgba(68,51,43,0.18));
 }
-.bean1 { top: 0px; right:20vw; }
-.bean2 { top: 80px; right: 3vw; }
-.bean3 { top: 340px;right: 20vw;filter: brightness(0.8) invert(0.01); }
-.bean4 { bottom: 100px; left: 20vw; }
-.bean5 { bottom: 150px; right:50vw; }
-.bean6 { bottom: 150px; right:60vw; }
 
-@media (max-width: 900px) {
-  .admin-login-art img { width: 200px; }
-  .admin-login-art { right: 4vw; }
-  .admin-login-center { max-width: 98vw; }
+.bean1 { top: 10%; right: 20vw; }
+.bean2 { top: 15%; right: 8vw; }
+.bean3 { top: 40%; right: 22vw; filter: brightness(0.8) invert(0.01); }
+.bean4 { bottom: 15%; left: 18vw; }
+.bean5 { bottom: 20%; right: 45vw; }
+.bean6 { bottom: 25%; right: 55vw; }
+
+/* Extra small mobile (320px and below) */
+@media (max-width: 320px) {
+  .admin-login-center {
+    padding: 15px 10px;
+    max-width: 95vw;
+  }
+  
+  .admin-login-logo img {
+    width: clamp(160px, 45vw, 200px);
+  }
+  
+  .admin-login-art {
+    padding: 5px;
+  }
+  
+  .admin-login-art img {
+    width: clamp(80px, 18vw, 120px);
+  }
+  
+  .admin-login-form input[type="text"],
+  .admin-login-form input[type="password"],
+  .admin-login-type-select,
+  .admin-login-btn {
+    font-size: 0.9rem;
+    height: 40px;
+    padding: 0 16px;
+  }
 }
-@media (max-width: 600px) {
-  .admin-login-logo img { width: 110px; }
-  .admin-login-art img { width: 120px; }
-  .admin-login-center { padding: 0 8px; }
-  .admin-login-title { font-size: 2rem; }
+
+/* Small mobile (321px - 480px) */
+@media (min-width: 321px) and (max-width: 480px) {
+  .admin-login-center {
+    padding: 20px 15px;
+    max-width: 90vw;
+  }
+  
+  .admin-login-logo img {
+    width: clamp(180px, 40vw, 250px);
+  }
+  
+  .admin-login-art img {
+    width: clamp(100px, 20vw, 150px);
+  }
+  
+  .admin-login-form input[type="text"],
+  .admin-login-form input[type="password"],
+  .admin-login-type-select,
+  .admin-login-btn {
+    font-size: 1rem;
+    height: 44px;
+    padding: 0 18px;
+  }
+}
+
+/* Medium mobile (481px - 600px) */
+@media (min-width: 481px) and (max-width: 600px) {
+  .admin-login-center {
+    padding: 20px;
+    max-width: 85vw;
+  }
+  
+  .admin-login-logo img {
+    width: clamp(200px, 35vw, 280px);
+  }
+  
+  .admin-login-art img {
+    width: clamp(120px, 22vw, 180px);
+  }
+}
+
+/* Large mobile / Small tablet (601px - 768px) */
+@media (min-width: 601px) and (max-width: 768px) {
+  .admin-login-center {
+    max-width: 80vw;
+  }
+  
+  .admin-login-logo img {
+    width: clamp(220px, 32vw, 320px);
+  }
+  
+  .admin-login-art img {
+    width: clamp(140px, 24vw, 220px);
+  }
+}
+
+/* Tablet (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .admin-login-center {
+    max-width: 500px;
+  }
+  
+  .admin-login-logo img {
+    width: clamp(250px, 30vw, 350px);
+  }
+  
+  .admin-login-art img {
+    width: clamp(180px, 26vw, 280px);
+  }
+}
+
+/* Small desktop (1025px - 1200px) */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .admin-login-logo img {
+    width: clamp(280px, 28vw, 380px);
+  }
+  
+  .admin-login-art img {
+    width: clamp(220px, 28vw, 350px);
+  }
+}
+
+/* Medium desktop (1201px - 1400px) */
+@media (min-width: 1201px) and (max-width: 1400px) {
+  .admin-login-logo img {
+    width: clamp(300px, 26vw, 400px);
+  }
+  
+  .admin-login-art img {
+    width: clamp(250px, 30vw, 400px);
+  }
+}
+
+/* Large desktop (1401px and above) */
+@media (min-width: 1401px) {
+  .admin-login-logo img {
+    width: clamp(320px, 24vw, 450px);
+  }
+  
+  .admin-login-art img {
+    width: clamp(300px, 32vw, 500px);
+  }
+  
+  .admin-login-art {
+    padding: clamp(20px, 3vw, 50px);
+  }
+}
+
+/* Ultra-wide screens (1920px and above) */
+@media (min-width: 1920px) {
+  .admin-login-logo img {
+    width: clamp(350px, 20vw, 500px);
+  }
+  
+  .admin-login-art img {
+    width: clamp(350px, 28vw, 600px);
+  }
 }
