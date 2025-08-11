@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reservations</title>
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/reservationlist.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Dancing+Script:700|Poppins:400,600&display=swap"
+    />
+  </head>
+  <body>
+    <div class="page-shell">
+      <div include-html="components/navbar.html"></div>
+      <div class="reservation-list-wrapper">
+      <div class="section-title">Reservations</div>
+      <div class="filter-btns">
+        <button>All</button>
+        <button>Not Paid</button>
+        <button>Deposit</button>
+        <button>Paid</button>
+      </div>
+      <!-- Reservation Card 1 -->
+      <div class="reservation-card">
+        <div class="res-header">
+          <span class="res-title">Reservation No 2532</span>
+          <span class="res-status">Confirmed</span>
+          <span class="res-max-cancel">Max Cancel Date: 22 Jun</span>
+        </div>
+        <div class="res-info">
+          <span>Table 3</span>
+          <span>Time : From 2:30 PM To 4:00 PM</span>
+        </div>
+        <div class="res-info">
+          <span>Date : 21 Jun 2025</span>
+          <span>Price : 250 Egp</span>
+          <span>No Of People : 4</span>
+        </div>
+        <div class="res-footer">
+          <span class="status-btn paid">Paid</span>
+          <button class="cancel-btn">Cancel Res</button>
+        </div>
+      </div>
+      <!-- Reservation Card 2 -->
+      <div class="reservation-card">
+        <div class="res-header">
+          <span class="res-title">Reservation No 2532</span>
+          <span class="res-status">Confirmed</span>
+          <span class="res-max-cancel">Max Cancel Date: 22 Jun</span>
+        </div>
+        <div class="res-info">
+          <span>Table 3</span>
+          <span>Time : From 2:30 PM To 4:00 PM</span>
+        </div>
+        <div class="res-info">
+          <span>Date : 21 Jun 2025</span>
+          <span>Price : 250 Egp</span>
+          <span>No Of People : 4</span>
+        </div>
+        <div class="res-footer">
+          <span class="status-btn notpaid">Not Paid</span>
+          <button class="cancel-btn">Cancel Res</button>
+        </div>
+      </div>
+      <!-- Reservation Card 3 -->
+      <div class="reservation-card">
+        <div class="res-header">
+          <span class="res-title">Reservation No 2532</span>
+          <span class="res-status">Confirmed</span>
+          <span class="res-max-cancel">Max Cancel Date: 22 Jun</span>
+        </div>
+        <div class="res-info">
+          <span>Table 3</span>
+          <span>Time : From 2:30 PM To 4:00 PM</span>
+        </div>
+        <div class="res-info">
+          <span>Date : 21 Jun 2025</span>
+          <span>Price : 250 Egp</span>
+          <span>No Of People : 4</span>
+        </div>
+        <div class="res-footer">
+          <span class="status-btn deposit">Deposit</span>
+          <button class="cancel-btn">Cancel Res</button>
+        </div>
+      </div>
+      
+ 
+      <div include-html="components/footer.html"></div>
+    </div>
+    <script src="js/include-html.js"></script>
+  </body>
+
+</html>

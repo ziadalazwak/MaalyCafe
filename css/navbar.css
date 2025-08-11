@@ -1,0 +1,108 @@
+.logo-corner {
+  position: absolute;
+  top: 0px;
+  left: 64px;
+  z-index: 20;
+}
+
+.logo-corner img {
+  width: 100px;
+  height: 90px;
+  bottom: 80%;
+  justify-content: flex-start;
+}
+
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #e3c08d;
+  text-decoration: none;
+  font-size: 1.12rem;
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+  letter-spacing: 0.7px;
+  transition: color 0.2s;
+  padding: 8px 16px;
+  border-radius: 12px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.nav-links a:hover {
+  color: #fff;
+  background: rgba(227,192,141,0.08);
+}
+
+.cart-icon {
+  cursor: pointer;
+  margin-left: 18px;
+  font-size: 1.22rem;
+}
+
+.cart-icon:focus,
+.nav-links a:focus {
+  outline: 2px solid #e3c08d;
+  outline-offset: 2px;
+}
+
+@media (max-width: 900px) {
+  .logo-corner {
+    top: 12px;
+    left: 12px;
+  }
+  .navbar {
+    padding: 18px 10px 0 0;
+    gap: 16px;
+    z-index: 200;
+    position: relative;
+  }
+  .nav-links {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo-corner {
+    top: 4px;
+    left: 4px;
+  }
+  .logo-corner img {
+    width: 64px;
+    height: 64px;
+  }
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 8px 4px 0 4px;
+    min-height: unset;
+    border-radius: 0 0 16px 16px;
+  }
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    width: 100%;
+    padding: 0;
+  }
+  .nav-links a {
+    font-size: 0.95rem;
+    padding: 6px 10px;
+    width: 100%;
+    border-radius: 8px;
+    text-align: left;
+  }
+  .cart-icon {
+    margin-left: 0;
+    font-size: 1.1rem;
+  }
+}

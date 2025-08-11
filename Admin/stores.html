@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stores</title>
+    <link rel="stylesheet" href="../css/stores.css" />
+    <link rel="stylesheet" href="../css/stores-modal.css" />
+  </head>
+  <body>
+    <div include-html="../components/admin_header.html"></div>
+
+    <div class="container">
+      <div
+        include-html="../components/admin_sidebar.html"
+        active-menu="Stores"
+      ></div>
+      <main class="main-content">
+        <div class="header">
+          <h2>(2) Stores</h2>
+          <button class="add-store" id="openAddStoreModal">Add Store</button>
+        </div>
+        <div class="stores-list">
+          <div class="store-card">
+            <img
+              src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=100&q=80"
+              alt="Drinks"
+            />
+            <div class="store-info">
+              <span class="store-name">Drinks</span>
+              <div class="store-actions vertical-actions">
+                <button class="edit">Edit</button>
+                <button class="delete">Delete</button>
+              </div>
+            </div>
+          </div>
+          <div class="store-card">
+            <img
+              src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=100&q=80"
+              alt="Drinks"
+            />
+            <div class="store-info">
+              <span class="store-name">Drinks</span>
+              <div class="store-actions vertical-actions">
+                <button class="edit">Edit</button>
+                <button class="delete">Delete</button>
+              </div>
+            </div>
+          </div>
+          <div class="store-card">
+            <img
+              src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=100&q=80"
+              alt="Bakery"
+            />
+            <div class="store-info">
+              <span class="store-name">Bakery</span>
+              <div class="store-actions vertical-actions">
+                <button class="edit">Edit</button>
+                <button class="delete">Delete</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        
+      </main>
+    </div>
+
+    <!-- Add Store Modal -->
+    <div id="addStoreModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeAddStoreModal">&times;</span>
+        <h2>Add Store</h2>
+        <form id="addStoreForm">
+          <div class="form-group id-group">
+            <label for="storeId">ID</label>
+            <input
+              type="text"
+              id="storeId"
+              name="storeId"
+              class="id-input"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="storeNameAr">Name In Arabic</label>
+            <input type="text" id="storeNameAr" name="storeNameAr" required />
+          </div>
+          <div class="form-group">
+            <label for="storeNameEn">Name In English</label>
+            <input type="text" id="storeNameEn" name="storeNameEn" required />
+          </div>
+          <button type="submit" class="modal-add-btn">Add</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Load scripts -->
+
+    <script src="../js/include-html.js"></script>
+
+    <script src="../js/stores-modal.js"></script>
+    <script src="../js/page_initializer.js"></script>
+  </body>
+</html>

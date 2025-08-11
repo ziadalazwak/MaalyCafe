@@ -1,0 +1,443 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Abhaya Libre', serif;
+  background: #f9f5f5;
+  margin: 0;
+  color: #1B1A1A;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100vw;
+}
+
+.main-content {
+  flex: 1;
+  padding: 32px;
+  background: #f9f5f5;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.pos-vouchers-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.pos-vouchers-header-row h2 {
+  font-size: clamp(20px, 4vw, 24px);
+  margin: 0;
+  color: #1B1A1A;
+}
+
+.pos-vouchers-search-model {
+  background: #fff;
+  border-radius: 4px;
+  margin-bottom: 32px;
+  padding: 32px 24px 24px 24px;
+  box-shadow: 0 2px 8px rgba(80,40,10,0.06);
+  width: 100%;
+  max-width: 100%;
+}
+
+.search-block {
+  margin-bottom: 32px;
+}
+
+.search-title {
+  display: block;
+  font-size: clamp(18px, 3.5vw, 22px);
+  color: #1B1A1A;
+  margin-bottom: 16px;
+  font-family: inherit;
+}
+
+.search-by-date-form,
+.search-by-invoice-form {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.input-with-icon {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  border-bottom: 1px solid #b38165;
+  padding-bottom: 5px;
+  min-width: 200px;
+}
+
+.input-with-icon .search-icon {
+  flex-shrink: 0;
+}
+
+.input-with-icon .search-icon img {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  filter: brightness(0.5) sepia(1) hue-rotate(300deg) saturate(2);
+}
+
+.date-input,
+.invoice-input {
+  border: none;
+  background: none;
+  font-size: clamp(16px, 2.5vw, 18px);
+  color: #4d3c31;
+  outline: none;
+  padding: 0;
+  flex-grow: 1;
+  width: 100%;
+  min-width: 0;
+}
+
+.date-input::placeholder,
+.invoice-input::placeholder {
+  color: #b38165;
+  opacity: 1;
+}
+
+.date-placeholder, .invoice-placeholder {
+  display: none;
+}
+
+.search-btn {
+  background-color: #a66b3a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: clamp(16px, 2.5vw, 18px);
+  font-weight: 500;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.search-btn:hover {
+  background-color: #8a542b;
+}
+
+/* Table wrapper with horizontal scroll */
+.pos-vouchers-table-wrapper {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(80,40,10,0.06);
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 16px 0;
+  width: 100%;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Custom scrollbar for webkit browsers */
+.pos-vouchers-table-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.pos-vouchers-table-wrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.pos-vouchers-table-wrapper::-webkit-scrollbar-thumb {
+  background: #a66b3a;
+  border-radius: 4px;
+}
+
+.pos-vouchers-table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #8a542b;
+}
+
+.pos-vouchers-table {
+  width: 100%;
+  min-width: 600px; /* Minimum width to ensure table doesn't get too cramped */
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.pos-vouchers-table th, .pos-vouchers-table td {
+  padding: 40px 15px;
+  text-align: center;
+  color: #1B1A1A;
+  border-bottom: 1px solid #a7a5a5;
+  border-right: 1px solid #a7a5a5;
+  white-space: nowrap;
+  min-width: 100px;
+}
+
+.pos-vouchers-table th:last-child, .pos-vouchers-table td:last-child {
+  border-right: none;
+}
+
+.pos-vouchers-table thead {
+  background-color: #ffffff;
+  border-bottom: none;
+}
+
+.pos-vouchers-table thead th {
+  background-color: #fff;
+  font-weight: bold;
+  font-size: clamp(16px, 2.5vw, 18px);
+  color: #1B1A1A;
+  border-bottom: none;
+  text-align: center;
+  padding: 15px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.pos-vouchers-table thead th:first-child {
+  border-top-left-radius: 12px;
+}
+
+.pos-vouchers-table thead th:last-child {
+  border-top-right-radius: 12px;
+}
+
+.pos-vouchers-table tbody tr {
+  background-color: #F9F9F9;
+}
+
+.pos-vouchers-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.pos-vouchers-table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 12px;
+}
+
+.pos-vouchers-table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 12px;
+}
+
+.pos-vouchers-table th, .pos-vouchers-table td {
+  border-top: none;
+  border-left: none;
+}
+
+.pos-vouchers-search-modal {
+  position: fixed;
+  top: 0; 
+  left: 0; 
+  width: 100vw; 
+  height: 100vh;
+  background: rgba(60, 40, 20, 0.18);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.pos-vouchers-search-modal-content {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(80,40,10,0.13);
+  padding: 38px 48px 32px 48px;
+  min-width: 520px;
+  max-width: 90vw;
+  max-height: 90vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow-y: auto;
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 2.2rem;
+  color: #a67c6b;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.close-modal-btn:hover {
+  color: #7a4a1c;
+}
+
+.search-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: clamp(15px, 2.5vw, 17px);
+  color: #7a4a1c;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.2s;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.search-section:hover {
+  background: #f6f2ef;
+}
+
+.search-icon img {
+  width: 28px;
+  height: 28px;
+  vertical-align: middle;
+  filter: brightness(0); 
+  margin-bottom: 2px;
+}
+
+.search-label {
+  color: #1B1A1A;
+  font-weight: bold;
+  font-size: clamp(18px, 3vw, 20px);
+}
+
+/* Tablet styles */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 24px 16px;
+  }
+  
+  .pos-vouchers-search-model {
+    padding: 24px 16px;
+  }
+  
+  .pos-vouchers-table th, .pos-vouchers-table td {
+    padding: 20px 10px;
+    font-size: 14px;
+  }
+  
+  .pos-vouchers-table {
+    min-width: 500px;
+  }
+  
+  .search-by-date-form, .search-by-invoice-form {
+    gap: 16px;
+  }
+  
+  .input-with-icon {
+    min-width: 180px;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 480px) {
+  .main-content {
+    padding: 16px 8px;
+  }
+  
+  .pos-vouchers-header-row {
+    margin-bottom: 24px;
+  }
+  
+  .pos-vouchers-search-model {
+    padding: 16px 12px;
+    margin-bottom: 24px;
+  }
+  
+  .search-block {
+    margin-bottom: 24px;
+  }
+  
+  .pos-vouchers-table-wrapper {
+    padding: 8px 0;
+  }
+  
+  .pos-vouchers-table th, .pos-vouchers-table td {
+    padding: 15px 8px;
+    font-size: 12px;
+    min-width: 80px;
+  }
+  
+  .pos-vouchers-table {
+    min-width: 400px;
+  }
+  
+  .search-by-date-form, .search-by-invoice-form {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+  
+  .input-with-icon {
+    min-width: 100%;
+    width: 100%;
+  }
+  
+  .search-btn {
+    width: 100%;
+    padding: 12px;
+  }
+  
+  .pos-vouchers-search-modal-content {
+    min-width: 95vw;
+    padding: 24px 16px;
+    max-height: 95vh;
+  }
+  
+  .pos-vouchers-search-modal {
+    padding: 10px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 320px) {
+  .main-content {
+    padding: 12px 6px;
+  }
+  
+  .pos-vouchers-table {
+    min-width: 350px;
+  }
+  
+  .pos-vouchers-table th, .pos-vouchers-table td {
+    padding: 12px 6px;
+    font-size: 11px;
+    min-width: 70px;
+  }
+}
+
+/* Ensure no horizontal overflow */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Add scroll indicator for table */
+.pos-vouchers-table-wrapper::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 40px;
+  background: linear-gradient(to left, rgba(255,255,255,0.8), transparent);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.pos-vouchers-table-wrapper:hover::after {
+  opacity: 1;
+}

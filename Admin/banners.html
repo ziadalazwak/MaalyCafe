@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Banners</title>
+    <link rel="stylesheet" href="../css/banners.css" />
+    <link rel="stylesheet" href="../css/admin_sidebar.css" />
+    <link rel="stylesheet" href="../css/banner-modal.css" />
+    <link rel="stylesheet" href="../css/items.css" />
+  </head>
+  <body>
+    <div include-html="../components/admin_header.html"></div>
+    <div class="container">
+      <div
+        include-html="../components/admin_sidebar.html"
+        active-menu="Banners"
+      ></div>
+
+      <main class="main-content">
+        <div class="header">
+          <h2>Banners</h2>
+          <button class="add-banner" id="openAddBannerModal">Add Banner</button>
+        </div>
+        <div class="banners-table-wrapper">
+          <table class="banners-table">
+            <thead>
+              <tr>
+                <th>Photo</th>
+                <th>Show &amp; Unshow</th>
+                <th>User Add</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Photo">
+                  <img
+                    src="../images/ff6f2a226b2776e05cbf9a6005a5146fa6f8adb1.jpg"
+                    class="banner-img"
+                  />
+                </td>
+                <td data-label="Show & Unshow">Unshow</td>
+                <td data-label="User Add">Ahmed</td>
+                <td data-label="Status">Active</td>
+                <td class="actions" data-label="Actions">
+                  <span class="icon-btn delete-btn" title="Delete">
+                    <img src="../images/delete-03.png" alt="Delete" />
+                  </span>
+                  <span class="icon-btn edit-btn" title="Edit">
+                    <img src="../images/ri_edit-fill.png" alt="Edit" />
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Photo">
+                  <img
+                    src="../images/ff6f2a226b2776e05cbf9a6005a5146fa6f8adb1.jpg"
+                    class="banner-img"
+                  />
+                </td>
+                <td data-label="Show & Unshow">Show</td>
+                <td data-label="User Add">Khalid</td>
+                <td data-label="Status">Active</td>
+                <td class="actions" data-label="Actions">
+                  <span class="icon-btn delete-btn" title="Delete">
+                    <img src="../images/delete-03.png" alt="Delete" />
+                  </span>
+                  <span class="icon-btn edit-btn" title="Edit">
+                    <img src="../images/ri_edit-fill.png" alt="Edit" />
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Photo">
+                  <img
+                    src="../images/ff6f2a226b2776e05cbf9a6005a5146fa6f8adb1.jpg"
+                    class="banner-img"
+                  />
+                </td>
+                <td data-label="Show & Unshow">Unshow</td>
+                <td data-label="User Add">Sallem</td>
+                <td data-label="Status">Active</td>
+                <td class="actions" data-label="Actions">
+                  <span class="icon-btn delete-btn" title="Delete">
+                    <img src="../images/delete-03.png" alt="Delete" />
+                  </span>
+                  <span class="icon-btn edit-btn" title="Edit">
+                    <img src="../images/ri_edit-fill.png" alt="Edit" />
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+    <!-- Add Banner Modal -->
+    <div id="addBannerModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeAddBannerModal">&times;</span>
+        <h2>Add Banner</h2>
+        <form id="addBannerForm">
+          <label for="bannerPhoto">Photo</label>
+          <div class="photo-upload" id="bannerPhotoDrop">
+            <span class="plus">+</span>
+            <span class="photo-text">Add Photo</span>
+            <input
+              type="file"
+              id="bannerPhoto"
+              name="bannerPhoto"
+              accept="image/*"
+              style="display: none"
+            />
+          </div>
+          <button type="submit" class="modal-add-btn">Save</button>
+        </form>
+      </div>
+    </div>
+    <script src="../js/banner-modal.js"></script>
+    <script src="../js/include-html.js"></script>
+    <script src="../js/page_initializer.js"></script>
+  </body>
+</html>

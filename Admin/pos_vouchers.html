@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pos Vouchers</title>
+    <link rel="stylesheet" href="../css/pos_vouchers.css">
+    <link rel="stylesheet" href="../css/admin_sidebar.css">
+    <link rel="stylesheet" href="../css/admin_header.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap" />
+</head>
+<body>
+    <div include-html="../components/admin_header.html"></div>
+    <div class="container">
+        <div class="sidebar">
+            <div include-html="../components/admin_sidebar.html" active-menu="Pos Vouchers"></div>
+        </div>
+        <main class="main-content">
+            <div class="pos-vouchers-header-row">
+                <h2>Pos Vouchers</h2>
+                <div class="search-section" id="openVoucherSearch">
+                    <span class="search-icon">
+                        <img src="../images/search.png" class="search-icon" alt="Search Icon">
+                    </span>
+                    <span class="search-label">Search By</span>
+                </div>
+            </div>
+            <div class="pos-vouchers-search-modal" id="voucherSearchModal" style="display: none;">
+                <div class="pos-vouchers-search-modal-content">
+                    <button class="close-modal-btn" id="closeVoucherSearchModal">&times;</button>
+                    <div class="search-block">
+                        <label class="search-title">Search By Date</label>
+                        <form class="search-by-date-form">
+                            <div class="input-with-icon">
+                                <span class="search-icon"><img src="../images/iconoir_search.png" alt="Search Icon"></span>
+                                <input type="text" class="date-input" id="startDate" placeholder="Start Date">
+                            </div>
+                            <div class="input-with-icon">
+                              
+                                <input type="text" class="date-input" id="endDate" placeholder="End Date">
+                            </div>
+                            <button type="submit" class="search-btn">Search</button>
+                        </form>
+                    </div>
+                    <div class="search-block">
+                        <label class="search-title">Search By Invoice No</label>
+                        <form class="search-by-invoice-form">
+                            <div class="input-with-icon">
+                                <span class="search-icon"><img src="../images/iconoir_search.png" alt="Search Icon"></span>
+                                <input type="text" class="invoice-input" id="invoiceNo" placeholder="Invoice No">
+                            </div>
+                            <button type="submit" class="search-btn">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="pos-vouchers-table-wrapper">
+                <table class="pos-vouchers-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Type</th>
+                            <th>Customer</th>
+                            <th>Inv Id.</th>
+                            <th>Debit</th>
+                            <th>Credit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>22 Jun</td>
+                            <td>Voch</td>
+                            <td>Ahmed Khalid</td>
+                            <td>34567</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td>22 Jun</td>
+                            <td>Voch</td>
+                            <td>Ahmed Khalid</td>
+                            <td>34567</td>
+                            <td>No</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>22 Jun</td>
+                            <td>Voch</td>
+                            <td>Ahmed Khalid</td>
+                            <td>34567</td>
+                            <td>No</td>
+                            <td>Yes</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <script src="../js/admin_sidebar.js"></script>
+    <script src="../js/include-html.js"></script>
+    <script SRC="../js/page_initializer.js"></script>
+    <script>
+    document.getElementById('openVoucherSearch').onclick = function() {
+        document.getElementById('voucherSearchModal').style.display = 'flex';
+    };
+    document.getElementById('closeVoucherSearchModal').onclick = function() {
+        document.getElementById('voucherSearchModal').style.display = 'none';
+    };
+    document.getElementById('voucherSearchModal').onclick = function(e) {
+        if (e.target === this) {
+            this.style.display = 'none';
+        }
+    };
+    </script>
+</body>
+</html> 

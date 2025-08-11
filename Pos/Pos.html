@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/pos.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Dancing+Script:wght@400;700&display=swap"
+    />
+  </head>
+
+  <body>
+    <div include-html="../components/PosHeader.html"></div>
+    <div class="pos-main">
+      <section class="pos-products-section">
+        <div class="Pos_Products_Categories">
+          <button>Hot Drinks</button>
+          <button>Iced Coffee</button>
+          <button>Frappe</button>
+          <button>Smoothie</button>
+          <button>Fresh Juice</button>
+          <button>Ingredience</button>
+        </div>
+        <div class="Pos_ProductsGrid">
+          <div class="Pos_ProductCard">
+            <img src="../images/Rectangle (no bg).png" alt="Latte" />
+            <div class="product-info">
+              <span class="product-name">Latte</span>
+              <span class="product-separator"></span>
+              <span class="product-price">35 EGP</span>
+            </div>
+          </div>
+          <div class="Pos_ProductCard">
+            <img src="../images/Rectangle (no bg).png" alt="Latte" />
+            <div class="product-info">
+              <span class="product-name">Latte</span>
+              <span class="product-separator"></span>
+              <span class="product-price">35 EGP</span>
+            </div>
+          </div>
+          <div class="Pos_ProductCard">
+            <img src="../images/Rectangle (no bg).png" alt="Latte" />
+            <div class="product-info">
+              <span class="product-name">Latte</span>
+              <span class="product-separator"></span>
+              <span class="product-price">35 EGP</span>
+            </div>
+          </div>
+          <div class="Pos_ProductCard">
+            <img src="../images/Rectangle (no bg).png" alt="Latte" />
+            <div class="product-info">
+              <span class="product-name">Latte</span>
+              <span class="product-separator"></span>
+              <span class="product-price">35 EGP</span>
+            </div>
+          </div>
+          <div class="Pos_ProductCard">
+            <img src="../images/Rectangle (no bg).png" alt="Latte" />
+            <div class="product-info">
+              <span class="product-name">Latte</span>
+              <span class="product-separator"></span>
+              <span class="product-price">35 EGP</span>
+            </div>
+          </div>
+          <div class="Pos_ProductCard">
+            <img src="../images/Rectangle (no bg).png" alt="Latte" />
+            <div class="product-info">
+              <span class="product-name">Latte</span>
+              <span class="product-separator"></span>
+              <span class="product-price">35 EGP</span>
+            </div>
+          </div>
+          <div class="Pos_ProductCard">
+            <img src="../images/Rectangle (no bg).png" alt="Latte" />
+            <div class="product-info">
+              <span class="product-name">Latte</span>
+              <span class="product-separator"></span>
+              <span class="product-price">35 EGP</span>
+            </div>
+          </div>
+          <div class="Pos_ProductCard">
+            <img src="../images/Rectangle (no bg).png" alt="Latte" />
+            <div class="product-info">
+              <span class="product-name">Latte</span>
+              <span class="product-separator"></span>
+              <span class="product-price">35 EGP</span>
+            </div>
+          </div>
+          <div class="Pos_ProductCard">
+            <img src="../images/Rectangle (no bg).png" alt="Latte" />
+            <div class="product-info">
+              <span class="product-name">Latte</span>
+              <span class="product-separator"></span>
+              <span class="product-price">35 EGP</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <button id="sidebar-toggle-btn">
+        <img src="../images/iconoir_nav-arrow-right.png" alt="Toggle Invoice" />
+      </button>
+      <aside class="pos-sidebar">
+        <div class="sidebar-user">
+          <img class="user-avatar" src="../images/user.jpg" alt="User" />
+          <span class="user-name">Noran Hamed</span>
+        </div>
+        <div class="sidebar-invoice">
+          <div class="invoice-header">
+            <span>Invoice No : <b>234567</b></span>
+            <button class="new-invoice">New Invoice</button>
+          </div>
+          <div class="invoice-items">
+            <div class="invoice-row">
+              <span>Latte</span><span>2</span><span>20.00</span>
+            </div>
+            <div class="invoice-row">
+              <span>Double Espresso</span><span>1</span><span>15.00</span>
+            </div>
+            <div class="invoice-row">
+              <span>Additional</span><span></span><span>12.00</span>
+            </div>
+            <div class="invoice-row">
+              <span>Total Before Discount</span><span></span><span>12.00</span>
+            </div>
+            <div class="invoice-row">
+              <span>Discount</span><span></span><span>12.00</span>
+            </div>
+            <div class="invoice-row">
+              <span>Total Before TAX</span><span></span><span>35.00</span>
+            </div>
+            <div class="invoice-row">
+              <span>TAX</span><span></span><span>5.00</span>
+            </div>
+          </div>
+          <div class="invoice-total">
+            <span>TOTAL</span>
+            <span>52.00</span>
+          </div>
+          <div class="invoice-payment">
+            <button class="pay-btn">Cash</button>
+            <button class="pay-btn">Visa</button>
+          </div>
+          <button class="charge-btn">CHARGE</button>
+        </div>
+      </aside>
+    </div>
+    <script src="../js/pos.js"></script>
+    <script src="../js/include-html.js"></script>
+  </body>
+</html>

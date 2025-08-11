@@ -1,0 +1,260 @@
+body {
+  font-family: "Abhaya Libre", serif;
+  background: #f9f5f5;
+  margin: 0;
+}
+.container {
+  display: flex;
+}
+.main-content {
+  flex: 1;
+  padding: 36px 38px 0 38px;
+  background: #f9f5f5;
+}
+.users-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  margin-top: 12px;
+}
+.users-header-row h2 {
+  font-size: 26px;
+  color: #1b1a1a;
+  margin: 0;
+}
+.add-user-btn {
+  background: #a8715c;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 32px 8px 18px;
+  font-size: 18px;
+  font-family: "Abhaya Libre", serif;
+  cursor: pointer;
+  box-shadow: 0 2px 6px #e6d3c5;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.add-user-btn:hover {
+  background: #a8715c;
+}
+.plus-icon {
+  font-size: 20px;
+  margin-right: 4px;
+}
+.plus-icon img {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+.user-list {
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+}
+.user-card-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 32px;
+  margin: 0 0 30px 0;
+  width: 100%;
+}
+
+.user-actions-outside {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+  margin-left: 40px;
+  justify-content: center;
+  height: 100%;
+}
+.edit-action,
+.delete-action {
+  font-size: 18px;
+  font-weight: 400;
+  padding: 0 2px;
+}
+
+.user-card {
+  background: #f6f3f3;
+  border: 1.5px solid #000000;
+  border-radius: 14px;
+  padding: 22px 22px 12px 22px;
+  box-shadow: 0 2px 8px rgba(80, 40, 10, 0.06);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 60%;
+  height: 70px;
+}
+.user-card-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.user-status {
+  color: #4aac32;
+  font-size: 17px;
+  font-weight: 400;
+  margin-left: 0;
+  margin-right: 2px;
+  text-align: right;
+  flex: 1;
+}
+
+.user-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1b1a1a;
+}
+.user-status {
+  color: #3ab54a;
+  font-size: 16px;
+  font-weight: 500;
+  margin-left: 24px;
+}
+.user-info-row {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-size: 20px;
+  color: #1b1a1a;
+}
+.user-info-row span,
+.user-info-row span b {
+  color: #1b1a1a;
+  font-weight: bold;
+  margin-right: 0;
+  font-size: 16px;
+  text-decoration: none;
+}
+.user-info-row span b {
+  font-weight: 400;
+}
+.user-info-row span a {
+  color: #4d3c31;
+  text-decoration: none;
+  font-weight: 400;
+  pointer-events: none;
+}
+
+/* .user-actions is no longer used; replaced by .user-actions-outside */
+.edit-action {
+  color: #66371d;
+  cursor: pointer;
+  font-size: 15px;
+  margin-bottom: 2px;
+  transition: text-decoration 0.2s;
+}
+.edit-action:hover {
+  text-decoration: underline;
+}
+.delete-action {
+  color: #b32424;
+  cursor: pointer;
+  font-size: 15px;
+  transition: text-decoration 0.2s;
+}
+.delete-action:hover {
+  text-decoration: underline;
+}
+@media (max-width: 900px) {
+  .main-content {
+    padding: 16px 6px 0 6px;
+  }
+  .user-info-row {
+    gap: 10px;
+    font-size: 14px;
+    flex-wrap: wrap;
+  }
+  .user-card-wrapper {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+  .user-card {
+    width: 100%;
+    min-width: 0;
+  }
+  .user-actions-outside {
+    flex-direction: row;
+    gap: 16px;
+    margin-left: 0;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
+@media (max-width: 600px) {
+  .main-content {
+    padding: 8px 2px 0 2px;
+  }
+  .users-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .users-header-row h2 {
+    font-size: 16px;
+  }
+  .add-user-btn {
+    font-size: 13px;
+    padding: 6px 10px;
+    width: 100%;
+    min-width: 0;
+    margin-top: 6px;
+  }
+  .user-list {
+    gap: 10px;
+  }
+  .user-card-wrapper {
+    flex-direction: column;
+    gap: 6px;
+    margin: 0 0 12px 0;
+    align-items: stretch;
+  }
+  .user-card {
+    padding: 10px 6px 8px 6px;
+    border-radius: 8px;
+    width: 100%;
+    min-width: 0;
+    height: auto;
+  }
+  .user-card-row {
+    margin-bottom: 6px;
+  }
+  .user-title {
+    font-size: 13px;
+  }
+  .user-status {
+    font-size: 12px;
+    margin-left: 8px;
+  }
+  .user-info-row {
+    gap: 4px;
+    font-size: 11px;
+    flex-wrap: wrap;
+  }
+  .user-info-row span,
+  .user-info-row span b {
+    font-size: 11px;
+  }
+  .user-actions-outside {
+    flex-direction: row;
+    gap: 8px;
+    margin-left: 0;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .edit-action,
+  .delete-action {
+    font-size: 11px;
+    padding: 0 2px;
+  }
+}

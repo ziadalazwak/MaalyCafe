@@ -1,0 +1,283 @@
+body {
+  font-family: 'Abhaya Libre', serif;
+  background: #f9f5f5;
+  margin: 0;
+  color: #4a2d0b;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 220px;
+  background: #faf9f9;
+  border-right: 1px solid #eee;
+  padding-top: 0;
+}
+
+.main-content {
+  flex: 1;
+  padding: 24px 32px 0 32px;
+  background: #f9f5f5;
+}
+
+.bills-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.bills-header-row h2 {
+  font-size: 24px;
+  margin: 0;
+  color: #1B1A1A;
+}
+
+.search-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 17px;
+  color: #7a4a1c;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.2s;
+}
+
+.search-section .search-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-section .search-icon img {
+  filter: brightness(0);
+  width: 24px;
+  height: 24px;
+}
+
+.search-section .search-label {
+  display: inline-flex;
+  align-items: center;
+  color: #000;
+}
+
+.search-section:hover {
+  background: #f6f2ef;
+}
+
+.search-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.bills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.bill-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(80,40,10,0.06);
+  padding: 24px 32px;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bill-id {
+  font-size: 20px;
+  color: #1B1A1A;
+  margin-bottom: 8px;
+}
+
+.bill-details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.bill-info {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  font-size: 17px;
+  color: #1B1A1A;
+}
+
+.date-search-form {
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
+.date-search-form form {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.date-search-form .search-icon {
+  width: 32px;
+  height: 32px;
+  color: #1B1A1A;
+  margin-right: 8px;
+}
+
+.date-input-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-right: 32px;
+}
+
+.date-input {
+  border: none;
+  border-bottom: 2px solid #a67c6b;
+  background: transparent;
+  font-size: 22px;
+  color: #a67c6b;
+  padding: 8px 16px 8px 0;
+  outline: none;
+  width: 180px;
+  margin-right: 0;
+}
+
+/* Hide browser default placeholder for date input */
+.date-input::-webkit-input-placeholder { color: transparent; }
+.date-input:-moz-placeholder { color: transparent; }
+.date-input::-moz-placeholder { color: transparent; }
+.date-input:-ms-input-placeholder { color: transparent; }
+.date-input::placeholder { color: transparent; }
+
+.date-placeholder {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a67c6b;
+  font-size: 22px;
+  pointer-events: none;
+  transition: 0.2s;
+  padding-left: 0;
+  font-family: inherit;
+}
+
+.date-input:focus + .date-placeholder,
+.date-input:not(:placeholder-shown) + .date-placeholder {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.date-search-btn {
+  background: #a67c6b;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 38px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-left: 16px;
+}
+
+.date-search-btn:hover {
+  background: #7a4a1c;
+}
+
+.date-search-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(60, 40, 20, 0.18);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.date-search-modal-content {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(80,40,10,0.13);
+  padding: 38px 48px 32px 48px;
+  min-width: 420px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 2.2rem;
+  color: #a67c6b;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.close-modal-btn:hover {
+  color: #7a4a1c;
+}
+
+.date-search-modal-content form {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: flex-end;
+  min-width: 90px;
+}
+
+@media (max-width: 900px) {
+  .main-content {
+    padding: 18px 8px 0 8px;
+  }
+  .sidebar {
+    width: 140px;
+  }
+  .bills-list {
+    gap: 12px;
+  }
+  .bill-card {
+    padding: 14px 8px;
+    font-size: 15px;
+  }
+  .bill-info {
+    gap: 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .date-search-modal-content {
+    min-width: 90vw;
+    padding: 18px 8px 18px 8px;
+  }
+  .date-search-modal-content form {
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+  }
+}
+ 

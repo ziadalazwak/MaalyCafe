@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Items</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap"
+    />
+    <link rel="stylesheet" href="../css/items.css" />
+    <link rel="stylesheet" href="../css/items-modal.css" />
+  </head>
+  <body>
+    <div include-html="../components/admin_header.html"></div>
+    <div class="container">
+      <div class="sidebar">
+        <div
+          include-html="../components/admin_sidebar.html"
+          active-menu="Items"
+        ></div>
+      </div>
+      <main class="main-content">
+        <div class="items-search-row">
+          <span class="search-icon">
+            <img
+              src="../images/search.png"
+              class="search-icon"
+              alt="Search Icon"
+            />
+          </span>
+          <input
+            type="text"
+            class="items-search-input"
+            placeholder="Search For Items"
+          />
+          <button class="add-item-btn" id="openAddItemModal">Add Item</button>
+        </div>
+        <div class="items-table-container">
+          <table class="items-table">
+            <thead>
+              <tr>
+                <th>Name In English</th>
+                <th>Name In Arabic</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Photo</th>
+                <th>Status</th>
+                <th>Show</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Name In English">Latte</td>
+                <td data-label="Name In Arabic">لاتيه</td>
+                <td data-label="Price">40</td>
+                <td data-label="Stock">12</td>
+                <td data-label="Photo">
+                  <img
+                    src="../images/ff6f2a226b2776e05cbf9a6005a5146fa6f8adb1.jpg"
+                    alt="Latte"
+                    class="item-photo"
+                  />
+                </td>
+                <td data-label="Status">Active</td>
+                <td data-label="Show">Unshow</td>
+                <td data-label="Actions">
+                  <span class="icon-btn delete-btn" title="Delete"
+                    ><img src="../images/delete-03.png" alt="Delete"
+                  /></span>
+                  <span class="icon-btn edit-btn" title="Edit"
+                    ><img src="../images/ri_edit-fill.png" alt="Edit"
+                  /></span>
+                </td>
+              </tr>
+              
+              <tr>
+                <td data-label="Name In English">Latte</td>
+                <td data-label="Name In Arabic">لاتيه</td>
+                <td data-label="Price">40</td>
+                <td data-label="Stock">12</td>
+                <td data-label="Photo">
+                  <img
+                    src="../images/ff6f2a226b2776e05cbf9a6005a5146fa6f8adb1.jpg"
+                    alt="Latte"
+                    class="item-photo"
+                  />
+                </td>
+                <td data-label="Status">Active</td>
+                <td data-label="Show">Unshow</td>
+                <td data-label="Actions">
+                  <span class="icon-btn delete-btn" title="Delete"
+                    ><img src="../images/delete-03.png" alt="Delete"
+                  /></span>
+                  <span class="icon-btn edit-btn" title="Edit"
+                    ><img src="../images/ri_edit-fill.png" alt="Edit"
+                  /></span>
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Name In English">Latte</td>
+                <td data-label="Name In Arabic">لاتيه</td>
+                <td data-label="Price">40</td>
+                <td data-label="Stock">12</td>
+                <td data-label="Photo">
+                  <img
+                    src="../images/ff6f2a226b2776e05cbf9a6005a5146fa6f8adb1.jpg"
+                    alt="Latte"
+                    class="item-photo"
+                  />
+                </td>
+                <td data-label="Status">Active</td>
+                <td data-label="Show">Unshow</td>
+                <td data-label="Actions">
+                  <span class="icon-btn delete-btn" title="Delete"
+                    ><img src="../images/delete-03.png" alt="Delete"
+                  /></span>
+                  <span class="icon-btn edit-btn" title="Edit"
+                    ><img src="../images/ri_edit-fill.png" alt="Edit"
+                  /></span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+    <div id="editItemModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal" id="closeEditItemModal">&times;</span>
+        <h2 class="modal-title">Edit Item</h2>
+        <form class="edit-item-form">
+          <div class="form-row">
+            <div class="form-group" style="width: 100%">
+              <label>Name In Arabic</label>
+              <input type="text" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group" style="width: 100%">
+              <label>Name In English</label>
+              <input type="text" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Description In English</label>
+              <textarea></textarea>
+            </div>
+            <div class="form-group">
+              <label>Description In Arabic</label>
+              <textarea></textarea>
+            </div>
+          </div>
+          <div class="form-row item-stock-order">
+            <div class="form-group item-stock-order">
+              <label>Item Stock</label>
+              <input type="text" />
+            </div>
+            <div class="form-group photo-group">
+              <label>Photo</label>
+              <div class="photo-row">
+                <img
+                  src="images/latte.jpg"
+                  alt="Item Photo"
+                  class="item-photo-preview"
+                  id="itemPhotoPreview"
+                />
+                <div class="photo-add" id="addPhotoBtn">+</div>
+                <input
+                  type="file"
+                  id="itemPhotoInput"
+                  accept="image/*"
+                  style="display: none"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group item-stock-order">
+              <label>Item Ordered</label>
+              <input type="text" />
+            </div>
+          </div>
+          <div class="form-row price-discount-date">
+            <div class="form-group price-discount-date">
+              <label>Price</label>
+              <input type="text" />
+            </div>
+            <div class="form-group price-discount-date">
+              <label>Discount</label>
+              <input type="text" />
+            </div>
+            <div class="form-group price-discount-date">
+              <label>Date</label>
+              <input type="text" />
+            </div>
+          </div>
+          <div class="form-row radio-row">
+            <label class="radio-label"
+              ><input type="checkbox" name="show" /> Show</label
+            >
+            <label class="radio-label"
+              ><input type="checkbox" name="is_active" /> Is Active</label
+            >
+            <label class="radio-label"
+              ><input type="checkbox" name="has_vat" /> Has Vat</label
+            >
+          </div>
+          <button type="submit" class="save-btn">Save</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Load scripts -->
+    <script src="../js/include-html.js"></script>
+    <script src="../js/admin_sidebar.js"></script>
+    <script src="../js/items-modal.js"></script>
+    <script src="../js/page_initializer.js"></script>
+  </body>
+</html>

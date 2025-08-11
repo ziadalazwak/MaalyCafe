@@ -1,0 +1,300 @@
+body {
+  font-family: 'Abhaya Libre', serif;
+  background: #F6F3F3;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.cashbook-header-row {
+  margin-bottom: 24px;
+}
+
+.cashbook-search-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.cashbook-search-icon {
+  width: 20px;
+  cursor: pointer;
+  color: #A8715C;
+  flex-shrink: 0;
+}
+
+.cashbook-search-input {
+  border: none;
+  border-bottom: 1.5px solid #A8715C;
+  background: transparent;
+  font-size: 18px;
+  outline: none;
+  padding: 6px 0 6px 30px;
+  color: #A8715C;
+  width: 100%;
+  max-width: 800px;
+  min-width: 200px;
+  font-family: 'Abhaya Libre', serif;
+}
+
+.cashbook-date-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.cashbook-date-btn {
+  background: #7B4C2F;
+  border: none;
+  color: #fff;
+  border-radius: 8px;
+  width: 28px;
+  height: 28px;
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  margin: 0 5px;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.cashbook-date-btn:hover {
+  background: #5c3320;
+}
+
+.cashbook-date-nav span {
+  color: #000000;
+  font-size: 20px;
+  margin: 0 6px;
+  white-space: nowrap;
+}
+
+.cashbook-date-label {
+  font-size: 22px;
+  font-weight: bold;
+  color: #1B1A1A;
+  margin: 0 10px;
+  white-space: nowrap;
+}
+
+.cashbook-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cashbook-list-title {
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  color: #1B1A1A;
+}
+
+.cashbook-list-count {
+  color: #1B1A1A;
+  margin-left: 8px;
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.cashbook-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.cashbook-card {
+  background: #F6F3F3;
+  border: 1px solid #000000;
+  border-radius: 16px;
+  padding: 32px 32px 18px 32px;
+  box-shadow: 0 2px 8px rgba(68, 51, 43, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cashbook-table-wrapper {
+  width: 100%;
+  overflow-x: hidden;
+  margin-top: 32px;
+  border-radius: 16px;
+  border: 1px solid #000000;
+  background: #F6F3F3;
+  box-sizing: border-box;
+}
+
+.cashbook-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #F6F3F3;
+  font-family: 'Abhaya Libre', serif;
+  margin: 0;
+  box-shadow: none;
+  border: none;
+  table-layout: fixed;
+}
+
+.cashbook-table-head {
+  background: #F6F3F3;
+  display: table-header-group;
+}
+
+.cashbook-table-row {
+  display: table-row;
+}
+
+.cashbook-table-th {
+  padding: 22px 8px;
+  min-height: 58px;
+  border: 1.5px solid #000000;
+  font-size: 22px;
+  background: #F6F3F3;
+  position: relative;
+  border-radius: 12px;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  word-wrap: break-word;
+  min-width: 80px;
+}
+
+.first-th {
+  border-top-left-radius: 16px;
+}
+
+.last-th {
+  border-top-right-radius: 16px;
+}
+
+.cashbook-table-cell {
+  padding: 22px 8px;
+  min-height: 58px;
+  border: 1.5px solid #000000;
+  text-align: center;
+  font-size: 18px;
+  background: #F6F3F3;
+  position: relative;
+  border-radius: 12px;
+  display: table-cell;
+  vertical-align: middle;
+  word-wrap: break-word;
+  min-width: 80px;
+}
+
+/* Remove double borders for clover effect */
+.cashbook-table-th:not(:first-child),
+.cashbook-table-cell:not(:first-child) {
+  border-left-width: 0;
+}
+
+.cashbook-table-row:not(:first-child) .cashbook-table-cell,
+.cashbook-table-row:not(:first-child) .cashbook-table-th {
+  border-top-width: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .cashbook-container {
+    padding: 0 12px;
+  }
+}
+
+@media (max-width: 992px) {
+  .cashbook-container {
+    max-width: 100%;
+  }
+  .cashbook-table {
+    min-width: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cashbook-container {
+    margin: 16px auto;
+    padding: 0 10px;
+  }
+  .cashbook-table {
+    min-width: 400px;
+  }
+}
+
+@media (max-width: 576px) {
+  .cashbook-container {
+    margin: 12px auto;
+    padding: 0 8px;
+  }
+  .cashbook-table {
+    min-width: 350px;
+  }
+}
+@media (max-width: 480px) {
+  .cashbook-table {
+    min-width: 320px;
+  }
+}
+
+/* --- Responsive Table: No Horizontal Scroll --- */
+.cashbook-table-wrapper {
+  width: 100%;
+  overflow-x: hidden;
+  margin-top: 32px;
+  border-radius: 16px;
+  border: 1px solid #000000;
+  background: #F6F3F3;
+  box-sizing: border-box;
+}
+
+.cashbook-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #F6F3F3;
+  font-family: 'Abhaya Libre', serif;
+  margin: 0;
+  box-shadow: none;
+  border: none;
+  table-layout: fixed;
+}
+
+.cashbook-table-th,
+.cashbook-table-cell {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  padding: 12px 4px;
+  font-size: 1rem;
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .cashbook-table-th,
+  .cashbook-table-cell {
+    font-size: 0.95rem;
+    padding: 8px 2px;
+  }
+}
+
+@media (max-width: 600px) {
+  .cashbook-table {
+    width: 100%;
+    table-layout: fixed;
+  }
+  .cashbook-table-th,
+  .cashbook-table-cell {
+    font-size: 0.8rem;
+    padding: 6px 1px;
+    min-width: 0;
+  }
+}

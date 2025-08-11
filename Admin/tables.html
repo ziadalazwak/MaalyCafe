@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tables</title>
+    <link rel="stylesheet" href="../css/tables.css" />
+    <link rel="stylesheet" href="../css/admin_sidebar.css" />
+    <link rel="stylesheet" href="../css/stores-modal.css" />
+  </head>
+  <body>
+    <div include-html="../components/admin_header.html"></div>
+    <div class="container">
+      <div
+        include-html="../components/admin_sidebar.html"
+        active-menu="Tabels"
+      ></div>
+      <main class="main-content">
+        <div class="header">
+          <h2>Tables</h2>
+          <button class="add-table" id="openAddTableModal">Add Table</button>
+        </div>
+        <div class="tables-list">
+          <div class="table-card">
+            <div class="table-info">
+              <span class="table-name">Table Name</span>
+              <div class="table-details">
+                <span>Id: 3245678</span>
+                <span>Price : 200 Egp</span>
+                <span>People : 4</span>
+              </div>
+            </div>
+            <div class="table-actions">
+              <button class="delete">Delete</button>
+              <button class="edit">Edit</button>
+            </div>
+          </div>
+          <div class="table-card">
+            <div class="table-info">
+              <span class="table-name">Table Name</span>
+              <div class="table-details">
+                <span>Id: 3245678</span>
+                <span>Price : 200 Egp</span>
+                <span>People : 4</span>
+              </div>
+            </div>
+            <div class="table-actions">
+              <button class="delete">Delete</button>
+              <button class="edit">Edit</button>
+            </div>
+          </div>
+          <div class="table-card">
+            <div class="table-info">
+              <span class="table-name">Table Name</span>
+              <div class="table-details">
+                <span>Id: 3245678</span>
+                <span>Price : 200 Egp</span>
+                <span>People : 4</span>
+              </div>
+            </div>
+            <div class="table-actions">
+              <button class="delete">Delete</button>
+              <button class="edit">Edit</button>
+            </div>
+          </div>
+          <div class="table-card">
+            <div class="table-info">
+              <span class="table-name">Table Name</span>
+              <div class="table-details">
+                <span>Id: 3245678</span>
+                <span>Price : 200 Egp</span>
+                <span>People : 4</span>
+              </div>
+            </div>
+            <div class="table-actions">
+              <button class="delete">Delete</button>
+              <button class="edit">Edit</button>
+            </div>
+          </div>
+          <div class="table-card">
+            <div class="table-info">
+              <span class="table-name">Table Name</span>
+              <div class="table-details">
+                <span>Id: 3245678</span>
+                <span>Price : 200 Egp</span>
+                <span>People : 4</span>
+              </div>
+            </div>
+            <div class="table-actions">
+              <button class="delete">Delete</button>
+              <button class="edit">Edit</button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <!-- Add Table Modal -->
+    <div id="addTableModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeAddTableModal">&times;</span>
+        <h2>Add Table</h2>
+        <form id="addTableForm">
+          <label for="tableName">Table Name</label>
+          <input type="text" id="tableName" name="tableName" required />
+          <label for="tableId">Id</label>
+          <input type="text" id="tableId" name="tableId" required />
+          <label for="tablePrice">Price</label>
+          <input type="text" id="tablePrice" name="tablePrice" required />
+          <label for="tablePeople">People</label>
+          <input type="text" id="tablePeople" name="tablePeople" required />
+          <button type="submit" class="modal-add-btn">Add</button>
+        </form>
+      </div>
+    </div>
+    <!-- Edit Table Modal -->
+    <div id="editTableModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeEditTableModal">&times;</span>
+        <h2>Edit Table</h2>
+        <form id="editTableForm">
+          <label for="editTableId">ID</label>
+          <input type="text" id="editTableId" name="editTableId" required />
+          <label for="editTableNameAr">Name In Arabic</label>
+          <input
+            type="text"
+            id="editTableNameAr"
+            name="editTableNameAr"
+            required
+          />
+          <label for="editTableNameEn">Name In English</label>
+          <input
+            type="text"
+            id="editTableNameEn"
+            name="editTableNameEn"
+            required
+          />
+          <div style="display: flex; gap: 18px">
+            <div
+              style="display: flex; flex-direction: column; margin-right: 18px"
+            >
+              <label for="editTablePerson">No Person</label>
+              <input
+                type="text"
+                id="editTablePerson"
+                name="editTablePerson"
+                required
+              />
+            </div>
+            <div style="flex: 1; display: flex; flex-direction: column">
+              <label for="editTablePrice">Price Based On Hours</label>
+              <input
+                type="text"
+                id="editTablePrice"
+                name="editTablePrice"
+                required
+              />
+            </div>
+          </div>
+          <button type="submit" class="modal-add-btn">Save</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Load scripts -->
+    <script src="../js/include-html.js"></script>
+    <script src="../js/admin_sidebar.js"></script>
+    <script src="../js/table-modal.js"></script>
+    <script src="../js/page_initializer.js"></script>
+  </body>
+</html>
